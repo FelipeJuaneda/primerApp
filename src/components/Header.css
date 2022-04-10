@@ -3,7 +3,7 @@
     position: fixed;
     top: 0;
     z-index: 100;
-    background-color: #2f323a00;
+    background-color: var(--color-transparente);
 
     display: flex;
     align-items: center;
@@ -11,7 +11,7 @@
 }
 .header .logoImg{
     width: 69px;
-    padding: 5px 0;
+    padding: 10px 0;
 }
 .header .listaDesordenada{
     list-style: none;
@@ -22,5 +22,10 @@
 }
 .header .listaDesordenada li a{
     text-decoration: none;
-    color: #FFEDDF;
+    text-transform: uppercase;
+    color: var(--color-cucurucho);
+    transition: all .4s;
+}
+.header .listaDesordenada li a:hover{
+    color: var(--color-blanco);
 }

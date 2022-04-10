@@ -1,3 +1,12 @@
+/*------------- VARIABLES-------------- */
+:root{
+  --color-negro: #000;
+  --color-blanco: #fff;
+  --color-cucurucho: #fccc9a;
+  --color-transparente: #2f323a00;
+}
+/* --------------------------------------*/
+
 .App {
   text-align: center;
 }
