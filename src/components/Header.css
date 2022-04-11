@@ -4,7 +4,6 @@
     top: 0;
     z-index: 100;
     background-color: var(--color-transparente);
-
     display: flex;
     align-items: center;
     justify-content: space-around;

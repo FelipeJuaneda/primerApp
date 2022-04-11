@@ -1,8 +1,10 @@
-.mainVideoCont{
+/* VIDEO CUCURUCO */
+.mainVideoCont {
     position: relative;
     min-height: 100vh;
     top: 0;
 }
+
 .mainVideoCont .videoCont {
     position: absolute;
     top: 0;
@@ -10,4 +12,83 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
+}
+
+.mainVideoCont .mainTituloCont {
+    position: absolute;
+    right: 55px;
+    bottom: 180px;
+    background-color: #b6e2da3b;
+    padding: 20px;
+    border-radius: 5px;
+}
+
+.mainVideoCont .mainTituloCont .titulo {
+    margin: 10px 0;
+    font-size: 40px;
+    color: var(--color-titulo);
+}
+
+.mainVideoCont .mainTituloCont .parrafoTitulo {
+    color: var(--color-verdeParrafo);
+}
+@media screen and (max-width:990px) {
+    .mainVideoCont .mainTituloCont{
+        right: 0;
+        left: 0;
+        bottom: 160px;
+        background-color: var(--color-verdeTransparente);
+    }
+}
+
+/* BOTON DE SABORES */
+.cta {
+    border: none;
+    background: none;
+    margin-top: 20px;
+    cursor: pointer;
+}
+
+.cta span {
+    padding-bottom: 7px;
+    letter-spacing: 4px;
+    font-size: 16px;
+    padding-right: 15px;
+    text-transform: uppercase;
+}
+
+.cta svg {
+    transform: translateX(-8px);
+    transition: all 0.3s ease;
+}
+
+.cta:hover svg {
+    transform: translateX(0);
+}
+
+.cta:active svg {
+    transform: scale(0.9);
+}
+
+.hover-underline-animation {
+    color: var(--color-negro);
+    padding-bottom: 20px;
+}
+
+.hover-underline-animation:after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: var(--color-titulo);
+    transform-origin: bottom right;
+    transition: transform 0.25s ease-out;
+}
+
+.cta:hover .hover-underline-animation:after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
 }
