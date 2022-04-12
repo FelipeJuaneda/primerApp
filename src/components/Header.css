@@ -8,6 +8,14 @@
     align-items: center;
     justify-content: space-around;
 }
+/* .header::after{
+    content: "";
+    width: 100%;
+    bottom: 0;
+    background: var(--color-cucurucho);
+    height: 1px;
+    position: absolute;
+} */
 .header .logoImg{
     width: 69px;
     padding: 10px 0;
@@ -24,6 +32,8 @@
     text-transform: uppercase;
     color: var(--color-cucurucho);
     transition: all .4s;
+    font-family: var(--fuente-nav);
+    font-weight: 600;
 }
 .header .listaDesordenada li a:hover{
     color: var(--color-blanco);

@@ -25,12 +25,15 @@
 
 .mainVideoCont .mainTituloCont .titulo {
     margin: 10px 0;
-    font-size: 40px;
+    font-size: 45px;
     color: var(--color-titulo);
+    font-family: var(--fuente-nav);
 }
 
 .mainVideoCont .mainTituloCont .parrafoTitulo {
     color: var(--color-verdeParrafo);
+    font-family: var(--fuente-parrafo);
+    font-size: 18.3px;
 }
 @media screen and (max-width:990px) {
     .mainVideoCont .mainTituloCont{
