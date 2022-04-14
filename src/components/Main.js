@@ -9,14 +9,18 @@ function MainComp(props) {
         <source src={videoFondo} type="video/mp4" />
       </video>
       <div className="mainTituloCont">
-        <h1 className="titulo">
+        <h1
+          className="titulo"
+          id="tituloScroll"
+          onClick={props.cambioColorTitulo}
+        >
           Disfruta del mejor <span className="spanTyped">Helado</span>
         </h1>
         <p className="parrafoTitulo">
-          Artesanal por excelencia, con sabor, textura y aroma{" "}
+          Artesanal por excelencia, con sabor, textura y aroma
           <span>único</span>
         </p>
-        <button onClick={props.alerta} className="cta">
+        <button className="cta">
           <span className="hover-underline-animation"> Descubrir Sabores </span>
           <svg
             id="arrow-horizontal"

@@ -4,9 +4,7 @@
     top: 0;
     z-index: 100;
     background-color: var(--color-transparente);
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
+
 }
 
 /* .header::after{
@@ -17,12 +15,18 @@
     height: 1px;
     position: absolute;
 } */
-.header .logoImg {
+.header .navegador {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.header .navegador .logoImg {
     width: 69px;
     padding: 10px 0;
 }
 
-.header .listaDesordenada {
+.header .navegador .listaDesordenada {
     list-style: none;
     display: flex;
     gap: 3rem;
@@ -30,7 +34,7 @@
 
 }
 
-.header .listaDesordenada li a {
+.header .navegador .listaDesordenada li a {
     text-decoration: none;
     text-transform: uppercase;
     color: var(--color-cucurucho);
@@ -39,6 +43,69 @@
     font-weight: 600;
 }
 
-.header .listaDesordenada li a:hover {
+.header .navegador .listaDesordenada li a:hover {
     color: var(--color-blanco);
+}
+
+.header .navegador .listaDesordenada .redesNav {
+    display: none;
+}
+
+.header .navegador .contenedorBurger {
+    padding: 4px 5px 0 5px;
+    cursor: pointer;
+    background-color: var(--color-cucurucho);
+    border-radius: 8px;
+    display: none;
+}
+
+.header .navegador .contenedorBurger .iconoBurger {
+    width: 30px;
+}
+
+@media screen and (max-width:768px) {
+    .header .navegador .contenedorBurger {
+        display: block;
+        z-index: 10;
+    }
+
+    .header .listaDesordenada {
+        position: fixed;
+        flex-direction: column;
+        background-color: var(--color-verdeTransparente);
+        height: 50%;
+        width: 50%;
+        justify-content: center;
+        top: -17px;
+        right: 0;
+        transform: translateX(-200%);
+        transition: transform 0.3s ease-in-out;
+    }
+
+    .header .listaDesordenada.toggleBurger {
+        transform: translateX(0%);
+    }
+
+    .header .navegador .listaDesordenada .redesNav {
+        display: block;
+        position: absolute;
+        bottom: 23px;
+        left: 0;
+        right: 0;
+        font-size: 30px;
+    }
+
+    .header .navegador .listaDesordenada .redesNav a {
+        text-decoration: none;
+    }
+
+    .header .navegador .listaDesordenada .redesNav i {
+        padding: 7px;
+        color: var(--color-cucurucho);
+        transition: color .3s;
+    }
+
+    .header .navegador .listaDesordenada .redesNav i:hover {
+        color: var(--color-blanco);
+    }
 }

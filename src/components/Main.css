@@ -35,8 +35,9 @@
     font-family: var(--fuente-parrafo);
     font-size: 18.3px;
 }
+
 @media screen and (max-width:990px) {
-    .mainVideoCont .mainTituloCont{
+    .mainVideoCont .mainTituloCont {
         right: 0;
         left: 0;
         bottom: 160px;
