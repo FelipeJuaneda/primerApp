@@ -2,19 +2,21 @@ import React from "react";
 import "./Main.css";
 import videoFondo from "./videos/heladoDerretido.mp4";
 
-function MainComp() {
+function MainComp(props) {
   return (
     <div className="mainVideoCont">
       <video autoPlay muted loop className="videoCont">
         <source src={videoFondo} type="video/mp4" />
       </video>
       <div className="mainTituloCont">
-        <h1 className="titulo">Disfruta del mejor <span className="spanTyped">Helado</span></h1>
+        <h1 className="titulo">
+          Disfruta del mejor <span className="spanTyped">Helado</span>
+        </h1>
         <p className="parrafoTitulo">
           Artesanal por excelencia, con sabor, textura y aroma{" "}
           <span>único</span>
         </p>
-        <button className="cta">
+        <button onClick={props.alerta} className="cta">
           <span className="hover-underline-animation"> Descubrir Sabores </span>
           <svg
             id="arrow-horizontal"
@@ -37,4 +39,3 @@ function MainComp() {
 }
 
 export default MainComp;
-
