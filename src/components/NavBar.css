@@ -1,4 +1,4 @@
-.header{
+.header {
     width: 100%;
     position: fixed;
     top: 0;
@@ -8,6 +8,7 @@
     align-items: center;
     justify-content: space-around;
 }
+
 /* .header::after{
     content: "";
     width: 100%;
@@ -16,18 +17,20 @@
     height: 1px;
     position: absolute;
 } */
-.header .logoImg{
+.header .logoImg {
     width: 69px;
     padding: 10px 0;
 }
-.header .listaDesordenada{
+
+.header .listaDesordenada {
     list-style: none;
     display: flex;
     gap: 3rem;
     padding: 0;
 
 }
-.header .listaDesordenada li a{
+
+.header .listaDesordenada li a {
     text-decoration: none;
     text-transform: uppercase;
     color: var(--color-cucurucho);
@@ -35,6 +38,7 @@
     font-family: var(--fuente-nav);
     font-weight: 600;
 }
-.header .listaDesordenada li a:hover{
+
+.header .listaDesordenada li a:hover {
     color: var(--color-blanco);
 }
