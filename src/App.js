@@ -14,6 +14,7 @@ function App() {
     titulo.style.color = "green";
   };
 
+  /* -------------------------------------------------- */
   return (
     <div className="App">
       <NavBar menuBurger={menuBurger} />
