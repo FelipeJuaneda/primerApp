@@ -20,8 +20,10 @@
     align-items: center;
     justify-content: space-around;
 }
-
-.header .navegador .logoImg {
+.header .navegador .linkLogo{
+    z-index: 10;
+}
+.header .navegador .linkLogo .logoImg {
     width: 69px;
     padding: 10px 0;
 }
@@ -74,7 +76,7 @@
         flex-direction: column;
         background-color: var(--color-verdeTransparente);
         height: 50%;
-        width: 50%;
+        width: 100%;
         justify-content: center;
         top: -17px;
         right: 0;
@@ -107,5 +109,33 @@
 
     .header .navegador .listaDesordenada .redesNav i:hover {
         color: var(--color-blanco);
+    }
+}
+/* CARRITO */
+.contenedorCarrito {
+    position: absolute;
+    right: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5px;
+    background-color: var(--color-verdeTransparente);
+    cursor: pointer;
+}
+.contenedorCarrito svg .colorCarrito {
+    fill: var(--color-cucurucho);
+}
+
+@media screen and (max-width:1250px){
+    .header .navegador{
+        justify-content: space-evenly;
+    }
+    .contenedorCarrito{
+        right: 25px;
+    }
+}
+@media screen and (max-width:768px){
+    .contenedorCarrito{
+        right: 10px;
     }
 }
