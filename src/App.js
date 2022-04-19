@@ -2,6 +2,7 @@ import "./App.css";
 import NavBar from "./components/NavBar";
 import Main from "./components/Main";
 import ItemListContainer from "./components/ItemListContainer";
+import ItemCount from "./components/ItemCount";
 
 function App() {
   //Algunos estilos
@@ -27,6 +28,7 @@ function App() {
       <Main cambioColorTitulo={pruebaProps} />
       <h1>TITULO</h1>
       <ItemListContainer greeting={estilosItemList} />
+      <ItemCount/>
     </div>
   );
 }
