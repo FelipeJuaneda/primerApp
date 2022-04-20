@@ -18,7 +18,7 @@ function MainComp(props) {
         </h1>
         <p className="parrafoTitulo">
           Artesanal por excelencia, con sabor, textura y aroma
-          <span>único</span>
+          <span> único</span>
         </p>
         <button className="cta">
           <span className="hover-underline-animation"> Descubrir Sabores </span>

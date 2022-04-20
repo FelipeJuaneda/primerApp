@@ -8,14 +8,11 @@ const ItemCount = () => {
   };
   const disminuir = () => {
     setValor(valor - 1);
-    if (valor <= 0) {
-      console.log("funca");
-    }
   };
 
   return (
     <div>
-      <button onClick={disminuir}>-</button>
+      <button onClick={disminuir} disabled={valor === 0}>-</button>
       <b>{valor}</b>
       <button onClick={aumentar}>+</button>
     </div>
