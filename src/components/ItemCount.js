@@ -1,20 +1,36 @@
 import { React, useState } from "react";
 
-const ItemCount = () => {
-  const [valor, setValor] = useState(0);
+const ItemCount = ({ inicial, stock, onAdd }) => {
+  const [qty, setQty] = useState(inicial);
 
-  const aumentar = () => {
-    setValor(valor + 1);
-  };
-  const disminuir = () => {
-    setValor(valor - 1);
+  const addProduct = (num) => {
+    setQty(qty + num);
   };
 
   return (
     <div>
-      <button onClick={disminuir} disabled={valor === 0}>-</button>
-      <b>{valor}</b>
-      <button onClick={aumentar}>+</button>
+      {/* //boton disminuir */}
+      <button
+        onClick={() => addProduct(-1)}
+        disabled={qty === inicial ? true : null}
+      >
+        -
+      </button>
+
+      <b>{qty}</b>{/*----- cantidad----- */}
+
+      {/* //boton aumentar */}
+      <button
+        onClick={() => addProduct(+1)}
+        disabled={qty === stock ? true : null}
+      >
+        +
+      </button>
+
+      {/* //boton añadir */}
+      <button onClick={() => onAdd(qty)} disabled={stock === 0 ? true : null}>
+        Añadir
+      </button>
     </div>
   );
 };

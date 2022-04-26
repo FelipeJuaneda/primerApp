@@ -1,5 +1,5 @@
 import React from "react";
-import "./NavBar.css";
+import "./styles/NavBar.css";
 import logo from "./images/heladoLogo.png";
 import menuBurgerIcono from "./images/menuBurger.png";
 import "remixicon/fonts/remixicon.css";
@@ -9,14 +9,12 @@ function HeaderComp(props) {
   const efectoScroll = () => {
     let header = document.getElementsByClassName("header")[0];
     if (window.scrollY >= 50) {
-      /* header.style.color = "#fff"; */
       header.style.background = "var(--color-verdeTransparente)";
     } else {
       header.style.background = "transparent";
     }
   };
   window.addEventListener("scroll", efectoScroll);
-
   return (
     <header className="header">
       <nav className="navegador">

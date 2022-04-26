@@ -2,14 +2,8 @@ import "./App.css";
 import NavBar from "./components/NavBar";
 import Main from "./components/Main";
 import ItemListContainer from "./components/ItemListContainer";
-import ItemCount from "./components/ItemCount";
 
 function App() {
-  //Algunos estilos
-  const estilosItemList = {
-    background: "#000",
-    color: "green",
-  };
   //FUNCION CLICK PARA MENU BURGER
   let menuBurger = () => {
     let listaDesordenada = document.getElementById("lista");
@@ -26,9 +20,9 @@ function App() {
     <div className="App">
       <NavBar menuBurger={menuBurger} />
       <Main cambioColorTitulo={pruebaProps} />
-      <h1>TITULO</h1>
-      <ItemListContainer greeting={estilosItemList} />
-      <ItemCount/>
+      <h1>Heladeria Artesanal</h1>
+      <ItemListContainer/>
+
     </div>
   );
 }

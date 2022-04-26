@@ -1,5 +1,5 @@
 import React from "react";
-import "./Main.css";
+import "./styles/Main.css";
 import videoFondo from "./videos/heladoDerretido.mp4";
 
 function MainComp(props) {

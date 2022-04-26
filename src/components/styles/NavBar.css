@@ -113,8 +113,7 @@
 }
 /* CARRITO */
 .contenedorCarrito {
-    position: absolute;
-    right: 100px;
+    z-index: 10;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -132,10 +131,5 @@
     }
     .contenedorCarrito{
         right: 25px;
-    }
-}
-@media screen and (max-width:768px){
-    .contenedorCarrito{
-        right: 10px;
     }
 }
