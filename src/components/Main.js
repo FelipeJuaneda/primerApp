@@ -9,11 +9,7 @@ function MainComp(props) {
         <source src={videoFondo} type="video/mp4" />
       </video>
       <div className="mainTituloCont">
-        <h1
-          className="titulo"
-          id="tituloScroll"
-          onClick={props.cambioColorTitulo}
-        >
+        <h1 className="titulo" id="tituloScroll">
           Disfruta del mejor <span className="spanTyped">Helado</span>
         </h1>
         <p className="parrafoTitulo">

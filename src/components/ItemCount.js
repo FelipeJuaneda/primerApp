@@ -1,4 +1,5 @@
 import { React, useState } from "react";
+import "./styles/Items.css";
 
 const ItemCount = ({ inicial, stock, onAdd }) => {
   const [qty, setQty] = useState(inicial);
@@ -8,9 +9,10 @@ const ItemCount = ({ inicial, stock, onAdd }) => {
   };
 
   return (
-    <div>
-      {/* //boton disminuir */}
-      <button
+    <div className="contenedorBotones">
+      <div className="botonesAumDism">
+        {/* //boton disminuir */}
+      <button 
         onClick={() => addProduct(-1)}
         disabled={qty === inicial ? true : null}
       >
@@ -26,9 +28,10 @@ const ItemCount = ({ inicial, stock, onAdd }) => {
       >
         +
       </button>
+      </div>
 
       {/* //boton añadir */}
-      <button onClick={() => onAdd(qty)} disabled={stock === 0 ? true : null}>
+      <button className="buttonAdd" onClick={() => onAdd(qty)} disabled={stock === 0 ? true : null}>
         Añadir
       </button>
     </div>

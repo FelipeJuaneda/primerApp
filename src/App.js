@@ -9,20 +9,14 @@ function App() {
     let listaDesordenada = document.getElementById("lista");
     listaDesordenada.classList.toggle("toggleBurger");
   };
-  //pruebass
-  let pruebaProps = () => {
-    let titulo = document.getElementById("tituloScroll");
-    titulo.style.color = "green";
-  };
 
   /* -------------------------------------------------- */
   return (
     <div className="App">
       <NavBar menuBurger={menuBurger} />
-      <Main cambioColorTitulo={pruebaProps} />
-      <h1>Heladeria Artesanal</h1>
-      <ItemListContainer/>
-
+      <Main />
+      <h1>Que quieres llevar!? (pedir online)</h1>
+      <ItemListContainer />
     </div>
   );
 }

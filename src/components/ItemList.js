@@ -26,7 +26,7 @@ const ItemList = () => {
   }, []);
 
   return (
-    <div>
+    <>
       {products.length ? (
         <>
           {products.map((product) => {
@@ -46,7 +46,7 @@ const ItemList = () => {
       ) : (
         <p>Cargando productos...</p>
       )}
-    </div>
+    </>
   );
 };
 

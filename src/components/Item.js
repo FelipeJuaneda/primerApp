@@ -1,5 +1,6 @@
 import React from "react";
 import ItemCount from "./ItemCount";
+import "./styles/Items.css";
 
 const Item = ({ nombre, precio, imagen, stock, id }) => {
     //funcion cantidad de productos agregados
@@ -7,10 +8,10 @@ const Item = ({ nombre, precio, imagen, stock, id }) => {
     alert(`Has agregado ${qty} / ${nombre}`);
   };
   return (
-  <div>
-      <img src={imagen} alt="Productos de heladeria"/>
-      <h2>{nombre}</h2>
-      <span>{precio}</span>
+  <div className="cardProduct">
+      <img className="imgProduct" src={imagen} alt="Productos de heladeria"/>
+      <h2 className="productName">{nombre}</h2>
+      <span className="priceProduct">{precio}$</span>
 
       <ItemCount stock={stock} onAdd={onAdd} inicial={1}/>
   </div>);
