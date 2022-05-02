@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import { listaDeProductos } from "../data/productsData";
 import Item from "./Item";
 
-
 const ItemList = () => {
   const [products, setProducts] = useState([]);
   const getProducts = new Promise((resolve, reject) => {
