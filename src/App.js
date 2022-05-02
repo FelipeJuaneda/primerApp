@@ -2,6 +2,7 @@ import "./App.css";
 import NavBar from "./components/NavBar";
 import Main from "./components/Main";
 import ItemListContainer from "./components/ItemListContainer";
+import ItemDetailContainer from "./components/ItemDetailContainer";
 
 function App() {
   //FUNCION CLICK PARA MENU BURGER
@@ -17,6 +18,7 @@ function App() {
       <Main />
       <h1>Que quieres llevar!? (pedir online)</h1>
       <ItemListContainer />
+      <ItemDetailContainer />
     </div>
   );
 }
