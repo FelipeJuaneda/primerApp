@@ -3,6 +3,7 @@ import NavBar from "./components/NavBar";
 import Main from "./components/Main";
 import ItemListContainer from "./components/ItemListContainer";
 import ItemDetailContainer from "./components/ItemDetailContainer";
+import { BrowserRouter, Routes } from "react-router-dom";
 
 function App() {
   //FUNCION CLICK PARA MENU BURGER
@@ -18,7 +19,7 @@ function App() {
       <Main />
       <h1>Que quieres llevar!? (pedir online)</h1>
       <ItemListContainer />
-      <ItemDetailContainer />
+      <ItemDetailContainer id={1} />
     </div>
   );
 }
