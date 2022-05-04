@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from "react";
-import { getProductsData } from "../data/getData";
+import { getProductsData } from "../../data/getData";
 import Item from "./Item";
 
 const ItemList = () => {
   const [products, setProducts] = useState([]);
-  
+
   useEffect(() => {
     getProductsData(setProducts);
   }, []);

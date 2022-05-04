@@ -1,43 +1,57 @@
-import React from "react";
-import "./styles/NavBar.css";
-import logo from "./images/heladoLogo.png";
-import menuBurgerIcono from "./images/menuBurger.png";
+import React, { useState } from "react";
+import "./NavBar.css";
+import logo from "../images/heladoLogo.png";
+import menuBurgerIcono from "../images/menuBurger.png";
 import "remixicon/fonts/remixicon.css";
 import CartWidget from "./CartWidget";
+import { Link } from "react-router-dom";
 
 function HeaderComp(props) {
-  const efectoScroll = () => {
-    let header = document.getElementsByClassName("header")[0];
+  //FUNCION CAMBIO DE COLOR EN SCROLL NAVEGADOR
+  const [header, setHeader] = useState(false);
+  const cambioBackgroundHeader = () => {
     if (window.scrollY >= 50) {
-      header.style.background = "var(--color-verdeTransparente)";
+      setHeader(true);
     } else {
-      header.style.background = "transparent";
+      setHeader(false);
     }
   };
-  window.addEventListener("scroll", efectoScroll);
+  window.addEventListener("scroll", cambioBackgroundHeader);
+
+  //FUNCION CLICK PARA MENU BURGER
+  const [clicked, setClicked] = useState(false);
+  const handleClick = () => {
+    setClicked(!clicked);
+  };
+
   return (
-    <header className="header">
+    <header className={header ? "header scrollActivo" : "header"}>
       <nav className="navegador">
         {/* LOGO */}
-        <a className="linkLogo" href="index.html">
+        <Link className="linkLogo" to="/">
           <img
             className="logoImg"
             src={logo}
             alt="Logo de Helado para pagina de Heladeria"
           />
-        </a>
+        </Link>
+
         {/* MENU BURGER */}
-        <div className="contenedorBurger" onClick={props.menuBurger}>
+        <div className="contenedorBurger" onClick={handleClick}>
           <img
             className="iconoBurger"
             src={menuBurgerIcono}
             alt="Menu Hamburguesa"
           />
         </div>
+
         {/* LISTA DESORDENADA */}
-        <ul className="listaDesordenada" id="lista">
+        <ul
+          className={`listaDesordenada ${clicked ? "toggleBurger" : ""}`}
+          id="lista"
+        >
           <li>
-            <a href="https://github.com/FelipeJuaneda">Inicio</a>
+            <Link to={"/"}>Inicio</Link>
           </li>
           <li>
             <a href="https://github.com/FelipeJuaneda">Productos</a>
@@ -58,6 +72,7 @@ function HeaderComp(props) {
             </a>
           </div>
         </ul>
+
         {/* LOGO CARRITO */}
         <CartWidget />
       </nav>

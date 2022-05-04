@@ -1,5 +1,5 @@
 import { React, useState } from "react";
-import "./styles/Items.css";
+import "./ItemCount.css";
 
 const ItemCount = ({ inicial, stock, onAdd }) => {
   const [qty, setQty] = useState(inicial);
@@ -32,13 +32,15 @@ const ItemCount = ({ inicial, stock, onAdd }) => {
       </div>
 
       {/* //boton añadir */}
-      <button
-        className="buttonAdd"
-        onClick={() => onAdd(qty)}
-        disabled={stock === 0 ? true : null}
-      >
-        Añadir
-      </button>
+      <div className="botonAñadirCont">
+        <button
+          className="ctaAñadir"
+          onClick={() => onAdd(qty)}
+          disabled={stock === 0 ? true : null}
+        >
+          <span className="hover-underline-animationAñadir"> Añadir </span>
+        </button>
+      </div>
     </div>
   );
 };

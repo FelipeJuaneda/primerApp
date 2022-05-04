@@ -1,6 +1,6 @@
 import React from "react";
-import "./styles/Main.css";
-import videoFondo from "./videos/heladoDerretido.mp4";
+import "./Main.css";
+import videoFondo from "../videos/heladoDerretido.mp4";
 
 function MainComp(props) {
   return (

@@ -26,4 +26,3 @@ export const getProductById = async (id, setState) => {
     console.log(error);
   }
 };
-

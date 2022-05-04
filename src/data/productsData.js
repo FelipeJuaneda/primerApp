@@ -6,7 +6,7 @@ export const listaDeProductos = [
         'https://chio.com.ar/tienda/trenque-lauquen/136-home_default/helado-artesanal-x-kilo.jpg',
       stock: 10,
       id: 1,
-      descripcion:"Kilito de helado",
+      descripcion:"Kilito de helado (descripcion de prueba)",
     },
     {
       nombre: '1/2kg',
@@ -15,7 +15,7 @@ export const listaDeProductos = [
       'https://chio.com.ar/tienda/trenque-lauquen/136-home_default/helado-artesanal-x-kilo.jpg',
       stock: 7,
       id: 2,
-      descripcion:"Medio kilito de helado",
+      descripcion:"Medio kilito de helado (descripcion de prueba)",
     },
     {
       nombre: '1/4kg',
@@ -24,7 +24,7 @@ export const listaDeProductos = [
       'https://chio.com.ar/tienda/trenque-lauquen/136-home_default/helado-artesanal-x-kilo.jpg',
       stock: 15,
       id: 3,
-      descripcion:"Un cuarto kilito de helado",
+      descripcion:"Un cuarto kilito de helado (descripcion de prueba)",
     },
   ];
   
