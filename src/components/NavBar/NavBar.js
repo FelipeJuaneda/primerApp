@@ -74,7 +74,9 @@ function HeaderComp(props) {
         </ul>
 
         {/* LOGO CARRITO */}
-        <CartWidget />
+        <Link to={'/cart'}>
+          <CartWidget />
+        </Link>
       </nav>
     </header>
   );
