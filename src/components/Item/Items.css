@@ -5,6 +5,7 @@
     align-items: center;
     flex-wrap: wrap;
     padding: 60px 0;
+    background-color: var(--color-blancoLindo);
 }
 @media screen and (max-width:1280px) {
     .contenedorProductos{
@@ -16,8 +17,8 @@
     .contenedorProductos{
         gap: 30px;
     }
-    
 }
+
 .contenedorProductos .cardProduct {
     padding: 30px;
     background: var(--color-verdeParrafo);
@@ -40,4 +41,18 @@
 
 .contenedorProductos .cardProduct .productName {
     margin: 0;
+}
+
+.gifHelado{
+    width: 13%;
+    padding-right: 10px;
+}
+@media screen and (max-width:600px){
+    .contenedorProductos .cardProduct{
+        height: 352px;
+        width: 247px;
+    }
+    .contenedorProductos .cardProduct .imgProduct {
+        width: 200px;
+    }
 }

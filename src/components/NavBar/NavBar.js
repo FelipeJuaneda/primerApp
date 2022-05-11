@@ -10,7 +10,7 @@ function HeaderComp(props) {
   //FUNCION CAMBIO DE COLOR EN SCROLL NAVEGADOR
   const [header, setHeader] = useState(false);
   const cambioBackgroundHeader = () => {
-    if (window.scrollY >= 50) {
+    if (window.scrollY >= 20) {
       setHeader(true);
     } else {
       setHeader(false);
@@ -54,7 +54,7 @@ function HeaderComp(props) {
             <Link to={"/"}>Inicio</Link>
           </li>
           <li>
-            <a href="https://github.com/FelipeJuaneda">Productos</a>
+            <Link to={"/"}>Productos</Link>
           </li>
           <li>
             <a href="https://github.com/FelipeJuaneda">Contacto</a>
@@ -74,7 +74,7 @@ function HeaderComp(props) {
         </ul>
 
         {/* LOGO CARRITO */}
-        <Link to={'/cart'}>
+        <Link className="linkCarrito" to={"/cart"}>
           <CartWidget />
         </Link>
       </nav>

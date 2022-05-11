@@ -3,6 +3,9 @@
     position: relative;
     min-height: 100vh;
     top: 0;
+    box-shadow: 1px 7px 77px -12px rgba(0,0,0,0.75);
+    -webkit-box-shadow: 1px 7px 77px -12px rgba(0,0,0,0.75);
+    -moz-box-shadow: 1px 7px 77px -12px rgba(0,0,0,0.75);
 }
 
 .mainVideoCont .videoCont {
@@ -40,8 +43,18 @@
     .mainVideoCont .mainTituloCont {
         right: 0;
         left: 0;
-        bottom: 160px;
+        bottom: 0;
         background-color: var(--color-verdeTransparente);
+    }
+}
+
+@media screen and (max-width:768px) {
+    .mainVideoCont .mainTituloCont .titulo {
+        font-size: 26px;
+    }
+
+    .mainVideoCont .mainTituloCont .parrafoTitulo {
+        font-size: 16px;
     }
 }
 

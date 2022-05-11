@@ -25,6 +25,11 @@
     width: 69px;
     padding: 10px 0;
 }
+@media screen and (max-width:768px) {
+    .header .navegador .linkLogo .logoImg {
+        width: 50px;
+    }
+}
 
 .header .navegador .listaDesordenada {
     list-style: none;
@@ -111,6 +116,9 @@
 }
 
 /* CARRITO */
+.linkCarrito{
+    z-index: 10;
+}
 .contenedorCarrito {
     z-index: 10;
     display: flex;

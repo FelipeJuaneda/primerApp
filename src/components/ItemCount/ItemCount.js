@@ -1,11 +1,31 @@
 import { React, useState } from "react";
+import { useAppContext } from "../context/AppContext";
+import { useCartContext } from "../context/CartContext";
 import "./ItemCount.css";
 
-const ItemCount = ({ inicial, stock, onAdd }) => {
+const ItemCount = ({ inicial, stock, onAdd, id }) => {
+  //estado de contador
   const [qty, setQty] = useState(inicial);
-
-  const addProduct = (num) => {
+  //funcion contador 
+  const contadorNum = (num) => {
     setQty(qty + num);
+  };
+
+  //contextos de carrito y productos
+  const { addToCart } = useCartContext();
+  const { products } = useAppContext();
+
+  //funcion para agregar cantidad de productos
+  const funcionAgregar = (id, cantidad) => {
+    const findProduct = products.find((producto) => producto.id === id);
+
+    if (!findProduct) {
+      alert("Error!!");
+      return;
+    }
+
+    addToCart(findProduct, cantidad);
+    onAdd(qty);
   };
 
   return (
@@ -13,7 +33,8 @@ const ItemCount = ({ inicial, stock, onAdd }) => {
       <div className="botonesAumDism">
         {/* //boton disminuir */}
         <button
-          onClick={() => addProduct(-1)}
+          className="botonDis"
+          onClick={() => contadorNum(-1)}
           disabled={qty === inicial ? true : null}
         >
           -
@@ -24,7 +45,8 @@ const ItemCount = ({ inicial, stock, onAdd }) => {
 
         {/* //boton aumentar */}
         <button
-          onClick={() => addProduct(+1)}
+          className="botonAum"
+          onClick={() => contadorNum(+1)}
           disabled={qty === stock ? true : null}
         >
           +
@@ -35,7 +57,7 @@ const ItemCount = ({ inicial, stock, onAdd }) => {
       <div className="botonAñadirCont">
         <button
           className="ctaAñadir"
-          onClick={() => onAdd(qty)}
+          onClick={() => funcionAgregar(id, qty)}
           disabled={stock === 0 ? true : null}
         >
           <span className="hover-underline-animationAñadir"> Añadir </span>

@@ -1,14 +1,16 @@
 import React, { useEffect, useState } from "react";
 import { getProductsData } from "../../data/getData";
 import Item from "./Item";
+import GifReload from "../images/heladoGif.gif";
 
 const ItemList = () => {
+  //array vacio de porductos
   const [products, setProducts] = useState([]);
-
+  //seteo todos los productos en el array
   useEffect(() => {
     getProductsData(setProducts);
   }, []);
-
+  //y mapeo los productos
   return (
     <>
       {products.length ? (
@@ -29,7 +31,13 @@ const ItemList = () => {
           })}
         </>
       ) : (
-        <p>Cargando productos...</p>
+        <div>
+          <img
+            className="gifHelado"
+            src={GifReload}
+            alt="gif de helado reload"
+          />
+        </div>
       )}
     </>
   );
