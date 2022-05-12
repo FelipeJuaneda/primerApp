@@ -1,10 +1,10 @@
 import React, { useState } from "react";
-import "./NavBar.css";
 import logo from "../images/heladoLogo.png";
 import menuBurgerIcono from "../images/menuBurger.png";
 import "remixicon/fonts/remixicon.css";
 import CartWidget from "./CartWidget";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
+import "./NavBar.css";
 
 function HeaderComp(props) {
   //FUNCION CAMBIO DE COLOR EN SCROLL NAVEGADOR
@@ -51,13 +51,19 @@ function HeaderComp(props) {
           id="lista"
         >
           <li>
-            <Link to={"/"}>Inicio</Link>
+            <NavLink to={"/"} className="link">
+              Inicio
+            </NavLink>
           </li>
           <li>
-            <Link to={"/"}>Productos</Link>
+            <NavLink to={"/"} className="link">
+              Productos
+            </NavLink>
           </li>
           <li>
-            <a href="https://github.com/FelipeJuaneda">Contacto</a>
+            <NavLink to={"/contacto"} className="link">
+              Contacto
+            </NavLink>
           </li>
 
           <div className="redesNav">
@@ -74,9 +80,9 @@ function HeaderComp(props) {
         </ul>
 
         {/* LOGO CARRITO */}
-        <Link className="linkCarrito" to={"/cart"}>
+        <NavLink className="linkCarrito" to={"/cart"}>
           <CartWidget />
-        </Link>
+        </NavLink>
       </nav>
     </header>
   );

@@ -39,13 +39,18 @@
 
 }
 
-.header .navegador .listaDesordenada li a {
+.header .navegador .listaDesordenada li .link {
     text-decoration: none;
     text-transform: uppercase;
     color: var(--color-cucurucho);
     transition: all .4s;
     font-family: var(--fuente-nav);
     font-weight: 600;
+}
+
+.link.linkActivo{
+    color: var(--color-blanco);
+    background-color: aqua;
 }
 
 .header .navegador .listaDesordenada li a:hover {
