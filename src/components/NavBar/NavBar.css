@@ -150,7 +150,8 @@
         right: 25px;
     }
 }
-.contadorProductoCarrito{
+
+.contadorProductoCarrito {
     position: absolute;
     bottom: -5px;
     font-size: 14px;

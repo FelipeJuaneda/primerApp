@@ -7,8 +7,58 @@
     justify-content: center;
     gap: 100px;
 }
-.volverAtras{
+
+.volverAtras {
     position: absolute;
     top: 0;
     right: 0;
+}
+.contTerminarCompra{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 65px;
+    display: flex;
+    background: var(--color-verdeTransparente);
+    justify-content: center;
+    align-items: center;
+}
+.botonTerminarCompra {
+    border: none;
+    background: none;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.hover-underline-animationTerminar {
+    letter-spacing: 3px;
+    font-size: 17px;
+    text-transform: uppercase;
+    font-family: var(--fuente-nav);
+    color: var(--color-blancoLindo);
+    padding-bottom: 20px;
+    transition: color .4s;
+}
+
+.hover-underline-animationTerminar:hover {
+    color: var(--color-titulo);
+}
+
+.hover-underline-animationTerminar:after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 3px;
+    bottom: 0;
+    left: 0;
+    background-color: var(--color-titulo);
+    transform-origin: bottom right;
+    transition: transform 0.25s ease-out;
+}
+
+.botonTerminarCompra:hover .hover-underline-animationTerminar:after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
 }

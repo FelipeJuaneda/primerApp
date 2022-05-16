@@ -1,6 +1,5 @@
 import { listaDeProductos } from "./productsData";
 
-
 //OBTENER PRODUCTOS
 const getProducts = new Promise((resolve, reject) => {
   setTimeout(() => {
@@ -19,8 +18,8 @@ export const getProductsData = async (setState) => {
 
 //OBTENER ITEMS
 export const getItem = () => {
-  return getProducts
-}
+  return getProducts;
+};
 
 //OBTENER PRODUCTOS POR ID
 const getById = (id, array) => array.find((el) => el.id === id);

@@ -26,14 +26,23 @@ const ItemDetail = ({ item }) => {
         <span className="priceProduct">{item.precio}$</span>
       </div>
       <div>
-        <SaboresContainer/>
+        <SaboresContainer />
       </div>
       {terminarCompra ? (
-        <Link to="/cart">Terminar Compra</Link>
+        <div className="contTerminarCompra">
+          <Link className="botonTerminarCompra" to="/cart">
+            <span className="hover-underline-animationTerminar">
+              {" "}
+              Terminar Compra{" "}
+            </span>
+          </Link>
+        </div>
       ) : (
         <ItemCount stock={item.stock} inicial={1} onAdd={onAdd} id={item.id} />
-        )}
-      <Link className="volverAtras" to={"/"}>Volver Atras</Link>
+      )}
+      <Link className="volverAtras" to={"/"}>
+        Volver Atras
+      </Link>
     </div>
   );
 };

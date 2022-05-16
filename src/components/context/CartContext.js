@@ -16,7 +16,7 @@ const CartContextProvider = ({ children }) => {
     const newCart = [...cart];
     const saborIsInCart = isInCart(sabor.id);
     if (saborIsInCart) {
-      alert('Sabor ya elejido')
+      alert("Sabor ya elejido");
     }
     setCart(newCart);
     setCart([...newCart, sabor]);

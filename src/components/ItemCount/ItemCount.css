@@ -35,18 +35,16 @@
     cursor: pointer;
 }
 
-.ctaAñadir .hover-underline-animationAñadir {
+.hover-underline-animationAñadir {
     letter-spacing: 3px;
     font-size: 17px;
     text-transform: uppercase;
     font-family: var(--fuente-nav);
-}
-
-.hover-underline-animationAñadir {
     color: var(--color-negro);
     padding-bottom: 20px;
     transition: color .4s;
 }
+
 .hover-underline-animationAñadir:hover{
     color: var(--color-cucurucho);
 }

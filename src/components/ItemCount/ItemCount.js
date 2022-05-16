@@ -6,7 +6,7 @@ import "./ItemCount.css";
 const ItemCount = ({ inicial, stock, onAdd, id }) => {
   //estado de contador
   const [qty, setQty] = useState(inicial);
-  //funcion contador 
+  //funcion contador
   const contadorNum = (num) => {
     setQty(qty + num);
   };
