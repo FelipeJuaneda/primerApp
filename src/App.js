@@ -4,7 +4,7 @@ import Main from "./components/Main/Main";
 import ItemListContainer from "./components/Item/ItemListContainer";
 import ItemDetailContainer from "./components/ItemDetail/ItemDetailContainer";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import Shop from "./components/Cart/Shop";
+import Cart from "./components/Cart/Cart";
 import CartContextProvider from "./components/context/CartContext";
 import AppContextProvider from "./components/context/AppContext";
 import Contact from "./components/Contacto/Contact";
@@ -20,7 +20,7 @@ function App() {
             <Routes>
               <Route path="/" element={<ItemListContainer />} />
               <Route path="/item/:itemId" element={<ItemDetailContainer />} />
-              <Route path="/cart" element={<Shop />} />
+              <Route path="/cart" element={<Cart />} />
               <Route path="/contacto" element={<Contact />} />
             </Routes>
           </BrowserRouter>

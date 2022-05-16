@@ -7,9 +7,20 @@ export const useCartContext = () => useContext(CartContext);
 const CartContextProvider = ({ children }) => {
   // Logica
   const [cart, setCart] = useState([]);
-  console.log(cart)
+  console.log(cart);
   // Validar si está el item en el carrito
   const isInCart = (id) => cart.find((producto) => producto.id === id);
+
+  //agregar sabor al carrito
+  const addSaborToCart = (sabor) => {
+    const newCart = [...cart];
+    const saborIsInCart = isInCart(sabor.id);
+    if (saborIsInCart) {
+      alert('Sabor ya elejido')
+    }
+    setCart(newCart);
+    setCart([...newCart, sabor]);
+  };
 
   // Agregar item al carrito
   const addToCart = (producto, cantidad) => {
@@ -48,6 +59,7 @@ const CartContextProvider = ({ children }) => {
         deleteFromCart,
         deleteCart,
         setCart,
+        addSaborToCart,
       }}
     >
       {children}

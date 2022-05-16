@@ -6,7 +6,7 @@ import "./Items.css";
 const Item = (item) => {
   //funcion cantidad de productos agregados
   const onAdd = (qty) => {
-    alert(`Has agregado ${qty} / ${item.nombre}`);
+    console.log(qty)
   };
   return (
     <div className="cardProduct">

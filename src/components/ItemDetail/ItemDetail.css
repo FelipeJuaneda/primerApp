@@ -3,4 +3,12 @@
     padding: 30px 0 30px 0;
     position: relative;
     height: 60vh;
+    display: flex;
+    justify-content: center;
+    gap: 100px;
+}
+.volverAtras{
+    position: absolute;
+    top: 0;
+    right: 0;
 }

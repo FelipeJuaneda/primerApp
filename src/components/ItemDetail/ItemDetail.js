@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import ItemCount from "../ItemCount/ItemCount";
+import SaboresContainer from "../Sabores/SaboresContainer";
 import "./ItemDetail.css";
 
 const ItemDetail = ({ item }) => {
@@ -24,7 +25,9 @@ const ItemDetail = ({ item }) => {
         <h2 className="productName">{item.descripcion}</h2>
         <span className="priceProduct">{item.precio}$</span>
       </div>
-
+      <div>
+        <SaboresContainer/>
+      </div>
       {terminarCompra ? (
         <Link to="/cart">Terminar Compra</Link>
       ) : (

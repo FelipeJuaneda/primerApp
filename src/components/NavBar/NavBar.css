@@ -25,6 +25,7 @@
     width: 69px;
     padding: 10px 0;
 }
+
 @media screen and (max-width:768px) {
     .header .navegador .linkLogo .logoImg {
         width: 50px;
@@ -48,7 +49,7 @@
     font-weight: 600;
 }
 
-.link.linkActivo{
+.link.linkActivo {
     color: var(--color-blanco);
     background-color: aqua;
 }
@@ -121,9 +122,10 @@
 }
 
 /* CARRITO */
-.linkCarrito{
+.linkCarrito {
     z-index: 10;
 }
+
 .contenedorCarrito {
     z-index: 10;
     display: flex;
@@ -132,6 +134,7 @@
     padding: 5px;
     background-color: var(--color-verdeTransparente);
     cursor: pointer;
+    position: relative;
 }
 
 .contenedorCarrito svg .colorCarrito {
@@ -146,4 +149,12 @@
     .contenedorCarrito {
         right: 25px;
     }
+}
+.contadorProductoCarrito{
+    position: absolute;
+    bottom: -5px;
+    font-size: 14px;
+    color: var(--color-cucurucho);
+    left: -2px;
+    margin: 0;
 }
