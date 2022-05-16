@@ -7,7 +7,7 @@ import ItemCart from "./ItemCart";
 const Cart = () => {
   const [productsLength, setProductsLength] = useState(0);
 
-  const { cart } = useCartContext();
+  const { cart, deleteCart } = useCartContext();
   console.log(cart);
 
   useEffect(() => {
@@ -24,12 +24,6 @@ const Cart = () => {
   return (
     <div className="contenedorCarritoItems">
       <h2>Carrito</h2>
-      <div className="columnaInfo">
-        <span className="nombreproduct">Nombre del Producto</span>
-        <span className="cantproduct">Cantidad</span>
-        <span className="precioproduct">Precio por Unidad</span>
-        <span className="totalproduct">Total del Producto</span>
-      </div>
       {cart.length === 0 ? (
         <div className="contenedorCarritoVacio">
           <p>Tu carrito esta vacio</p>
@@ -40,13 +34,26 @@ const Cart = () => {
           <Link to="/">Volver a Productos</Link>
         </div>
       ) : (
-        <div className="carritoConItems">
-          {cart.map((item, i) => (
-            <ItemCart key={i} item={item} />
-          ))}
-          <p className="totalCompra">
-            Total: <span>${total}</span>
-          </p>
+        <div>
+          <div>
+            <div className="columnaInfo">
+              <span className="nombreproduct">Nombre del Producto</span>
+              <span className="cantproduct">Cantidad</span>
+              <span className="precioproduct">Precio por Unidad</span>
+              <span className="totalproduct">Total del Producto</span>
+            </div>
+          </div>
+          <div className="carritoConItems">
+            {cart.map((item, i) => (
+              <ItemCart key={i} item={item} />
+            ))}
+            <p className="totalCompra">
+              Total: <span>${total}</span>
+            </p>
+            <button className="vaciarCarrito" onClick={() => deleteCart()}>
+              Vaciar Carrito
+            </button>
+          </div>
         </div>
       )}
     </div>

@@ -74,6 +74,12 @@
     color: var(--color-cucurucho);
 }
 
+.vaciarCarrito{
+    position: absolute;
+    bottom: 42px;
+    right: 11px;
+}
+
 .carritoItems {
     display: grid;
     grid-template-columns: repeat(8, 1fr);
