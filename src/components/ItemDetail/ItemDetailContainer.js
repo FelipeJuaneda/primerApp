@@ -1,16 +1,19 @@
-/* eslint-disable react-hooks/exhaustive-deps */
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import ItemDetail from "./ItemDetail";
-import { listaDeProductos } from "../../data/productsData.js";
+import { useAppContext } from "../context/AppContext";
 
-const ItemDetailContainer = ({ id }) => {
-  const {itemId} = useParams();
-  const [helados, setHelados] = useState({})
+const ItemDetailContainer = () => {
+  //parametro id en link
+  const { itemId } = useParams();
+  const [helados, setHelados] = useState({});
 
+  const { products } = useAppContext();
+
+  //seteo el detalle si se encuentra el id a helados
   useEffect(() => {
-    setHelados(listaDeProductos.find(h => h.id == itemId ))
-  }, [itemId]);
+    setHelados(products.find((h) => h.id == itemId));
+  }, [itemId, products]);
 
   return (
     <div>
