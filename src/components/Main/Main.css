@@ -3,9 +3,9 @@
     position: relative;
     min-height: 100vh;
     top: 0;
-    box-shadow: 1px 7px 77px -12px rgba(0,0,0,0.75);
-    -webkit-box-shadow: 1px 7px 77px -12px rgba(0,0,0,0.75);
-    -moz-box-shadow: 1px 7px 77px -12px rgba(0,0,0,0.75);
+    box-shadow: 1px 7px 77px -12px rgba(0, 0, 0, 0.75);
+    -webkit-box-shadow: 1px 7px 77px -12px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 1px 7px 77px -12px rgba(0, 0, 0, 0.75);
 }
 
 .mainVideoCont .videoCont {

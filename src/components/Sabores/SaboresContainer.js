@@ -1,12 +1,13 @@
-import React from 'react'
-import SaboresList from './SaboresList'
+import React from "react";
+import SaboresList from "./SaboresList";
 
-const SaboresContainer = () => {
+const SaboresContainer = ({saboresElegidos}) => {
+
   return (
-      <div>
-          <SaboresList/>
-      </div>
-  )
-}
+    <div>
+      <SaboresList saboresElegidos={saboresElegidos} />
+    </div>
+  );
+};
 
-export default SaboresContainer
+export default SaboresContainer;

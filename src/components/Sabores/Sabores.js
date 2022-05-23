@@ -1,9 +1,7 @@
-import "./Sabores.css"
+import "./Sabores.css";
 
 const Sabores = (sabores) => {
-  return (
-    <p>{sabores.nombre}</p>
-  );
+  return <p>{sabores.nombre}</p>;
 };
 
 export default Sabores;

@@ -4,6 +4,11 @@ import { useCartContext } from "../context/CartContext";
 const ItemCart = ({ item }) => {
   const { deleteFromCart, addToCart } = useCartContext();
 
+  //si la cantidad es 0 se elimina el producto
+  if (item.quantity === 0) {
+    deleteFromCart(item);
+  }
+
   return (
     <div className="carritoItems">
       <div className="tituloImagen">
@@ -14,11 +19,15 @@ const ItemCart = ({ item }) => {
         />
         <h2 className="carritoNombre">{item.nombre}</h2>
       </div>
+
       <div className="agregarMasyCantidad">
         <p className="cantidadParrafo">{item.quantity}</p>
+        <button onClick={() => addToCart(item, -1)}>-</button>
         <button onClick={() => addToCart(item, 1)}>Agregar mas</button>
       </div>
+
       <span className="carritoPrecio">{item.precio}$</span>
+
       <i
         className="ri-close-fill botonEliminarItem"
         onClick={() => deleteFromCart(item)}

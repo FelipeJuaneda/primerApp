@@ -26,7 +26,7 @@ const ItemDetail = ({ item }) => {
         <span className="priceProduct">{item.precio}$</span>
       </div>
       <div>
-        <SaboresContainer />
+        <SaboresContainer saboresElegidos={item.saboresElegidos} />
       </div>
       {terminarCompra ? (
         <div className="contTerminarCompra">
@@ -38,7 +38,7 @@ const ItemDetail = ({ item }) => {
           </Link>
         </div>
       ) : (
-        <ItemCount stock={item.stock} inicial={1} onAdd={onAdd} id={item.id} />
+        <ItemCount stock={item.stock} inicial={1} onAdd={onAdd} id={item.id} saboresElegidos={item.saboresElegidos} />
       )}
       <Link className="volverAtras" to={"/"}>
         Volver Atras

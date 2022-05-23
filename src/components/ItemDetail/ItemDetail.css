@@ -13,7 +13,8 @@
     top: 0;
     right: 0;
 }
-.contTerminarCompra{
+
+.contTerminarCompra {
     position: absolute;
     bottom: 0;
     left: 0;
@@ -24,6 +25,7 @@
     justify-content: center;
     align-items: center;
 }
+
 .botonTerminarCompra {
     border: none;
     background: none;
@@ -61,4 +63,7 @@
 .botonTerminarCompra:hover .hover-underline-animationTerminar:after {
     transform: scaleX(1);
     transform-origin: bottom left;
+}
+.gifHelado {
+    width: 50px;
 }

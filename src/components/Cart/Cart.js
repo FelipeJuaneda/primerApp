@@ -1,3 +1,4 @@
+import { addDoc, collection, getFirestore } from "firebase/firestore";
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { useCartContext } from "../context/CartContext";
@@ -5,21 +6,49 @@ import "./Cart.css";
 import ItemCart from "./ItemCart";
 
 const Cart = () => {
+  //cantidad de productos
   const [productsLength, setProductsLength] = useState(0);
 
-  const { cart, deleteCart } = useCartContext();
-  console.log(cart);
+  const { total, cart, deleteCart } = useCartContext();
+
+  const saveCart = () => {
+    //usuarios
+    const user = {
+      name: "feli",
+      phone: "jua",
+      email: "felipe9@gmail.com",
+    };
+
+    //carta sin info irrelevante
+    const cartResumida = cart.map(
+      ({ id, nombre, quantity, precio, saboresElegidos }) => ({
+        id,
+        nombre,
+        quantity,
+        precio,
+        saboresElegidos,
+      })
+    );
+    //carta a mandar
+    const cartToSave = {
+      user: user,
+      cart: cartResumida,
+      total: total,
+    };
+    console.log(cartToSave);
+
+    const db = getFirestore();
+    const cartCollection = collection(db, "cart");
+    addDoc(cartCollection, cartToSave).then((response) =>
+      console.log(response.id)
+    );
+  };
 
   useEffect(() => {
     setProductsLength(
       cart.reduce((prev, current) => prev + current.quantity, 0)
     );
   }, [cart]);
-
-  const total = cart.reduce(
-    (prev, current) => prev + current.quantity * current.precio,
-    0
-  );
 
   return (
     <div className="contenedorCarritoItems">
@@ -35,6 +64,7 @@ const Cart = () => {
         </div>
       ) : (
         <div>
+          {/* Columna de info cart */}
           <div>
             <div className="columnaInfo">
               <span className="nombreproduct">Nombre del Producto</span>
@@ -43,13 +73,18 @@ const Cart = () => {
               <span className="totalproduct">Total del Producto</span>
             </div>
           </div>
+          {/* mapeo del carrito */}
           <div className="carritoConItems">
             {cart.map((item, i) => (
-              <ItemCart key={i} item={item} />
+              <ItemCart key={i} item={item} productsLength={productsLength} />
             ))}
+            {/* Total Carrito */}
             <p className="totalCompra">
               Total: <span>${total}</span>
             </p>
+            {/* Terminar compra */}
+            <button onClick={saveCart}>Terminar compra!!</button>
+            {/* Vaciar carrito */}
             <button className="vaciarCarrito" onClick={() => deleteCart()}>
               Vaciar Carrito
             </button>

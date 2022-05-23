@@ -11,17 +11,6 @@ const CartContextProvider = ({ children }) => {
   // Validar si está el item en el carrito
   const isInCart = (id) => cart.find((producto) => producto.id === id);
 
-  //agregar sabor al carrito
-  const addSaborToCart = (sabor) => {
-    const newCart = [...cart];
-    const saborIsInCart = isInCart(sabor.id);
-    if (saborIsInCart) {
-      alert("Sabor ya elejido");
-    }
-    setCart(newCart);
-    setCart([...newCart, sabor]);
-  };
-
   // Agregar item al carrito
   const addToCart = (producto, cantidad) => {
     const newCart = [...cart];
@@ -51,6 +40,11 @@ const CartContextProvider = ({ children }) => {
   //eliminarcarrito
   const deleteCart = () => setCart([]);
 
+  const total = cart.reduce(
+    (prev, current) => prev + current.quantity * current.precio,
+    0
+  );
+
   return (
     <CartContext.Provider
       value={{
@@ -59,7 +53,7 @@ const CartContextProvider = ({ children }) => {
         deleteFromCart,
         deleteCart,
         setCart,
-        addSaborToCart,
+        total,
       }}
     >
       {children}

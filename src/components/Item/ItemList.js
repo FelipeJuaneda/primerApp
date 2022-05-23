@@ -17,6 +17,7 @@ const ItemList = ({ products }) => {
                   stock={product.stock}
                   id={product.id}
                   descripcion={product.descripcion}
+                  saboresElegidos={product.saboresElegidos}
                 />
               </div>
             );

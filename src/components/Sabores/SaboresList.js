@@ -1,27 +1,30 @@
 import React, { useEffect, useState } from "react";
 import { getSaboresData } from "../../data/getSabores";
-import { useCartContext } from "../context/CartContext";
+import { useAppContext } from "../context/AppContext";
 import Sabores from "./Sabores";
 import "./Sabores.css";
 
-const SaboresList = () => {
+const SaboresList = ({ saboresElegidos }) => {
   const [sabores, setSabores] = useState([]);
 
   useEffect(() => {
     getSaboresData(setSabores);
   }, []);
 
-  const { addSaborToCart } = useCartContext();
+  const { products } = useAppContext();
 
   const funcionAgregarSabor = (id) => {
-    const findProduct = sabores.find((sabor) => sabor.id === id);
-
-    if (!findProduct) {
+    const findSabor = sabores.find((sabor) => sabor.id === id);
+    //pusheo sabores en el array
+    saboresElegidos.push(findSabor);
+    //si la cantidad de sabores llega a 4=
+    if (saboresElegidos.length > 4) {
+      alert("Limite de sabores superado");
+    }
+    if (!findSabor) {
       alert("Error!!");
       return;
     }
-
-    addSaborToCart(findProduct);
   };
 
   return (

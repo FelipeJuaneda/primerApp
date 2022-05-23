@@ -3,7 +3,7 @@ import { useAppContext } from "../context/AppContext";
 import { useCartContext } from "../context/CartContext";
 import "./ItemCount.css";
 
-const ItemCount = ({ inicial, stock, onAdd, id }) => {
+const ItemCount = ({ inicial, stock, onAdd, id, saboresElegidos }) => {
   //estado de contador
   const [qty, setQty] = useState(inicial);
   //funcion contador
@@ -18,7 +18,10 @@ const ItemCount = ({ inicial, stock, onAdd, id }) => {
   //funcion para agregar cantidad de productos
   const funcionAgregar = (id, cantidad) => {
     const findProduct = products.find((producto) => producto.id === id);
-
+    if (saboresElegidos.length === 0) {
+      alert("agrega sabores primero (click en la imagen)");
+      return;
+    }
     if (!findProduct) {
       alert("Error!!");
       return;

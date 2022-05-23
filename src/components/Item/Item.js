@@ -20,7 +20,7 @@ const Item = (item) => {
       <h2 className="productName">{item.nombre}</h2>
       <span className="priceProduct">{item.precio}$</span>
 
-      <ItemCount stock={item.stock} onAdd={onAdd} inicial={1} id={item.id} />
+      <ItemCount stock={item.stock} onAdd={onAdd} inicial={1} id={item.id} saboresElegidos={item.saboresElegidos} />
     </div>
   );
 };

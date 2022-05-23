@@ -51,17 +51,17 @@ function HeaderComp(props) {
           id="lista"
         >
           <li>
-            <NavLink to={"/"} className="link">
+            <NavLink onClick={handleClick} to={"/"} className="link">
               Inicio
             </NavLink>
           </li>
           <li>
-            <NavLink to={"/"} className="link">
+            <NavLink onClick={handleClick} to={"/"} className="link">
               Productos
             </NavLink>
           </li>
           <li>
-            <NavLink to={"/contacto"} className="link">
+            <NavLink onClick={handleClick} to={"/contacto"} className="link">
               Contacto
             </NavLink>
           </li>
