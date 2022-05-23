@@ -22,8 +22,8 @@ const ItemDetail = ({ item }) => {
           alt="Productos de heladeria"
         />
         <h2 className="productName">{item.nombre}</h2>
-        <h2 className="productName">{item.descripcion}</h2>
-        <span className="priceProduct">{item.precio}$</span>
+        <h2 className="productDescrip">{item.descripcion}</h2>
+        <span className="priceProduct">Precio: {item.precio}$</span>
       </div>
       <div>
         <SaboresContainer saboresElegidos={item.saboresElegidos} />

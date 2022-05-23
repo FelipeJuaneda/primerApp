@@ -64,6 +64,43 @@
     transform: scaleX(1);
     transform-origin: bottom left;
 }
+
 .gifHelado {
     width: 50px;
+}
+
+
+@media screen and (max-width:1118px) {
+    .itemDetailCont {
+        padding-bottom: 90px;
+        flex-direction: column;
+        height: 100%;
+        gap: 30px;
+    }
+
+    .itemDetailInfo .imgProduct {
+        width: 140px;
+    }
+
+    .itemDetailInfo {
+        position: relative;
+    }
+
+    .itemDetailInfo::after {
+        content: "";
+        background-color: var(--color-blancoLindo);
+        height: 1px;
+        position: absolute;
+        bottom: -18px;
+        left: 95px;
+        right: 95px;
+    }
+
+    .productName {
+        font-size: 25px;
+    }
+
+    .productDescrip {
+        font-size: 17px;
+    }
 }

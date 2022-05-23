@@ -1,10 +1,11 @@
 import React from "react";
 import SaboresList from "./SaboresList";
+import "./Sabores.css"
 
 const SaboresContainer = ({saboresElegidos}) => {
 
   return (
-    <div>
+    <div  className="saboresContainer">
       <SaboresList saboresElegidos={saboresElegidos} />
     </div>
   );

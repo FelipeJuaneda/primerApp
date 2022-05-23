@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { getSaboresData } from "../../data/getSabores";
 import { useAppContext } from "../context/AppContext";
-import Sabores from "./Sabores";
 import "./Sabores.css";
 
 const SaboresList = ({ saboresElegidos }) => {
@@ -17,6 +16,7 @@ const SaboresList = ({ saboresElegidos }) => {
     const findSabor = sabores.find((sabor) => sabor.id === id);
     //pusheo sabores en el array
     saboresElegidos.push(findSabor);
+    console.log(saboresElegidos);
     //si la cantidad de sabores llega a 4=
     if (saboresElegidos.length > 4) {
       alert("Limite de sabores superado");
@@ -27,15 +27,31 @@ const SaboresList = ({ saboresElegidos }) => {
     }
   };
 
+  const findTipoCrema = sabores.filter((sabor) => sabor.tipo === "crema");
+  const findTipoAgua = sabores.filter((sabor) => sabor.tipo === "agua");
+
   return (
     <>
-      {sabores.map((sabor) => {
-        return (
-          <div onClick={() => funcionAgregarSabor(sabor.id)} key={sabor.id}>
-            <Sabores nombre={sabor.nombre} stock={sabor.stock} id={sabor.id} />
-          </div>
-        );
-      })}
+      <div className="saboresCrema">
+        <h2>Crema</h2>
+        {findTipoCrema.map((sabor) => {
+          return (
+            <div onClick={() => funcionAgregarSabor(sabor.id)} key={sabor.id}>
+              <p>{sabor.nombre}</p>
+            </div>
+          );
+        })}
+      </div>
+      <div className="saboresAgua">
+        <h2>Agua</h2>
+        {findTipoAgua.map((sabor) => {
+          return (
+            <div onClick={() => funcionAgregarSabor(sabor.id)} key={sabor.id}>
+              <p>{sabor.nombre}</p>
+            </div>
+          );
+        })}
+      </div>
     </>
   );
 };

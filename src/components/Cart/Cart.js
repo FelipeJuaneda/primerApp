@@ -73,21 +73,27 @@ const Cart = () => {
               <span className="totalproduct">Total del Producto</span>
             </div>
           </div>
+
           {/* mapeo del carrito */}
           <div className="carritoConItems">
             {cart.map((item, i) => (
               <ItemCart key={i} item={item} productsLength={productsLength} />
             ))}
+
             {/* Total Carrito */}
             <p className="totalCompra">
               Total: <span>${total}</span>
             </p>
+
+            {/* Vaciar carrito */}
+            <div>
+              <button className="vaciarCarrito" onClick={() => deleteCart()}>
+                Vaciar Carrito
+              </button>
+            </div>
+
             {/* Terminar compra */}
             <button onClick={saveCart}>Terminar compra!!</button>
-            {/* Vaciar carrito */}
-            <button className="vaciarCarrito" onClick={() => deleteCart()}>
-              Vaciar Carrito
-            </button>
           </div>
         </div>
       )}

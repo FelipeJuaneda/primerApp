@@ -74,7 +74,7 @@
     color: var(--color-cucurucho);
 }
 
-.vaciarCarrito{
+.vaciarCarrito {
     position: absolute;
     bottom: 42px;
     right: 11px;
@@ -130,4 +130,32 @@
     font-size: 27px;
     color: rgb(184, 64, 64);
     cursor: pointer;
+}
+
+.agregarMasyCantidad {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.agregarMasyCantidad i {
+    cursor: pointer;
+}
+
+@media screen and (max-width:768px) {
+    .columnaInfo {
+        display: none;
+    }
+
+    .carritoItems {
+        display: flex;
+        background-color: var(--color-verdeTransparente);
+        position: relative;
+        justify-content: space-around;
+        align-items: center;
+    }
+    .carritoImagen{
+        width: 100px;
+    }
 }
