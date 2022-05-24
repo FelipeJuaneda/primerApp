@@ -1,6 +1,7 @@
 import React from "react";
 import "./Main.css";
 import videoFondo from "../videos/heladoDerretido.mp4";
+import "swiper/css/bundle";
 
 function MainComp(props) {
   return (
@@ -8,6 +9,7 @@ function MainComp(props) {
       <video autoPlay muted loop className="videoCont">
         <source src={videoFondo} type="video/mp4" />
       </video>
+
       <div className="mainTituloCont">
         <h1 className="titulo" id="tituloScroll">
           Disfruta del mejor <span className="spanTyped">Helado</span>

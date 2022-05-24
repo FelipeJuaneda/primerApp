@@ -1,14 +1,9 @@
 .header {
     width: 100%;
-    position: fixed;
     top: 0;
     z-index: 100;
-    background-color: var(--color-transparente);
-    transition: all .7s;
-}
-
-.header.scrollActivo {
     background-color: var(--color-verdeTransparente);
+    transition: all .7s;
 }
 
 .header .navegador {
@@ -49,9 +44,10 @@
     font-weight: 600;
 }
 
-.link.linkActivo {
-    color: var(--color-blanco);
-    background-color: aqua;
+.link.active {
+    background-color: var(--color-verdeTransparente);
+    padding: 5px;
+    border-radius: 5px;
 }
 
 .header .navegador .listaDesordenada li a:hover {
@@ -86,6 +82,7 @@
         background-color: var(--color-verdeTransparente);
         height: 50%;
         width: 100%;
+        z-index: 1;
         justify-content: center;
         top: -17px;
         right: 0;

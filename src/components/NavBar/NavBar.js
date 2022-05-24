@@ -7,17 +7,6 @@ import { Link, NavLink } from "react-router-dom";
 import "./NavBar.css";
 
 function HeaderComp(props) {
-  //FUNCION CAMBIO DE COLOR EN SCROLL NAVEGADOR
-  const [header, setHeader] = useState(false);
-  const cambioBackgroundHeader = () => {
-    if (window.scrollY >= 20) {
-      setHeader(true);
-    } else {
-      setHeader(false);
-    }
-  };
-  window.addEventListener("scroll", cambioBackgroundHeader);
-
   //FUNCION CLICK PARA MENU BURGER
   const [clicked, setClicked] = useState(false);
   const handleClick = () => {
@@ -25,7 +14,7 @@ function HeaderComp(props) {
   };
 
   return (
-    <header className={header ? "header scrollActivo" : "header"}>
+    <header className="header">
       <nav className="navegador">
         {/* LOGO */}
         <Link className="linkLogo" to="/">
@@ -51,17 +40,17 @@ function HeaderComp(props) {
           id="lista"
         >
           <li>
-            <NavLink onClick={handleClick} to={"/"} className="link">
+            <NavLink onClick={handleClick} to={"/"} activeclassname="active" className="link">
               Inicio
             </NavLink>
           </li>
           <li>
-            <NavLink onClick={handleClick} to={"/"} className="link">
+            <NavLink onClick={handleClick} to={"/items"} activeclassname="active" className="link">
               Productos
             </NavLink>
           </li>
           <li>
-            <NavLink onClick={handleClick} to={"/contacto"} className="link">
+            <NavLink onClick={handleClick} to={"/contacto"} activeclassname="active" className="link">
               Contacto
             </NavLink>
           </li>

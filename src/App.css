@@ -15,7 +15,9 @@
 }
 
 /* --------------------------------------*/
-
+body{
+  background-color: var(--color-blancoLindo);
+}
 .App {
   text-align: center;
 }

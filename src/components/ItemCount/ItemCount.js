@@ -18,6 +18,7 @@ const ItemCount = ({ inicial, stock, onAdd, id, saboresElegidos }) => {
   //funcion para agregar cantidad de productos
   const funcionAgregar = (id, cantidad) => {
     const findProduct = products.find((producto) => producto.id === id);
+    //si no hay sabores elegidos:
     if (saboresElegidos.length === 0) {
       alert("agrega sabores primero (click en la imagen)");
       return;
@@ -26,7 +27,6 @@ const ItemCount = ({ inicial, stock, onAdd, id, saboresElegidos }) => {
       alert("Error!!");
       return;
     }
-
     addToCart(findProduct, cantidad);
     onAdd(qty);
   };

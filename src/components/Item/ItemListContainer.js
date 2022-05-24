@@ -4,7 +4,7 @@ import { collection, getDocs, getFirestore } from "firebase/firestore";
 import "./Items.css";
 
 const ItemListContainer = () => {
-  //array vacio de porductos
+  //array vacio de productos
   const [products, setProducts] = useState([]);
 
   //seteo todos los productos en el array

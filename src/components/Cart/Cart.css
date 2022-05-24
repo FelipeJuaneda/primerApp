@@ -1,10 +1,10 @@
 .contenedorCarritoItems {
-    position: absolute;
-    top: 93px;
-    right: 0;
-    left: 0;
-    bottom: 0%;
     background: var(--color-cucurucho);
+    height: 100vh;
+    min-height: 100%;
+}
+.tituloCarrito{
+    margin: 0;
 }
 
 @media screen and (max-width:768px) {
