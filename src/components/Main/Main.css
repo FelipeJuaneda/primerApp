@@ -132,9 +132,11 @@
     transform: translateX(-8px);
     transition: all 0.3s ease;
 }
-.cta svg .flechita{
+
+.cta svg .flechita {
     fill: var(--color-cucurucho);
 }
+
 .cta:hover svg {
     transform: translateX(0);
 }
@@ -177,9 +179,10 @@
 }
 
 @media screen and (max-width:800px) {
-    .mainVideoCont .mainTituloCont{
+    .mainVideoCont .mainTituloCont {
         bottom: 280px;
     }
+
     .mainVideoCont .mainTituloCont .titulo {
         font-size: 32px;
     }
@@ -211,9 +214,10 @@
 }
 
 @media screen and (max-width:530px) {
-    .mainVideoCont .mainTituloCont{
+    .mainVideoCont .mainTituloCont {
         bottom: 295px;
     }
+
     .mainVideoCont .mainTituloCont .titulo {
         font-size: 24px;
     }
@@ -230,7 +234,8 @@
     .ubicParrafo {
         margin: 10px;
     }
-    .cta{
+
+    .cta {
         padding-bottom: 12px;
     }
 }

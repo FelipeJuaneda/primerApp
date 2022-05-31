@@ -23,10 +23,12 @@
     background-color: var(--color-verdeTransparente);
     gap: 35px;
 }
-.tituloContacto{
+
+.tituloContacto {
     color: var(--color-blancoLindo);
     font-size: 32px;
 }
+
 .nombreCont,
 .apellidoCont,
 .mensajeCont {
@@ -122,44 +124,52 @@
 
 /* MEDIAS QUERIES */
 @media screen and (max-width:1350px) {
-    .imagenContactoCont{
+    .imagenContactoCont {
         width: 60%;
     }
-    .formCont{
+
+    .formCont {
         width: 40%;
     }
 }
+
 @media screen and (max-width:1111px) {
-    
-    .imagenContactoCont{
+
+    .imagenContactoCont {
         width: 50%;
     }
-    .formCont{
+
+    .formCont {
         width: 50%;
     }
 }
+
 @media screen and (max-width:900px) {
-    
-    .imagenContactoCont{
+
+    .imagenContactoCont {
         width: 30%;
     }
-    .formCont{
+
+    .formCont {
         width: 70%;
     }
 }
+
 @media screen and (max-width:768px) {
-    
-    .imagenContactoCont{
+
+    .imagenContactoCont {
         display: none;
     }
-    .formCont{
+
+    .formCont {
         width: 100%;
         background-image: url(../images/bombonHeladoCompania.jpg);
         background-size: cover;
         background-blend-mode: soft-light;
         background-position: top;
     }
-    .nombreCont, .apellidoCont, .mensajeCont{
+
+    .nombreCont, .apellidoCont, .mensajeCont {
         text-align: end;
     }
 }
