@@ -77,7 +77,7 @@
     }
 
     .header .listaDesordenada {
-        position: fixed;
+        position: absolute;
         flex-direction: column;
         background-color: var(--color-verdeTransparente);
         height: 50%;

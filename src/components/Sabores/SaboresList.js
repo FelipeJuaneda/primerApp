@@ -5,6 +5,7 @@ import "./Sabores.css";
 
 const SaboresList = ({ saboresElegidos, limiteSabor }) => {
   const [sabores, setSabores] = useState([]);
+  const [ident, setIdent] = useState(false);
 
   useEffect(() => {
     getSaboresData(setSabores);
@@ -21,7 +22,8 @@ const SaboresList = ({ saboresElegidos, limiteSabor }) => {
 
     //busca sabores
     const findSabor = sabores.find((sabor) => sabor.id === id);
-    console.log(findSabor);
+    setIdent(!ident);
+
     //si en el array de saboresElegidos esta duplicadop el sabor:
     if (saboresElegidos.includes(findSabor)) {
       alert("sabor ya elegido");
@@ -40,7 +42,6 @@ const SaboresList = ({ saboresElegidos, limiteSabor }) => {
   //filtro por tipo crema o agua
   const findTipoCrema = sabores.filter((sabor) => sabor.tipo === "crema");
   const findTipoAgua = sabores.filter((sabor) => sabor.tipo === "agua");
-
   return (
     <>
       <div className="saboresCrema">
@@ -48,11 +49,11 @@ const SaboresList = ({ saboresElegidos, limiteSabor }) => {
         {findTipoCrema.map((sabor) => {
           return (
             <div
-              className="sabores "
+              className="sabores"
               onClick={() => funcionAgregarSabor(sabor.id)}
               key={sabor.id}
             >
-              <p className={sabor.id}>{sabor.nombre}</p>
+              <p>{sabor.nombre}</p>
             </div>
           );
         })}

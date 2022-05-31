@@ -1,9 +1,15 @@
-.saboresContainer{
+.saboresContainer {
     display: flex;
     justify-content: space-evenly;
     gap: 30px;
     flex-wrap: wrap;
 }
-.sabores{
+
+.sabores {
     cursor: pointer;
+}
+
+
+.selecActive {
+    background-color: blue;
 }

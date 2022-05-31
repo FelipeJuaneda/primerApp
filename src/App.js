@@ -8,6 +8,7 @@ import Cart from "./components/Cart/Cart";
 import CartContextProvider from "./components/context/CartContext";
 import AppContextProvider from "./components/context/AppContext";
 import Contact from "./components/Contacto/Contact";
+import Checkout from "./components/Checkout/Checkout";
 
 function App() {
   return (
@@ -16,12 +17,13 @@ function App() {
         <div className="App">
           <BrowserRouter>
             <NavBar />
-            
+
             <Routes>
               <Route path="/" element={<Main />} />
               <Route path="/items" element={<ItemListContainer />} />
               <Route path="/item/:itemId" element={<ItemDetailContainer />} />
               <Route path="/cart" element={<Cart />} />
+              <Route path="/checkout" element={<Checkout />} />
               <Route path="/contacto" element={<Contact />} />
             </Routes>
           </BrowserRouter>

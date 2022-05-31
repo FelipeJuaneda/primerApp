@@ -3,13 +3,12 @@ import { useParams } from "react-router-dom";
 import ItemDetail from "./ItemDetail";
 import { useAppContext } from "../context/AppContext";
 import GifReload from "../images/heladoGif.gif";
-import "./ItemDetail.css"
+import "./ItemDetail.css";
 
 const ItemDetailContainer = () => {
   //parametro id en link
   const { itemId } = useParams();
   const [helados, setHelados] = useState({});
-
   const { products } = useAppContext();
 
   //seteo el detalle si se encuentra el id a helados

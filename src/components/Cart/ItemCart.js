@@ -21,9 +21,9 @@ const ItemCart = ({ item }) => {
       </div>
 
       <div className="agregarMasyCantidad">
-        <i onClick={() => addToCart(item, -1)} class="ri-subtract-line"></i>
+        <i onClick={() => addToCart(item, -1)} className="ri-subtract-line"></i>
         <p className="cantidadParrafo">{item.quantity}</p>
-        <i onClick={() => addToCart(item, 1)} class="ri-add-line"></i>
+        <i onClick={() => addToCart(item, 1)} className="ri-add-line"></i>
       </div>
 
       <span className="carritoPrecio">{item.precio}$</span>

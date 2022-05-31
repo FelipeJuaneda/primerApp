@@ -1,4 +1,3 @@
-import { addDoc, collection, getFirestore } from "firebase/firestore";
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { useCartContext } from "../context/CartContext";
@@ -10,39 +9,6 @@ const Cart = () => {
   const [productsLength, setProductsLength] = useState(0);
 
   const { total, cart, deleteCart } = useCartContext();
-
-  const saveCart = () => {
-    //usuarios
-    const user = {
-      name: "feli",
-      phone: "jua",
-      email: "felipe9@gmail.com",
-    };
-
-    //carta sin info irrelevante
-    const cartResumida = cart.map(
-      ({ id, nombre, quantity, precio, saboresElegidos }) => ({
-        id,
-        nombre,
-        quantity,
-        precio,
-        saboresElegidos,
-      })
-    );
-    //carta a mandar
-    const cartToSave = {
-      user: user,
-      cart: cartResumida,
-      total: total,
-    };
-    console.log(cartToSave);
-
-    const db = getFirestore();
-    const cartCollection = collection(db, "cart");
-    addDoc(cartCollection, cartToSave).then((response) =>
-      console.log(response.id)
-    );
-  };
 
   useEffect(() => {
     setProductsLength(
@@ -56,11 +22,11 @@ const Cart = () => {
       {cart.length === 0 ? (
         <div className="contenedorCarritoVacio">
           <p>Tu carrito esta vacio</p>
-          <img
+          <img className="imageCart"
             src="https://pbs.twimg.com/media/EWVoZnkXYAEUrji.jpg"
             alt="Puede darme dinero?"
           />
-          <Link to="/">Volver a Productos</Link>
+          <Link to="/items">Volver a Productos</Link>
         </div>
       ) : (
         <div>
@@ -93,7 +59,7 @@ const Cart = () => {
             </div>
 
             {/* Terminar compra */}
-            <button onClick={saveCart}>Terminar compra!!</button>
+            <Link to={"/checkout"}>Checkout</Link>
           </div>
         </div>
       )}
