@@ -1,7 +1,7 @@
 <h1 align="center">Hola 👋, Soy Felipe Juaneda</h1>
 <h3 align="center">Estudiante de Programación full Stack</h3>
 
-- 🔭 Trabajando actualmente en un proyectito de React Js [Heladeria Artesanal](https://primer-app.vercel.app/)
+- 🔭 Trabajando actualmente en un proyecto de React Js [Heladeria Artesanal](https://primer-app.vercel.app/) (Desplegado en Vercel)
 
 - LinkedIn [https://www.linkedin.com/in/felipe-juaneda-8b7103190/](https://www.linkedin.com/in/felipe-juaneda-8b7103190/)
 
