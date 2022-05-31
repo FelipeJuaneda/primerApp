@@ -22,7 +22,8 @@ const Cart = () => {
       {cart.length === 0 ? (
         <div className="contenedorCarritoVacio">
           <p>Tu carrito esta vacio</p>
-          <img className="imageCart"
+          <img
+            className="imageCart"
             src="https://pbs.twimg.com/media/EWVoZnkXYAEUrji.jpg"
             alt="Puede darme dinero?"
           />

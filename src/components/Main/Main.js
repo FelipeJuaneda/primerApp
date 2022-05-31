@@ -1,9 +1,16 @@
 import React from "react";
 import "./Main.css";
 import videoFondo from "../videos/heladoDerretido.mp4";
-import { Typewriter } from "react-simple-typewriter";
+import { Cursor, useTypewriter } from "react-simple-typewriter";
 
-function MainComp(props) {
+function MainComp() {
+  const { text } = useTypewriter({
+    words: ["Helado", "Sabor", "Momento"],
+    loop: 0,
+    typeSpeed: 70,
+    deleteSpeed: 100,
+    delaySpeed: 2500,
+  });
   return (
     <div className="mainVideoCont">
       <video autoPlay muted loop className="videoCont">
@@ -14,15 +21,8 @@ function MainComp(props) {
         <h1 className="titulo" id="tituloScroll">
           Disfruta del mejor{" "}
           <span className="spanTyped">
-            <Typewriter
-              loop
-              cursor
-              cursorStyle="_"
-              typeSpeed={70}
-              deleteSpeed={50}
-              delaySpeed={2500}
-              words={["Helado", "Sabor", "Momento"]}
-            />
+            {text}
+            <Cursor />
           </span>
         </h1>
         <p className="parrafoTitulo">
@@ -67,7 +67,8 @@ function MainComp(props) {
             height="10"
             viewBox="0 0 46 16"
           >
-            <path className="flechita"
+            <path
+              className="flechita"
               id="Path_10"
               data-name="Path 10"
               d="M8,0,6.545,1.455l5.506,5.506H-30V9.039H12.052L6.545,14.545,8,16l8-8Z"

@@ -3,7 +3,8 @@
     height: 100vh;
     min-height: 100%;
 }
-.tituloCarrito{
+
+.tituloCarrito {
     margin: 0;
 }
 
@@ -155,12 +156,14 @@
         justify-content: space-around;
         align-items: center;
     }
-    .carritoImagen{
+
+    .carritoImagen {
         width: 100px;
     }
 }
-@media screen and (max-width:400px){
-    .imageCart{
+
+@media screen and (max-width:400px) {
+    .imageCart {
         width: 100%;
     }
 }

@@ -45,9 +45,10 @@
     transition: color .4s;
 }
 
-.hover-underline-animationAñadir:hover{
+.hover-underline-animationAñadir:hover {
     color: var(--color-cucurucho);
 }
+
 .hover-underline-animationAñadir:after {
     content: "";
     position: absolute;
