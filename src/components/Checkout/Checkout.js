@@ -3,6 +3,7 @@ import { addDoc, collection, getFirestore } from "firebase/firestore";
 import { useForm } from "react-hook-form";
 import { useCartContext } from "../context/CartContext";
 import "./Checkout.css";
+import swal from "sweetalert";
 
 const Checkout = () => {
   //useForm
@@ -48,34 +49,48 @@ const Checkout = () => {
     addDoc(cartCollection, cartToSave).then((response) =>
       console.log(response.id)
     );
+    swal({
+      title: "Pedido Tomado!",
+      text: "Muchas gracias por su compra!",
+      icon: "success",
+    });
   };
 
   return (
-    <div>
-      <h2>Datos de Envio</h2>
-      <form onSubmit={handleSubmit(saveData)}>
-        <div>
-          <input
-            type={"text"}
-            placeholder="Nombre"
-            {...register("nombre", {
-              required: true,
-            })}
-          />
-          {errors.nombre?.type === "required" && <p>Nombre rquerido!</p>}
+    <div className="checkoutContainer">
+      <form className="formularioCheckout" onSubmit={handleSubmit(saveData)}>
+        <h2>Datos de Envio</h2>
+        <div className="nombreApellido">
+          <div className="contNombre">
+            <input
+              className="nombreInput"
+              type={"text"}
+              placeholder="Nombre"
+              {...register("nombre", {
+                required: true,
+              })}
+            />
+            {errors.nombre?.type === "required" && (
+              <p className="nombreReq">Nombre rquerido!</p>
+            )}
+          </div>
+          <div className="contApellido">
+            <input
+              className="apellidoInput"
+              type={"text"}
+              placeholder="Apellido"
+              {...register("apellido", {
+                required: true,
+              })}
+            />
+            {errors.apellido?.type === "required" && (
+              <p className="apellidoReq">Apellido rquerido!</p>
+            )}
+          </div>
         </div>
-        <div>
+        <div className="emailCont">
           <input
-            type={"text"}
-            placeholder="Apellido"
-            {...register("apellido", {
-              required: true,
-            })}
-          />
-          {errors.apellido?.type === "required" && <p>Apellido rquerido!</p>}
-        </div>
-        <div>
-          <input
+            className="emailInput"
             type={"text"}
             placeholder="Email"
             {...register("email", {
@@ -84,30 +99,52 @@ const Checkout = () => {
             })}
           />
           {errors.email?.type === "pattern" && (
-            <p>Formato de Email incorrecto!</p>
+            <p className="emailReq">Formato de Email incorrecto!</p>
           )}
         </div>
-        <div>
-          <input
-            type={"number"}
-            placeholder="Numero de telefono"
-            {...register("telefono", {
-              required: true,
-            })}
-          />
-        </div>
-        <div>
-          <input
-            type={"text"}
-            placeholder="Direccion"
-            {...register("direccion", {
-              required: true,
-            })}
-          />
+        <div className="numeroDireccion">
+          <div className="numeroCont">
+            <input
+              className="numeroInput"
+              type={"number"}
+              placeholder="Numero de telefono"
+              {...register("telefono", {
+                required: true,
+              })}
+            />
+          </div>
+          <div className="direcCont">
+            <input
+              className="direcInput"
+              type={"text"}
+              placeholder="Direccion"
+              {...register("direccion", {
+                required: true,
+              })}
+            />
+          </div>
         </div>
 
-        <input type={"submit"} value="Enviar" />
+        <button className="ctaCkeckout" type={"submit"}>
+          <span className="hover-underline-animationCheckout"> Enviar! </span>
+          <svg
+            id="arrow-horizontal"
+            xmlns="http://www.w3.org/2000/svg"
+            width="30"
+            height="10"
+            viewBox="0 0 46 16"
+          >
+            <path
+              id="Path_10"
+              data-name="Path 10"
+              d="M8,0,6.545,1.455l5.506,5.506H-30V9.039H12.052L6.545,14.545,8,16l8-8Z"
+              transform="translate(30)"
+            ></path>
+          </svg>
+        </button>
       </form>
+
+      <div className="contenedorImgCheck"></div>
     </div>
   );
 };

@@ -1,6 +1,7 @@
 import { React, useState } from "react";
 import { useAppContext } from "../context/AppContext";
 import { useCartContext } from "../context/CartContext";
+import swal from "sweetalert";
 import "./ItemCount.css";
 
 const ItemCount = ({ inicial, stock, onAdd, id, saboresElegidos }) => {
@@ -20,7 +21,12 @@ const ItemCount = ({ inicial, stock, onAdd, id, saboresElegidos }) => {
     const findProduct = products.find((producto) => producto.id === id);
     //si no hay sabores elegidos:
     if (saboresElegidos.length === 0) {
-      alert("agrega sabores primero (click en la imagen)");
+      swal({
+        title: "Debes agregar sabores Primero!",
+        text: "Click en la imagen para Detalles",
+        icon: "warning",
+        timer: "4500",
+      });
       return;
     }
     if (!findProduct) {

@@ -1,0 +1,148 @@
+.checkoutContainer {
+    display: flex;
+    height: 90vh;
+}
+
+.checkoutContainer .formularioCheckout {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--color-verdeTransparente);
+    gap: 18px;
+}
+
+.checkoutContainer .contenedorImgCheck {
+    background-image: url(../images/conoDifuminado.jpg);
+    width: 50%;
+    background-position: center;
+    background-size: cover;
+}
+
+/* nombre y apellido */
+.nombreApellido {
+    display: flex;
+    gap: 15px;
+    width: 75%;
+    justify-content: center;
+}
+
+.contNombre, .contApellido {
+    width: 50%;
+}
+
+.numeroDireccion {
+    display: flex;
+    gap: 15px;
+}
+
+.nombreInput, .apellidoInput {
+    width: 100%;
+    height: 29px;
+    border-style: none;
+    border-radius: 5px;
+
+}
+
+/* email */
+.emailCont {
+    width: 75%;
+}
+
+.emailInput {
+    width: 100%;
+    height: 29px;
+    border-style: none;
+    border-radius: 5px;
+    text-align: center;
+}
+
+/* numero y direccion */
+.numeroDireccion {
+    display: flex;
+    gap: 15px;
+    width: 75%;
+    justify-content: center;
+
+}
+
+.numeroCont, .direcCont {
+    width: 50%;
+}
+
+.numeroInput, .direcInput {
+    width: 100%;
+    height: 29px;
+    border-style: none;
+    border-radius: 5px;
+}
+
+.nombreInput,
+.apellidoInput,
+.numeroInput,
+.direcInput,
+.emailInput::placeholder {
+    text-align: center;
+}
+
+
+
+/* boton enviar */
+.ctaCkeckout {
+    border: none;
+    background: none;
+    font-family: var(--fuente-nav);
+    cursor: pointer;
+    padding-top: 25px;
+}
+
+.ctaCkeckout span {
+    padding-bottom: 7px;
+    letter-spacing: 4px;
+    font-size: 18px;
+    padding-right: 15px;
+    text-transform: uppercase;
+}
+
+.ctaCkeckout svg {
+    transform: translateX(-8px);
+    transition: all 0.3s ease;
+}
+
+.ctaCkeckout svg path {
+    fill: var(--color-cucurucho);
+}
+
+.ctaCkeckout:hover svg {
+    transform: translateX(0);
+}
+
+.ctaCkeckout:active svg {
+    transform: scale(0.9);
+}
+
+.hover-underline-animationCheckout {
+    position: relative;
+    color: var(--color-blancoLindo);
+    padding-bottom: 20px;
+}
+
+.hover-underline-animationCheckout:after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 1.5px;
+    bottom: 0;
+    left: 0;
+    background-color: var(--color-cucurucho);
+    transform-origin: bottom right;
+    transition: transform 0.25s ease-out;
+}
+
+.ctaCkeckout:hover .hover-underline-animationCheckout:after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}

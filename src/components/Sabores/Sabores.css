@@ -8,7 +8,6 @@
     cursor: pointer;
 }
 
-
-.selecActive {
-    background-color: blue;
+.activado{
+    background-color: aqua;
 }
