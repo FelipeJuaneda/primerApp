@@ -12,6 +12,8 @@
     position: absolute;
     top: 0;
     left: 0;
+    bottom: 0;
+    right: 0;
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -24,10 +26,19 @@
     border-radius: 5px;
     left: 20px;
     right: 20px;
-    bottom: 255px;
-    top: 169px;
+    bottom: 95px;
+    top: 94px;
+    height: 80%;
     display: flex;
     flex-direction: column;
+    top: 50px;
+}
+
+@media screen and (min-width:1221px) {
+    .mainVideoCont .mainTituloCont {
+        left: 116px;
+        right: 116px;
+    }
 }
 
 .mainVideoCont .mainTituloCont .titulo {
@@ -52,120 +63,25 @@
 
 .ubicacionMain {
     background: var(--color-verdeTransparente);
-    /* background-image: url(../../components/images/salsa.jpg); */
     border-radius: 5px;
     box-shadow: 1px 1px 96px -7px rgba(0, 0, 0, 0.75);
     -webkit-box-shadow: 1px 1px 96px -7px rgba(0, 0, 0, 0.75);
     -moz-box-shadow: 1px 1px 96px -7px rgba(0, 0, 0, 0.75);
-    height: 230px;
+    height: 84%;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
 }
 
-.ubicTitle {
-    font-family: var(--fuente-nav);
-    margin: 0;
-}
+@media screen and (max-height:750px) {
+    .mainVideoCont .mainTituloCont {
+        top: 25px;
+    }
 
-.ubicTitle span {
-    text-decoration: underline;
-}
-
-.listaUbicaciones {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 50px;
-    height: 40%;
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    font-family: var(--fuente-nav);
-}
-
-
-.ri-map-pin-2-line {
-    display: none;
-}
-
-.listaUbicaciones li {
-    cursor: pointer;
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* BOTON */
-
-.cta {
-    border: none;
-    background: none;
-    margin-top: 20px;
-    cursor: pointer;
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    padding-bottom: 25px;
-}
-
-.cta span {
-    padding-bottom: 7px;
-    letter-spacing: 4px;
-    font-size: 16px;
-    padding-right: 15px;
-    text-transform: uppercase;
-}
-
-.cta svg {
-    transform: translateX(-8px);
-    transition: all 0.3s ease;
-}
-
-.cta svg .flechita {
-    fill: var(--color-cucurucho);
-}
-
-.cta:hover svg {
-    transform: translateX(0);
-}
-
-.cta:active svg {
-    transform: scale(0.9);
-}
-
-.hover-underline-animation {
-    color: var(--color-blancoLindo);
-    padding-bottom: 20px;
-}
-
-.hover-underline-animation:after {
-    content: "";
-    position: absolute;
-    width: 100%;
-    transform: scaleX(0);
-    height: 2px;
-    bottom: 0;
-    left: 0;
-    background-color: var(--color-cucurucho);
-    transform-origin: bottom right;
-    transition: transform 0.25s ease-out;
-}
-
-.cta:hover .hover-underline-animation:after {
-    transform: scaleX(1);
-    transform-origin: bottom left;
+    .ubicacionMain {
+        height: 80%;
+    }
 }
 
 /* MEDIA QUERIES */
@@ -179,10 +95,6 @@
 }
 
 @media screen and (max-width:800px) {
-    .mainVideoCont .mainTituloCont {
-        bottom: 280px;
-    }
-
     .mainVideoCont .mainTituloCont .titulo {
         font-size: 32px;
     }
@@ -195,267 +107,41 @@
         font-size: 22px;
 
     }
-
-    .listaUbicaciones {
-        flex-direction: column;
-        text-align: start;
-        gap: 0;
-    }
-
-    .direcLogo {
-        display: flex;
-        align-items: center;
-        gap: 5px;
-    }
-
-    .ri-map-pin-2-line {
-        display: block;
-    }
 }
 
 @media screen and (max-width:530px) {
-    .mainVideoCont .mainTituloCont {
-        bottom: 245px;
-    }
-
     .mainVideoCont .mainTituloCont .titulo {
         font-size: 24px;
     }
-
+    
     .mainVideoCont .mainTituloCont .parrafoTitulo {
         font-size: 16.3px;
-
+        
     }
-
+    
     .ubicTitle {
         font-size: 17px;
     }
-
-    .ubicParrafo {
-        margin: 10px;
-    }
-
+    
     .cta {
         padding-bottom: 12px;
     }
 }
 
-
-
-/* .mainVideoCont {
-    position: relative;
-    min-height: 100vh;
-    top: 0;
-    box-shadow: 1px 7px 77px -12px rgba(0, 0, 0, 0.75);
-    -webkit-box-shadow: 1px 7px 77px -12px rgba(0, 0, 0, 0.75);
-    -moz-box-shadow: 1px 7px 77px -12px rgba(0, 0, 0, 0.75);
+@media screen and (max-width:400px) {
+    
+    .mainVideoCont .mainTituloCont .titulo {
+        font-size: 20px;
+    }
 }
 
-.mainVideoCont .videoCont {
-    position: absolute;
-    top: 0;
-    left: 0;
+.imgg {
     width: 100%;
     height: 100%;
     object-fit: cover;
 }
 
-.mainVideoCont .mainTituloCont {
-    position: absolute;
-    right: 52px;
-    left: 52px;
-    bottom: 250px;
-    top: 250px;
-    background-color: var(--color-verdeTransparente);
-    padding: 20px;
-    border-radius: 5px;
-}
-
-.mainVideoCont .mainTituloCont .titulo {
-    margin: 10px 0;
-    font-size: 45px;
-    color: var(--color-titulo);
-    font-family: var(--fuente-nav);
-}
-
-.mainVideoCont .mainTituloCont .titulo .spanTyped {
-    color: var(--color-cucurucho);
-}
-
-.mainVideoCont .mainTituloCont .parrafoTitulo {
-    color: var(--color-verdeParrafo);
-    font-family: var(--fuente-parrafo);
-    font-size: 22.3px;
-    margin: 0;
-}
-
-.listaUbicaciones {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 50px;
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    font-family: var(--fuente-nav);
-}
-
-.listaUbicaciones li {
-    cursor: pointer;
-}
-
-.ubicacionMain {
-    background: var(--color-verdeTransparente);
-    padding: 20px 30px;
-    border-radius: 5px;
-    box-shadow: 1px 1px 96px -7px rgba(0, 0, 0, 0.75);
-    -webkit-box-shadow: 1px 1px 96px -7px rgba(0, 0, 0, 0.75);
-    -moz-box-shadow: 1px 1px 96px -7px rgba(0, 0, 0, 0.75);
-}
-
-.ubicTitle {
-    font-family: var(--fuente-nav);
-}
-.ubicTitle span{
-    text-decoration: underline;
-}
-
-@media screen and (max-width:990px) {
-    .mainVideoCont .mainTituloCont {
-        right: 0;
-        left: 0;
-
-    }
-}
-
-@media screen and (max-width:768px) {
-    .mainVideoCont .mainTituloCont {
-        bottom: 320px;
-        top: 270px;
-        padding: 0;
-    }
-
-    .mainVideoCont .mainTituloCont .titulo {
-        font-size: 26px;
-    }
-
-    .mainVideoCont .mainTituloCont .parrafoTitulo {
-        font-size: 16px;
-    }
-
-    .ubicTitle {
-        font-size: 20px;
-    }
-
-    .listaUbicaciones {
-        gap: 25px;
-    }
-
-}
-
-@media screen and (max-width:500px) {
-    .mainVideoCont .mainTituloCont {
-        padding: 10px 0px 20px 0px;
-    }
-
-    .ubicacionMain {
-        padding: 10px 0px 20px 0px;
-    }
-}
-
-@media screen and (max-width:410px) {
-    .listaUbicaciones {
-        flex-direction: column;
-        gap: 0;
-    }
-
-    .mainVideoCont .mainTituloCont {
-        bottom: 261px;
-        top: 216px;
-    }
-}
-
-
-.cta {
-    border: none;
-    background: none;
-    margin-top: 20px;
-    cursor: pointer;
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    padding-bottom: 25px;
-}
-
-.cta span {
-    padding-bottom: 7px;
-    letter-spacing: 4px;
-    font-size: 16px;
-    padding-right: 15px;
-    text-transform: uppercase;
-}
-
-.cta svg {
-    transform: translateX(-8px);
-    transition: all 0.3s ease;
-}
-
-.cta:hover svg {
-    transform: translateX(0);
-}
-
-.cta:active svg {
-    transform: scale(0.9);
-}
-
-.hover-underline-animation {
-    color: var(--color-negro);
-    padding-bottom: 20px;
-}
-
-.hover-underline-animation:after {
-    content: "";
-    position: absolute;
+.swiper {
     width: 100%;
-    transform: scaleX(0);
-    height: 2px;
-    bottom: 0;
-    left: 0;
-    background-color: var(--color-titulo);
-    transform-origin: bottom right;
-    transition: transform 0.25s ease-out;
+    height: 100%;
 }
-
-.cta:hover .hover-underline-animation:after {
-    transform: scaleX(1);
-    transform-origin: bottom left;
-}
-
-
-@media screen and (min-width:1500px) {
-    .mainVideoCont .mainTituloCont {
-        left: 660px;
-        right: 30px;
-        bottom: 174px;
-        top: 169px;
-        display: flex;
-        flex-direction: column;
-        gap: 9px;
-    }
-
-    .ubicacionMain {
-        height: 230px;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-    }
-    .mainVideoCont .mainTituloCont .titulo{
-        text-align: start;
-    }
-    .mainVideoCont .mainTituloCont .parrafoTitulo{
-        text-align: start;
-
-    }
-}  */

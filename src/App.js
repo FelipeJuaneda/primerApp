@@ -17,7 +17,6 @@ function App() {
         <div className="App">
           <BrowserRouter>
             <NavBar />
-
             <Routes>
               <Route path="/" element={<Main />} />
               <Route path="/items" element={<ItemListContainer />} />

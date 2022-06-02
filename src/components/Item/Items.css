@@ -1,3 +1,16 @@
+.productDestacadosTitle {
+    font-size: 37px;
+    font-family: var(--fuente-nav);
+    padding-top: 50px;
+    color: var(--color-verdeTransparente);
+}
+
+@media screen and (max-width:600px) {
+    .productDestacadosTitle {
+        font-size: 30px;
+    }
+}
+
 .contenedorProductos {
     display: flex;
     gap: 110px;

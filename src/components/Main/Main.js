@@ -2,6 +2,15 @@ import React from "react";
 import "./Main.css";
 import videoFondo from "../videos/heladoDerretido.mp4";
 import { Cursor, useTypewriter } from "react-simple-typewriter";
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
+import "swiper/css/bundle";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
+import imgUno from "../images/salsa.jpg";
+import imgDos from "../images/tachos.jpg";
+import imgTres from "../images/bombonHeladoCompania.jpg";
+import { A11y, Navigation, Pagination, Scrollbar } from "swiper";
 
 function MainComp() {
   const { text } = useTypewriter({
@@ -30,52 +39,27 @@ function MainComp() {
         </p>
 
         <div className="ubicacionMain">
-          <h2 className="ubicTitle">
-            Ubicados en <span>Córdoba Capital</span>
-          </h2>
-          <p className="ubicParrafo">Nuestros locales:</p>
-          <ul className="listaUbicaciones">
-            <div>
-              <div className="direcLogo">
-                <i className="ri-map-pin-2-line"></i>
-                <li>Belgrano 773</li>
-              </div>
-              <div className="direcLogo">
-                <i className="ri-map-pin-2-line"></i>
-                <li>Fructuoso Rivera 261</li>
-              </div>
-            </div>
-            <div>
-              <div className="direcLogo">
-                <i className="ri-map-pin-2-line"></i>
-                <li>Ambrosio Olmos 666</li>
-              </div>
-              <div className="direcLogo">
-                <i className="ri-map-pin-2-line"></i>
-                <li>Manuel Estrada 270</li>
-              </div>
-            </div>
-          </ul>
-        </div>
-
-        <button className="cta">
-          <span className="hover-underline-animation"> Descubrir Sabores </span>
-          <svg
-            id="arrow-horizontal"
-            xmlns="http://www.w3.org/2000/svg"
-            wsidth="30"
-            height="10"
-            viewBox="0 0 46 16"
+          <Swiper
+            modules={[Navigation, Pagination, Scrollbar, A11y]}
+            spaceBetween={0}
+            slidesPerView={1}
+            navigation
+            autoplay
+            pagination={{ clickable: true }}
+            scrollbar={{ draggable: true }}
           >
-            <path
-              className="flechita"
-              id="Path_10"
-              data-name="Path 10"
-              d="M8,0,6.545,1.455l5.506,5.506H-30V9.039H12.052L6.545,14.545,8,16l8-8Z"
-              transform="translate(30)"
-            ></path>
-          </svg>
-        </button>
+            <SwiperSlide>
+              <img className="imgg" src={imgUno} alt="salsa helado" />
+            </SwiperSlide>
+            <SwiperSlide>
+              <img className="imgg" src={imgDos} alt="tachos de helado" />
+            </SwiperSlide>
+            <SwiperSlide>
+              <img className="imgg" src={imgTres} alt="palitos bombon helado" />
+            </SwiperSlide>
+            ...
+          </Swiper>
+        </div>
       </div>
     </div>
   );

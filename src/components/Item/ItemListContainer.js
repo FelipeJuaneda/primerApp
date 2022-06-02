@@ -17,8 +17,12 @@ const ItemListContainer = () => {
   }, []);
 
   return (
+    <div>
+      <h2 className="productDestacadosTitle">Productos Destacados</h2>
     <div className="contenedorProductos">
       <ItemList products={products} />
+    </div>
+
     </div>
   );
 };

@@ -5,25 +5,25 @@ import "./Sabores.css";
 
 const SaboresList = ({ saboresElegidos, limiteSabor }) => {
   const [sabores, setSabores] = useState([]);
-  const [ident, setIdent] = useState(false);
-
+  const [arraySabores, setArraySabores] = useState([]);
   useEffect(() => {
     getSaboresData(setSabores);
   }, []);
 
   const { products } = useAppContext();
-
+  
   const funcionAgregarSabor = (id) => {
     //si la cantidad de sabores llega al limite deja de agregar
     if (saboresElegidos.length >= limiteSabor) {
       alert("Limite de sabores superado");
       return;
     }
-
+    
     //busca sabores
     const findSabor = sabores.find((sabor) => sabor.id === id);
-    setIdent(!ident);
-
+    console.log(arraySabores)
+    
+    setArraySabores(findSabor.nombre)
     //si en el array de saboresElegidos esta duplicadop el sabor:
     if (saboresElegidos.includes(findSabor)) {
       alert("sabor ya elegido");
