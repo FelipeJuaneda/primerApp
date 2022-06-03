@@ -2,12 +2,53 @@
     display: flex;
     justify-content: space-evenly;
     flex-wrap: wrap;
+    gap: 50px;
 }
 
-.sabores {
+.saboresCrema {
+    text-align: start;
+}
+
+.saboresAgua {
+    text-align: start;
+}
+
+.tituloCrema,
+.tituloAgua {
+    font-family: var(--fuente-nav);
+}
+
+.listaCrema,
+.listaAgua {
+    padding-bottom: 7px;
     cursor: pointer;
+    font-family: var(--fuente-parrafo);
+    font-size: 18px;
 }
 
-.activado{
-    background-color: aqua;
+.saboresElegidosCont {
+    text-align: end;
+    background: var(--color-cucurucho);
+    padding: 15px;
+    border-radius: 7px;
+}
+
+.tituloSaboresEleg {
+    text-align: center;
+}
+
+.tituloSaboresEleg {
+    font-family: var(--fuente-nav);
+
+}
+
+.listaSaboresElegidos {
+    text-align: end;
+    list-style: none;
+}
+
+.cruzSabores {
+    color: red;
+    font-size: 15px;
+    padding-left: 5px;
 }

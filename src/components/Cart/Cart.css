@@ -200,3 +200,89 @@
     box-shadow: 9px 9px 33px #7ec96f88, -9px -9px 33px #3dcc2a52;
     transform: translateY(-2px);
 }
+
+/* Boton vaciar carrito */
+.botonVaciarCont {
+    display: flex;
+    justify-content: end;
+    margin-right: 10px;
+}
+
+.botonVaciarCarrito {
+    width: 150px;
+    height: 35px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    background: red;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.15);
+    background: #e62222;
+}
+
+.botonVaciarCarrito, button span {
+    transition: 200ms;
+}
+
+.botonVaciarCarrito .text {
+    transform: translateX(35px);
+    color: white;
+    font-weight: bold;
+}
+
+.botonVaciarCarrito .icon {
+    position: absolute;
+    transform: translateX(110px);
+    height: 40px;
+    width: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.botonVaciarCarrito svg {
+    width: 15px;
+    fill: #eee;
+}
+
+.botonVaciarCarrito:hover {
+    background: #ff3636;
+}
+
+.botonVaciarCarrito:hover .text {
+    color: transparent;
+}
+
+.botonVaciarCarrito:hover .icon {
+    width: 150px;
+    border-left: none;
+    transform: translateX(0);
+}
+
+.botonVaciarCarrito:focus {
+    outline: none;
+}
+
+.botonVaciarCarrito:active .icon svg {
+    transform: scale(0.8);
+}
+
+
+/* boton Checkout*/
+.botonCheckout {
+    border: solid 2px var(--color-verdeParrafo);
+    padding: 5px 20px;
+    background-color: var(--color-verdeParrafo);
+    text-decoration: none;
+    color: var(--color-negro);
+    font-family: var(--fuente-nav);
+    border-radius: 5px;
+    transition: all .4s;
+}
+
+.botonCheckout:hover {
+    background-color: var(--color-verdeTransparente);
+    color: var(--color-cucurucho);
+    border: solid 2px var(--color-verdeTransparente);
+}

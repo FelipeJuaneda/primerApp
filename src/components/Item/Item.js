@@ -26,6 +26,7 @@ const Item = (item) => {
         inicial={1}
         id={item.id}
         saboresElegidos={item.saboresElegidos}
+        limiteSabor={item.limiteSabor}
       />
     </div>
   );
