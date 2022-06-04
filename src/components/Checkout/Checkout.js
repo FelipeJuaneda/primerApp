@@ -149,7 +149,7 @@ const Checkout = () => {
           <span className="tituloResumen">Resumen</span>
           {cart.map((it) => {
             return (
-              <div className="nombreCantidad">
+              <div key={it.id} className="nombreCantidad">
                 <p>
                   <span className="nombreResumen">
                     {it.nombre} X{it.quantity}
