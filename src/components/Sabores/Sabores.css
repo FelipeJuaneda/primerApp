@@ -52,3 +52,17 @@
     font-size: 15px;
     padding-left: 5px;
 }
+
+@media screen and (max-width:593px) {
+    .saboresContainer {
+        gap: 15px;
+        flex-flow: column-reverse;
+    }
+    .saboresCrema, 
+    .saboresAgua{
+        text-align: center;
+    }
+    .listaSaboresElegidos{
+        text-align: center;
+    }
+}
