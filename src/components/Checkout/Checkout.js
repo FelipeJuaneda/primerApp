@@ -44,6 +44,7 @@ const Checkout = () => {
     };
     console.log(cartToSave);
 
+    //envio a FireStore la cart e imprimo mensaje success
     const db = getFirestore();
     const cartCollection = collection(db, "cart");
     addDoc(cartCollection, cartToSave).then((response) =>

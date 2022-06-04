@@ -4,7 +4,14 @@ import { useCartContext } from "../context/CartContext";
 import swal from "sweetalert";
 import "./ItemCount.css";
 
-const ItemCount = ({ inicial, stock, onAdd, id, saboresElegidos, limiteSabor }) => {
+const ItemCount = ({
+  inicial,
+  stock,
+  onAdd,
+  id,
+  saboresElegidos,
+  limiteSabor,
+}) => {
   //estado de contador
   const [qty, setQty] = useState(inicial);
   //funcion contador
@@ -27,9 +34,9 @@ const ItemCount = ({ inicial, stock, onAdd, id, saboresElegidos, limiteSabor }) 
         icon: "warning",
         timer: "4500",
       });
-      return
+      return;
     }
-    
+
     if (!findProduct) {
       alert("Error!!");
       return;

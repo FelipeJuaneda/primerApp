@@ -64,7 +64,11 @@ const SaboresList = ({ saboresElegidos, limiteSabor }) => {
         <h2 className="tituloCrema">Crema</h2>
         {findTipoCrema.map((sabor) => {
           return (
-            <div className="listaCrema" onClick={() => funcionAgregarSabor(sabor.id)} key={sabor.id}>
+            <div
+              className="listaCrema"
+              onClick={() => funcionAgregarSabor(sabor.id)}
+              key={sabor.id}
+            >
               <p>{sabor.nombre}</p>
             </div>
           );
@@ -74,7 +78,11 @@ const SaboresList = ({ saboresElegidos, limiteSabor }) => {
         <h2 className="tituloAgua">Agua</h2>
         {findTipoAgua.map((sabor) => {
           return (
-            <div className="listaAgua" onClick={() => funcionAgregarSabor(sabor.id)} key={sabor.id}>
+            <div
+              className="listaAgua"
+              onClick={() => funcionAgregarSabor(sabor.id)}
+              key={sabor.id}
+            >
               <p>{sabor.nombre}</p>
             </div>
           );

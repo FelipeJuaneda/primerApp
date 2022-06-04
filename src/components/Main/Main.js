@@ -13,6 +13,7 @@ import imgTres from "../images/bombonHeladoCompania.jpg";
 import { A11y, Navigation, Pagination, Scrollbar } from "swiper";
 
 function MainComp() {
+  //Typewriter para el titulo
   const { text } = useTypewriter({
     words: ["Helado", "Sabor", "Momento"],
     loop: 0,

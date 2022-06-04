@@ -113,23 +113,23 @@
     .mainVideoCont .mainTituloCont .titulo {
         font-size: 24px;
     }
-    
+
     .mainVideoCont .mainTituloCont .parrafoTitulo {
         font-size: 16.3px;
-        
+
     }
-    
+
     .ubicTitle {
         font-size: 17px;
     }
-    
+
     .cta {
         padding-bottom: 12px;
     }
 }
 
 @media screen and (max-width:400px) {
-    
+
     .mainVideoCont .mainTituloCont .titulo {
         font-size: 20px;
     }
