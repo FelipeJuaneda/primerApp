@@ -3,8 +3,46 @@
     height: 90vh;
 }
 
-.checkoutContainer .formularioCheckout {
+.formularioResumenCont {
     width: 50%;
+    position: relative;
+}
+
+.resumenInfo {
+    position: absolute;
+    top: 30px;
+    right: 0;
+    left: 0;
+    background-color: var(--color-verdeParrafo);
+}
+
+.tituloResumen {
+    font-size: 20px;
+    font-family: var(--fuente-parrafo);
+    text-decoration: underline;
+}
+
+.nombreCantidad {
+    display: flex;
+    gap: 35px;
+    justify-content: center;
+    padding: 5px 0;
+}
+
+.nombreResumen {
+    color: var(--color-blancoLindo);
+}
+
+.totalResumen {
+    text-transform: uppercase;
+}
+
+.totalContResumen {
+    background: var(--color-transparenteClaro);
+    padding: 5px 0;
+}
+
+.checkoutContainer .formularioCheckout {
     height: 100%;
     display: flex;
     flex-direction: column;
@@ -155,19 +193,23 @@
     .checkoutContainer {
         height: 92vh;
     }
-    .checkoutContainer .formularioCheckout{
-        width: 70%;
-    }
-    
+
+
 }
+
 @media screen and (max-width:900px) {
-    .checkoutContainer .formularioCheckout{
+    .formularioResumenCont {
+        width: 100%;
+    }
+
+    .checkoutContainer .formularioCheckout {
         width: 100%;
         background-image: url(../images/conoDifuminado.jpg);
         background-size: cover;
         background-blend-mode: multiply;
     }
-    .checkoutContainer .contenedorImgCheck{
+
+    .checkoutContainer .contenedorImgCheck {
         display: none;
     }
 }

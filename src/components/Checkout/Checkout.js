@@ -15,7 +15,7 @@ const Checkout = () => {
 
   //llamo funciones de contexto del cart
   const { total, cart } = useCartContext();
-
+  console.log(cart);
   //funcion onChange para mandar los datos a firebase
   const saveData = (data) => {
     //carta sin info irrelevante
@@ -47,102 +47,122 @@ const Checkout = () => {
     const db = getFirestore();
     const cartCollection = collection(db, "cart");
     addDoc(cartCollection, cartToSave).then((response) =>
-      console.log(response.id)
+      swal({
+        title: "Pedido Tomado!",
+        text: `Muchas gracias ${data.nombre} por su compra! \n Se ha enviado a su Email: ${data.email} el ticket con la orden de su compra "${response.id}" `,
+        icon: "success",
+      })
     );
-    swal({
-      title: "Pedido Tomado!",
-      text: "Muchas gracias por su compra!",
-      icon: "success",
-    });
   };
 
   return (
     <div className="checkoutContainer">
-      <form className="formularioCheckout" onSubmit={handleSubmit(saveData)}>
-        <h2>Datos de Envio</h2>
-        <div className="nombreApellido">
-          <div className="contNombre">
+      <div className="formularioResumenCont">
+        <form className="formularioCheckout" onSubmit={handleSubmit(saveData)}>
+          <h2>Datos de Envio</h2>
+          <div className="nombreApellido">
+            <div className="contNombre">
+              <input
+                className="nombreInput"
+                type={"text"}
+                placeholder="Nombre"
+                {...register("nombre", {
+                  required: true,
+                })}
+              />
+              {errors.nombre?.type === "required" && (
+                <p className="nombreReq">Nombre rquerido!</p>
+              )}
+            </div>
+            <div className="contApellido">
+              <input
+                className="apellidoInput"
+                type={"text"}
+                placeholder="Apellido"
+                {...register("apellido", {
+                  required: true,
+                })}
+              />
+              {errors.apellido?.type === "required" && (
+                <p className="apellidoReq">Apellido rquerido!</p>
+              )}
+            </div>
+          </div>
+          <div className="emailCont">
             <input
-              className="nombreInput"
+              className="emailInput"
               type={"text"}
-              placeholder="Nombre"
-              {...register("nombre", {
-                required: true,
+              placeholder="Email"
+              {...register("email", {
+                pattern:
+                  /^(([^<>()\[\]\\.,;:\s@”]+(\.[^<>()\[\]\\.,;:\s@”]+)*)|(“.+”))@((\[[0–9]{1,3}\.[0–9]{1,3}\.[0–9]{1,3}\.[0–9]{1,3}])|(([a-zA-Z\-0–9]+\.)+[a-zA-Z]{2,}))$/,
               })}
             />
-            {errors.nombre?.type === "required" && (
-              <p className="nombreReq">Nombre rquerido!</p>
+            {errors.email?.type === "pattern" && (
+              <p className="emailReq">Formato de Email incorrecto!</p>
             )}
           </div>
-          <div className="contApellido">
-            <input
-              className="apellidoInput"
-              type={"text"}
-              placeholder="Apellido"
-              {...register("apellido", {
-                required: true,
-              })}
-            />
-            {errors.apellido?.type === "required" && (
-              <p className="apellidoReq">Apellido rquerido!</p>
-            )}
+          <div className="numeroDireccion">
+            <div className="numeroCont">
+              <input
+                className="numeroInput"
+                type={"number"}
+                placeholder="Numero de telefono"
+                {...register("telefono", {
+                  required: true,
+                })}
+              />
+            </div>
+            <div className="direcCont">
+              <input
+                className="direcInput"
+                type={"text"}
+                placeholder="Direccion"
+                {...register("direccion", {
+                  required: true,
+                })}
+              />
+            </div>
           </div>
-        </div>
-        <div className="emailCont">
-          <input
-            className="emailInput"
-            type={"text"}
-            placeholder="Email"
-            {...register("email", {
-              pattern:
-                /^(([^<>()\[\]\\.,;:\s@”]+(\.[^<>()\[\]\\.,;:\s@”]+)*)|(“.+”))@((\[[0–9]{1,3}\.[0–9]{1,3}\.[0–9]{1,3}\.[0–9]{1,3}])|(([a-zA-Z\-0–9]+\.)+[a-zA-Z]{2,}))$/,
-            })}
-          />
-          {errors.email?.type === "pattern" && (
-            <p className="emailReq">Formato de Email incorrecto!</p>
-          )}
-        </div>
-        <div className="numeroDireccion">
-          <div className="numeroCont">
-            <input
-              className="numeroInput"
-              type={"number"}
-              placeholder="Numero de telefono"
-              {...register("telefono", {
-                required: true,
-              })}
-            />
-          </div>
-          <div className="direcCont">
-            <input
-              className="direcInput"
-              type={"text"}
-              placeholder="Direccion"
-              {...register("direccion", {
-                required: true,
-              })}
-            />
-          </div>
-        </div>
 
-        <button className="ctaCkeckout" type={"submit"}>
-          <span className="hover-underline-animationCheckout"> Enviar! </span>
-          <svg
-            id="arrow-horizontal"
-            xmlns="http://www.w3.org/2000/svg"
-            width="30"
-            height="10"
-            viewBox="0 0 46 16"
-          >
-            <path
-              id="Path_10"
-              data-name="Path 10"
-              d="M8,0,6.545,1.455l5.506,5.506H-30V9.039H12.052L6.545,14.545,8,16l8-8Z"
-              transform="translate(30)"
-            ></path>
-          </svg>
-        </button>
-      </form>
+          <button className="ctaCkeckout" type={"submit"}>
+            <span className="hover-underline-animationCheckout"> Enviar! </span>
+            <svg
+              id="arrow-horizontal"
+              xmlns="http://www.w3.org/2000/svg"
+              width="30"
+              height="10"
+              viewBox="0 0 46 16"
+            >
+              <path
+                id="Path_10"
+                data-name="Path 10"
+                d="M8,0,6.545,1.455l5.506,5.506H-30V9.039H12.052L6.545,14.545,8,16l8-8Z"
+                transform="translate(30)"
+              ></path>
+            </svg>
+          </button>
+        </form>
+
+        <div className="resumenInfo">
+          <span className="tituloResumen">Resumen</span>
+          {cart.map((it) => {
+            return (
+              <div className="nombreCantidad">
+                <p>
+                  <span className="nombreResumen">
+                    {it.nombre} X{it.quantity}
+                  </span>
+                </p>
+                <p>Subtotal: {it.precio * it.quantity}$</p>
+              </div>
+            );
+          })}
+          <p className="totalContResumen">
+            <span className="totalResumen">Total:</span> {total}$
+          </p>
+        </div>
+      </div>
 
       <div className="contenedorImgCheck"></div>
     </div>

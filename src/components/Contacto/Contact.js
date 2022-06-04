@@ -2,6 +2,7 @@ import React from "react";
 import "./Contact.css";
 import emailjs from "@emailjs/browser";
 import imagenContacto from "../images/bombonHeladoCompania.jpg";
+import swal from "sweetalert";
 
 const Contact = () => {
   const enviarEmail = (e) => {
@@ -15,6 +16,11 @@ const Contact = () => {
       )
       .then((res) => console.log(res))
       .catch((error) => console.log(error));
+    swal({
+      title: "Mensaje enviado!",
+      text: `Nos contactaremos a la brevedad`,
+      icon: "success",
+    });
   };
 
   return (
