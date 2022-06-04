@@ -58,11 +58,13 @@
         gap: 15px;
         flex-flow: column-reverse;
     }
-    .saboresCrema, 
-    .saboresAgua{
+
+    .saboresCrema,
+    .saboresAgua {
         text-align: center;
     }
-    .listaSaboresElegidos{
+
+    .listaSaboresElegidos {
         text-align: center;
     }
 }
