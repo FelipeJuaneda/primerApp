@@ -72,7 +72,7 @@ const Checkout = () => {
                 })}
               />
               {errors.nombre?.type === "required" && (
-                <p className="nombreReq">Nombre rquerido!</p>
+                <p className="nombreReq">Nombre requerido!</p>
               )}
             </div>
             <div className="contApellido">
@@ -85,7 +85,7 @@ const Checkout = () => {
                 })}
               />
               {errors.apellido?.type === "required" && (
-                <p className="apellidoReq">Apellido rquerido!</p>
+                <p className="apellidoReq">Apellido requerido!</p>
               )}
             </div>
           </div>
