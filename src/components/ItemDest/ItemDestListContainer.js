@@ -4,6 +4,7 @@ import ProductList from "../Products/ProductList";
 import { useAppContext } from "../context/AppContext";
 import "./Items.css";
 import "../Products/Products.css";
+import { Link } from "react-router-dom";
 
 const ItemDestListContainer = () => {
   const { products, productos } = useAppContext();
@@ -16,8 +17,8 @@ const ItemDestListContainer = () => {
       </div>
       <div>
         <div>Selecciona categoria</div>
-        <span>Palitos</span>
-        <span>Tortas Heladas</span>
+        <Link to={"/items/palito"}>Palitos</Link>
+        <Link to={"/items/torta"}>Tortas Heladas</Link>
       </div>
       <div className="contenedorProductos">
         <ProductList productos={productos} />

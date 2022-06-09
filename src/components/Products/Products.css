@@ -1,24 +1,24 @@
-.contenedorProductos{
-    display: flex;
-    gap: 60px;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    padding: 20px 0 20px 0
+.contenedorProductos {
+  display: flex;
+  gap: 60px;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  padding: 20px 0 20px 0;
 }
-.productCont{
-    padding: 20px 20px 0 20px;
-    background-color: var(--color-verdeTransparente);
+.productCont {
+  padding: 20px 20px 0 20px;
+  background-color: var(--color-verdeTransparente);
 }
-.imageProduct{
-    width: 250px;
-    height: 250px;
+.imageProduct {
+  width: 250px;
+  height: 250px;
 }
 
-.precioAñadir{
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    flex-flow: column;
-    padding-top: 16px;
+.precioAñadir {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-flow: column;
+  padding-top: 16px;
 }

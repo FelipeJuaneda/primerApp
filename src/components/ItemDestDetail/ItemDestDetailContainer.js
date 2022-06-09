@@ -7,14 +7,16 @@ import "./ItemDestDetail.css";
 
 const ItemDestDetailContainer = () => {
   //parametro id en link
-  const { itemId } = useParams();
+  // const { itemId } = useParams();
+  const { category } = useParams();
+
   const [helados, setHelados] = useState({});
   const { products} = useAppContext();
 
   //seteo el detalle si se encuentra el id a helados
   useEffect(() => {
-    setHelados(products.find((h) => h.id == itemId));
-  }, [itemId, products]);
+    setHelados(products.find((h) => h.id == category));
+  }, [category, products]);
 
   return (
     <div>
