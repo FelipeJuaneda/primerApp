@@ -2,9 +2,9 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import ItemCount from "../ItemCount/ItemCount";
 import SaboresContainer from "../Sabores/SaboresContainer";
-import "./ItemDetail.css";
+import "./ItemDestDetail.css";
 
-const ItemDetail = ({ item }) => {
+const ItemDestDetail = ({ item }) => {
   //estado de terminar compra
   const [terminarCompra, setTerminarCompra] = useState(false);
   //funcion desaparece boton añadir, y agrega terminar compra
@@ -65,4 +65,4 @@ const ItemDetail = ({ item }) => {
   );
 };
 
-export default ItemDetail;
+export default ItemDestDetail;

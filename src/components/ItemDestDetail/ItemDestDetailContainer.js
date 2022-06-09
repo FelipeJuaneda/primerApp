@@ -1,15 +1,15 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import ItemDetail from "./ItemDetail";
 import { useAppContext } from "../context/AppContext";
 import GifReload from "../images/heladoGif.gif";
-import "./ItemDetail.css";
+import ItemDestDetail from "./ItemDestDetail";
+import "./ItemDestDetail.css";
 
-const ItemDetailContainer = () => {
+const ItemDestDetailContainer = () => {
   //parametro id en link
   const { itemId } = useParams();
   const [helados, setHelados] = useState({});
-  const { products } = useAppContext();
+  const { products} = useAppContext();
 
   //seteo el detalle si se encuentra el id a helados
   useEffect(() => {
@@ -19,7 +19,7 @@ const ItemDetailContainer = () => {
   return (
     <div>
       {helados ? (
-        <ItemDetail item={helados} />
+        <ItemDestDetail item={helados} />
       ) : (
         <img className="gifHelado" src={GifReload} alt="gif de helado reload" />
       )}
@@ -27,4 +27,4 @@ const ItemDetailContainer = () => {
   );
 };
 
-export default ItemDetailContainer;
+export default ItemDestDetailContainer;

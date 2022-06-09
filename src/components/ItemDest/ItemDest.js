@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import ItemCount from "../ItemCount/ItemCount";
 import "./Items.css";
 
-const Item = (item) => {
+const ItemDest = (item) => {
   //funcion cantidad de productos agregados
   const onAdd = (qty) => {
     console.log(qty);
@@ -32,4 +32,4 @@ const Item = (item) => {
   );
 };
 
-export default Item;
+export default ItemDest;

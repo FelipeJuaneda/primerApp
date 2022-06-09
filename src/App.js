@@ -1,14 +1,15 @@
 import "./App.css";
 import NavBar from "./components/NavBar/NavBar";
 import Main from "./components/Main/Main";
-import ItemListContainer from "./components/Item/ItemListContainer";
-import ItemDetailContainer from "./components/ItemDetail/ItemDetailContainer";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Cart from "./components/Cart/Cart";
 import CartContextProvider from "./components/context/CartContext";
 import AppContextProvider from "./components/context/AppContext";
 import Contact from "./components/Contacto/Contact";
 import Checkout from "./components/Checkout/Checkout";
+import ProductDetailCont from "./components/ProductsDetail/ProductDetailCont";
+import ItemDestListContainer from "./components/ItemDest/ItemDestListContainer";
+import ItemDestDetailContainer from "./components/ItemDestDetail/ItemDestDetailContainer";
 
 function App() {
   return (
@@ -19,8 +20,9 @@ function App() {
             <NavBar />
             <Routes>
               <Route path="/" element={<Main />} />
-              <Route path="/items" element={<ItemListContainer />} />
-              <Route path="/item/:itemId" element={<ItemDetailContainer />} />
+              <Route path="/items" element={<ItemDestListContainer />} />
+              <Route path="/item/:itemId" element={<ItemDestDetailContainer />} />
+              <Route path="/product/:prodId" element={<ProductDetailCont />} />
               <Route path="/cart" element={<Cart />} />
               <Route path="/checkout" element={<Checkout />} />
               <Route path="/contacto" element={<Contact />} />

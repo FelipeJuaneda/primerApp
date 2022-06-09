@@ -1,7 +1,7 @@
-import Item from "./Item";
 import GifReload from "../images/heladoGif.gif";
+import ItemDest from "./ItemDest";
 
-const ItemList = ({ products }) => {
+const ItemDestList = ({ products }) => {
   //mapeo los productos
   return (
     <>
@@ -10,7 +10,7 @@ const ItemList = ({ products }) => {
           {products.map((product) => {
             return (
               <div key={product.id}>
-                <Item
+                <ItemDest
                   nombre={product.nombre}
                   imagen={product.imagen}
                   precio={product.precio}
@@ -36,4 +36,4 @@ const ItemList = ({ products }) => {
   );
 };
 
-export default ItemList;
+export default ItemDestList;

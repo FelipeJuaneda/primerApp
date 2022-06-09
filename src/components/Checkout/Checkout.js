@@ -39,7 +39,7 @@ const Checkout = () => {
     //carta a mandar
     const cartToSave = {
       user: user,
-      cart: cartResumida,
+      cart: cart,
       total: total,
     };
     console.log(cartToSave);
