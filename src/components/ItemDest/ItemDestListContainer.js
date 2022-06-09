@@ -1,13 +1,24 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import ItemDestList from "./ItemDestList";
 import ProductList from "../Products/ProductList";
 import { useAppContext } from "../context/AppContext";
 import "./Items.css";
 import "../Products/Products.css";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 
 const ItemDestListContainer = () => {
   const { products, productos } = useAppContext();
+  const { category } = useParams();
+  const [helados, setHelados] = useState(productos);
+
+  //seteo en helados los productos filtrados
+  useEffect(() => {
+    if (category) {
+      setHelados(productos.filter((h) => h.categoria === category));
+    } else {
+      setHelados(productos);
+    }
+  }, [category, productos]);
 
   return (
     <div>
@@ -21,7 +32,7 @@ const ItemDestListContainer = () => {
         <Link to={"/items/torta"}>Tortas Heladas</Link>
       </div>
       <div className="contenedorProductos">
-        <ProductList productos={productos} />
+        <ProductList productos={helados} />
       </div>
     </div>
   );
