@@ -1,0 +1,51 @@
+.productDetail {
+  background-color: var(--color-verdeTransparente);
+  position: relative;
+  display: flex;
+  justify-content: center;
+  gap: 32px;
+}
+
+.productDetailInfo {
+  padding-bottom: 20px;
+  width: 50%;
+}
+
+.imgProducto {
+  width: 430px;
+  height: 430px;
+  object-fit: cover;
+}
+
+.productNombre {
+  color: var(--color-cucurucho);
+  font-family: var(--fuente-nav);
+}
+
+.precioProduct {
+  font-size: 17px;
+}
+
+.descripcionContador {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  justify-content: space-around;
+  width: 50%;
+}
+
+.productDescripcion {
+  font-size: 18px;
+}
+
+.contTerminarCompraProduct {
+  position: absolute;
+  bottom: -65px;
+  left: 0;
+  right: 0;
+  height: 65px;
+  display: flex;
+  background: var(--color-verdeTransparente);
+  justify-content: center;
+  align-items: center;
+}

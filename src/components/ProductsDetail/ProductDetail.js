@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import ProductsCount from "../ItemCount/ProductsCount";
+import "./ProductDetail.css";
 
 const ProductDetail = ({ prod }) => {
   //estado de terminar compra
@@ -12,20 +13,19 @@ const ProductDetail = ({ prod }) => {
   };
 
   return (
-    <div className="itemDetailCont">
-      <div className="itemDetailInfo">
+    <div className="productDetail">
+      <div className="productDetailInfo">
         <img
-          className="imgProduct"
+          className="imgProducto"
           src={prod.imagen}
           alt="Productos de heladeria"
         />
-        <h2 className="productName">{prod.nombre}</h2>
-        <h2 className="productDescrip">{prod.descripcion}</h2>
-        <span className="priceProduct">Precio: {prod.precio}$</span>
+        <h2 className="productNombre">{prod.nombre}</h2>
+        <span className="precioProduct">Precio: {prod.precio}$</span>
       </div>
 
       {terminarCompra ? (
-        <div className="contTerminarCompra">
+        <div className="contTerminarCompraProduct">
           <Link className="botonTerminarCompra" to="/cart">
             <span className="hover-underline-animationTerminar">
               {" "}
@@ -34,12 +34,15 @@ const ProductDetail = ({ prod }) => {
           </Link>
         </div>
       ) : (
-        <ProductsCount
-          stock={prod.stock}
-          inicial={1}
-          onAdd={onAdd}
-          id={prod.id}
-        />
+        <div className="descripcionContador">
+          <p className="productDescripcion">{prod.descripcion}</p>
+          <ProductsCount
+            stock={prod.stock}
+            inicial={1}
+            onAdd={onAdd}
+            id={prod.id}
+          />
+        </div>
       )}
       <Link className="volverAtrasDetail" to={"/items"}>
         <svg
