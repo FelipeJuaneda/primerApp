@@ -7,18 +7,42 @@
   padding: 20px 0 20px 0;
 }
 .productCont {
-  padding: 20px 20px 0 20px;
+  padding: 9px 20px 9px 20px;
   background-color: var(--color-verdeTransparente);
-}
-.imageProduct {
-  width: 250px;
-  height: 250px;
+  width: 290px;
+  height: 395px;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  justify-content: center;
 }
 
+.imageProduct {
+  width: 220px;
+  height: 220px;
+  object-fit: cover;
+  filter: drop-shadow(0px 9px 13px rgba(0, 0, 0, 0.5));
+  transition: all 0.3s;
+}
+.imageProduct:hover {
+  transform: translateY(-4px);
+  filter: drop-shadow(0px 0px 13px rgba(0, 0, 0, 0.5));
+}
+.productName {
+  font-size: 17px;
+  padding-top: 13px;
+  font-family: var(--fuente-nav);
+}
+.priceProduct {
+  font-size: 17.3px;
+  text-decoration: underline;
+  text-underline-position: under;
+}
 .precioAñadir {
   display: flex;
   justify-content: space-around;
   align-items: center;
   flex-flow: column;
-  padding-top: 16px;
+  padding-top: 13px;
+  gap: 15px;
 }

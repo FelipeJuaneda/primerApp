@@ -2,9 +2,10 @@ import React, { useEffect, useState } from "react";
 import ItemDestList from "./ItemDestList";
 import ProductList from "../Products/ProductList";
 import { useAppContext } from "../context/AppContext";
+import { Link, NavLink, useParams } from "react-router-dom";
 import "./Items.css";
 import "../Products/Products.css";
-import { Link, useParams } from "react-router-dom";
+import "./Categorias.css";
 
 const ItemDestListContainer = () => {
   const { products, productos } = useAppContext();
@@ -23,13 +24,36 @@ const ItemDestListContainer = () => {
   return (
     <div>
       <h2 className="productDestacadosTitle">Productos Destacados</h2>
+
       <div className="contenedorProductosDestacados">
         <ItemDestList products={products} />
       </div>
-      <div>
-        <div>Selecciona categoria</div>
-        <Link to={"/items/palito"}>Palitos</Link>
-        <Link to={"/items/torta"}>Tortas Heladas</Link>
+
+      <div className="categoriasCont">
+        <div className="tituloCategorias">Categorias</div>
+        <div className="categoriaItems">
+          <NavLink
+            activeclassname="categoriaActiva"
+            className={"itemCat"}
+            to={"/items/palito"}
+          >
+            Palitos
+          </NavLink>
+          <NavLink
+            activeclassname="categoriaActiva"
+            className={"itemCat"}
+            to={"/items/torta"}
+          >
+            Tortas Heladas
+          </NavLink>
+          <NavLink
+            activeclassname="categoriaActiva"
+            className={"itemCat"}
+            to={"/items/alfajor"}
+          >
+            Alfajores
+          </NavLink>
+        </div>
       </div>
       <div className="contenedorProductos">
         <ProductList productos={helados} />
