@@ -7,7 +7,6 @@
 
 - 📫 Email: **felipejua9@gmail.com**
 
-- 📄 Tuve mi primera experiencia laboral como programador con un pequeño proyecto para Nutricionista [https://felipejuaneda.github.io/nutricion-page/](https://felipejuaneda.github.io/nutricion-page/)
 
 <h3 align="left">Connect with me:</h3>
 <p align="left">
