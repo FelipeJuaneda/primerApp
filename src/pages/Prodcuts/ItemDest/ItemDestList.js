@@ -1,4 +1,4 @@
-import GifReload from "../images/heladoGif.gif";
+import GifReload from "../../../images/heladoGif.gif";
 import ItemDest from "./ItemDest";
 
 const ItemDestList = ({ products }) => {

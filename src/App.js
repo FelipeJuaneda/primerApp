@@ -1,15 +1,15 @@
-import "./App.css";
-import NavBar from "./components/NavBar/NavBar";
-import Main from "./components/Main/Main";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import Cart from "./components/Cart/Cart";
-import CartContextProvider from "./components/context/CartContext";
-import AppContextProvider from "./components/context/AppContext";
-import Contact from "./components/Contact/Contact";
+import AppContextProvider from "./context/AppContext";
+import CartContextProvider from "./context/CartContext";
+import ItemDestListContainer from "./pages/Prodcuts/ItemDest/ItemDestListContainer";
+import ItemDestDetailContainer from "./pages/Details/ItemDestDetail/ItemDestDetailContainer";
+import ProductDetailCont from "./pages/Details/ProductsDetail/ProductDetailCont";
+import Cart from "./pages/Cart/Cart";
+import Contact from "./pages/Contact/Contact";
+import Main from "./pages/Main/Main";
+import NavBar from "./layouts/NavBar/NavBar";
 import Checkout from "./components/Checkout/Checkout";
-import ProductDetailCont from "./components/ProductsDetail/ProductDetailCont";
-import ItemDestListContainer from "./components/ItemDest/ItemDestListContainer";
-import ItemDestDetailContainer from "./components/ItemDestDetail/ItemDestDetailContainer";
+import "./App.css";
 
 function App() {
   return (

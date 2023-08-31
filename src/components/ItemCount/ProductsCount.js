@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import { useAppContext } from "../context/AppContext";
-import { useCartContext } from "../context/CartContext";
-import "./ProductsCount.css"
+import { useAppContext } from "../../context/AppContext";
+import { useCartContext } from "../../context/CartContext";
+import "./ProductsCount.css";
 
 const ProductsCount = ({ stock, onAdd, inicial, id }) => {
   //estado de contador

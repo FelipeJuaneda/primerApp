@@ -1,120 +1,122 @@
 .checkoutContainer {
-    display: flex;
-    height: 90vh;
+  display: flex;
+  height: 90vh;
 }
 
 .formularioResumenCont {
-    width: 50%;
-    position: relative;
+  width: 50%;
+  position: relative;
 }
 
 .resumenInfo {
-    position: absolute;
-    top: 30px;
-    right: 0;
-    left: 0;
-    background-color: var(--color-verdeParrafo);
+  position: absolute;
+  top: 30px;
+  right: 0;
+  left: 0;
+  background-color: var(--color-verdeParrafo);
 }
 
 .tituloResumen {
-    font-size: 20px;
-    font-family: var(--fuente-parrafo);
-    text-decoration: underline;
+  font-size: 20px;
+  font-family: var(--fuente-parrafo);
+  text-decoration: underline;
 }
 
 .nombreCantidad {
-    display: flex;
-    gap: 35px;
-    justify-content: center;
-    padding: 5px 0;
+  display: flex;
+  gap: 35px;
+  justify-content: center;
+  padding: 5px 0;
 }
 
 .nombreResumen {
-    color: var(--color-blancoLindo);
+  color: var(--color-blancoLindo);
 }
 
 .totalResumen {
-    text-transform: uppercase;
+  text-transform: uppercase;
 }
 
 .totalContResumen {
-    background: var(--color-transparenteClaro);
-    padding: 5px 0;
+  background: var(--color-transparenteClaro);
+  padding: 5px 0;
 }
 
 .checkoutContainer .formularioCheckout {
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    background-color: var(--color-verdeTransparente);
-    gap: 18px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--color-verdeTransparente);
+  gap: 18px;
 }
 
 .checkoutContainer .contenedorImgCheck {
-    background-image: url(../images/conoDifuminado.jpg);
-    width: 50%;
-    background-position: center;
-    background-size: cover;
+  background-image: url(../../images/conoDifuminado.jpg);
+  width: 50%;
+  background-position: center;
+  background-size: cover;
 }
 
 /* nombre y apellido */
 .nombreApellido {
-    display: flex;
-    gap: 15px;
-    width: 75%;
-    justify-content: center;
+  display: flex;
+  gap: 15px;
+  width: 75%;
+  justify-content: center;
 }
 
-.contNombre, .contApellido {
-    width: 50%;
+.contNombre,
+.contApellido {
+  width: 50%;
 }
 
 .numeroDireccion {
-    display: flex;
-    gap: 15px;
+  display: flex;
+  gap: 15px;
 }
 
-.nombreInput, .apellidoInput {
-    width: 100%;
-    height: 29px;
-    border-style: none;
-    border-radius: 5px;
-
+.nombreInput,
+.apellidoInput {
+  width: 100%;
+  height: 29px;
+  border-style: none;
+  border-radius: 5px;
 }
 
 /* email */
 .emailCont {
-    width: 75%;
+  width: 75%;
 }
 
 .emailInput {
-    width: 100%;
-    height: 29px;
-    border-style: none;
-    border-radius: 5px;
-    text-align: center;
+  width: 100%;
+  height: 29px;
+  border-style: none;
+  border-radius: 5px;
+  text-align: center;
 }
 
 /* numero y direccion */
 .numeroDireccion {
-    display: flex;
-    gap: 15px;
-    width: 75%;
-    justify-content: center;
-
+  display: flex;
+  gap: 15px;
+  width: 75%;
+  justify-content: center;
 }
 
-.numeroCont, .direcCont {
-    width: 50%;
+.numeroCont,
+.direcCont {
+  width: 50%;
 }
 
-.numeroInput, .direcInput {
-    width: 100%;
-    height: 29px;
-    border-style: none;
-    border-radius: 5px;
+.numeroInput,
+.direcInput {
+  width: 100%;
+  height: 29px;
+  border-style: none;
+  border-radius: 5px;
 }
 
 .nombreInput,
@@ -122,94 +124,87 @@
 .numeroInput,
 .direcInput,
 .emailInput::placeholder {
-    text-align: center;
+  text-align: center;
 }
-
-
 
 /* boton enviar */
 .ctaCkeckout {
-    border: none;
-    background: none;
-    font-family: var(--fuente-nav);
-    cursor: pointer;
-    padding-top: 25px;
+  border: none;
+  background: none;
+  font-family: var(--fuente-nav);
+  cursor: pointer;
+  padding-top: 25px;
 }
 
 .ctaCkeckout span {
-    padding-bottom: 7px;
-    letter-spacing: 4px;
-    font-size: 18px;
-    padding-right: 15px;
-    text-transform: uppercase;
+  padding-bottom: 7px;
+  letter-spacing: 4px;
+  font-size: 18px;
+  padding-right: 15px;
+  text-transform: uppercase;
 }
 
 .ctaCkeckout svg {
-    transform: translateX(-8px);
-    transition: all 0.3s ease;
+  transform: translateX(-8px);
+  transition: all 0.3s ease;
 }
 
 .ctaCkeckout svg path {
-    fill: var(--color-cucurucho);
+  fill: var(--color-cucurucho);
 }
 
 .ctaCkeckout:hover svg {
-    transform: translateX(0);
+  transform: translateX(0);
 }
 
 .ctaCkeckout:active svg {
-    transform: scale(0.9);
+  transform: scale(0.9);
 }
 
 .hover-underline-animationCheckout {
-    position: relative;
-    color: var(--color-blancoLindo);
-    padding-bottom: 20px;
+  position: relative;
+  color: var(--color-blancoLindo);
+  padding-bottom: 20px;
 }
 
 .hover-underline-animationCheckout:after {
-    content: "";
-    position: absolute;
-    width: 100%;
-    transform: scaleX(0);
-    height: 1.5px;
-    bottom: 0;
-    left: 0;
-    background-color: var(--color-cucurucho);
-    transform-origin: bottom right;
-    transition: transform 0.25s ease-out;
+  content: "";
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 1.5px;
+  bottom: 0;
+  left: 0;
+  background-color: var(--color-cucurucho);
+  transform-origin: bottom right;
+  transition: transform 0.25s ease-out;
 }
 
 .ctaCkeckout:hover .hover-underline-animationCheckout:after {
-    transform: scaleX(1);
-    transform-origin: bottom left;
+  transform: scaleX(1);
+  transform-origin: bottom left;
 }
-
-
-
 
 /* MEDIAS QUERIES */
-@media screen and (max-width:1200px) {
-    .checkoutContainer {
-        height: 92vh;
-    }
-
-
+@media screen and (max-width: 1200px) {
+  .checkoutContainer {
+    height: 92vh;
+  }
 }
 
-@media screen and (max-width:900px) {
-    .formularioResumenCont {
-        width: 100%;
-    }
+@media screen and (max-width: 900px) {
+  .formularioResumenCont {
+    width: 100%;
+  }
 
-    .checkoutContainer .formularioCheckout {
-        width: 100%;
-        background-image: url(../images/conoDifuminado.jpg);
-        background-size: cover;
-        background-blend-mode: multiply;
-    }
+  .checkoutContainer .formularioCheckout {
+    width: 100%;
+    background-image: url(../../images/conoDifuminado.jpg);
+    background-size: cover;
+    background-blend-mode: multiply;
+  }
 
-    .checkoutContainer .contenedorImgCheck {
-        display: none;
-    }
+  .checkoutContainer .contenedorImgCheck {
+    display: none;
+  }
 }

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import { useAppContext } from "../context/AppContext";
-import GifReload from "../images/heladoGif.gif";
+import { useAppContext } from "../../../context/AppContext";
+import GifReload from "../../../images/heladoGif.gif";
 import ProductDetail from "./ProductDetail";
 
 const ProductDetailCont = () => {

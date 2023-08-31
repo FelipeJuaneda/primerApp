@@ -1,16 +1,16 @@
 import React from "react";
 import "./Main.css";
-import videoFondo from "../videos/heladoDerretido.mp4";
+import videoFondo from "../../videos/heladoDerretido.mp4";
 import { Cursor, useTypewriter } from "react-simple-typewriter";
 import { Swiper, SwiperSlide } from "swiper/react";
+import imgUno from "../../images/salsa.jpg";
+import imgDos from "../../images/tachos.jpg";
+import imgTres from "../../images/bombonHeladoCompania.jpg";
+import { A11y, Navigation, Pagination, Scrollbar } from "swiper";
 import "swiper/css";
 import "swiper/css/bundle";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
-import imgUno from "../images/salsa.jpg";
-import imgDos from "../images/tachos.jpg";
-import imgTres from "../images/bombonHeladoCompania.jpg";
-import { A11y, Navigation, Pagination, Scrollbar } from "swiper";
 
 function MainComp() {
   //Typewriter para el titulo

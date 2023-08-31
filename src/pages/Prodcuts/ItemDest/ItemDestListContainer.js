@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from "react";
 import ItemDestList from "./ItemDestList";
-import ProductList from "../Products/ProductList";
-import { useAppContext } from "../context/AppContext";
+import ProductList from "../ProductsCategorie/ProductList";
+import { useAppContext } from "../../../context/AppContext";
 import { useParams } from "react-router-dom";
 import "./Items.css";
-import "../Products/Products.css";
-import Categories from "../Categories/Categories";
+import "../ProductsCategorie/Products.css";
+import Categories from "../../../components/Categories/Categories";
 
 const ItemDestListContainer = () => {
   const { products, productos } = useAppContext();

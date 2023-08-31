@@ -1,7 +1,7 @@
 import React from "react";
 import { addDoc, collection, getFirestore } from "firebase/firestore";
 import { useForm } from "react-hook-form";
-import { useCartContext } from "../context/CartContext";
+import { useCartContext } from "../../context/CartContext";
 import "./Checkout.css";
 import swal from "sweetalert";
 

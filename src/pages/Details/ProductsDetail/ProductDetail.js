@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import ProductsCount from "../ItemCount/ProductsCount";
+import ProductsCount from "../../../components/ItemCount/ProductsCount";
 import "./ProductDetail.css";
-import BackButtonDetail from "../BackButtonDetail/BackButtonDetail";
+import BackButtonDetail from "../../../components/BackButtonDetail/BackButtonDetail";
 
 const ProductDetail = ({ prod }) => {
   //estado de terminar compra

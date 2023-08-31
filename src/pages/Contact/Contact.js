@@ -1,6 +1,6 @@
 import React from "react";
 import emailjs from "@emailjs/browser";
-import imagenContacto from "../images/bombonHeladoCompania.jpg";
+import imagenContacto from "../../images/bombonHeladoCompania.jpg";
 import swal from "sweetalert";
 import "./Contact.css";
 

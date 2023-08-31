@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import logo from "../images/heladoLogo.png";
-import menuBurgerIcono from "../images/menuBurger.png";
+import logo from "../../images/heladoLogo.png";
+import menuBurgerIcono from "../../images/menuBurger.png";
 import "remixicon/fonts/remixicon.css";
 import CartWidget from "./CartWidget";
 import { Link, NavLink } from "react-router-dom";

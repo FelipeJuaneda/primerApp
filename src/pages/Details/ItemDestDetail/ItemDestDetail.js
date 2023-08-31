@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import ItemCount from "../ItemCount/ItemCount";
-import SaboresContainer from "../Sabores/SaboresContainer";
+import ItemCount from "../../../components/ItemCount/ItemCount";
+import SaboresContainer from "../../../components/Sabores/SaboresContainer";
 import "./ItemDestDetail.css";
-import BackButtonDetail from "../BackButtonDetail/BackButtonDetail";
+import BackButtonDetail from "../../../components/BackButtonDetail/BackButtonDetail";
 
 const ItemDestDetail = ({ item }) => {
   //estado de terminar compra

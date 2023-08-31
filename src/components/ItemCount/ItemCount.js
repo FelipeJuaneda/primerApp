@@ -1,6 +1,6 @@
 import { React, useState } from "react";
-import { useAppContext } from "../context/AppContext";
-import { useCartContext } from "../context/CartContext";
+import { useAppContext } from "../../context/AppContext";
+import { useCartContext } from "../../context/CartContext";
 import swal from "sweetalert";
 import "./ItemCount.css";
 
