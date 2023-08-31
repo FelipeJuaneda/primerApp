@@ -8,7 +8,7 @@ A continuación, se presentan los pasos para clonar y ejecutar un proyecto de Re
 - Node.js instalado en tu máquina.
 
 ### Pasos
-1. **Clona el repositorio:** Abre tu terminal y ejecuta el siguiente comando para clonar el repositorio de GitHub: **`https://github.com/FelipeJuaneda/primerApp.git`
+1. **Clona el repositorio:** Abre tu terminal y ejecuta el siguiente comando para clonar el repositorio de GitHub: `https://github.com/FelipeJuaneda/primerApp.git`
 
 2. **Moverse hasta la carpeta del repositorio con:** `cd primerApp`
 3. **Instalar las dependencias con:** `npm install`
