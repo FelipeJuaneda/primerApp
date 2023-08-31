@@ -2,10 +2,10 @@ import React, { useEffect, useState } from "react";
 import ItemDestList from "./ItemDestList";
 import ProductList from "../Products/ProductList";
 import { useAppContext } from "../context/AppContext";
-import { Link, NavLink, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import "./Items.css";
 import "../Products/Products.css";
-import "./Categorias.css";
+import Categories from "../Categories/Categories";
 
 const ItemDestListContainer = () => {
   const { products, productos } = useAppContext();
@@ -29,32 +29,8 @@ const ItemDestListContainer = () => {
         <ItemDestList products={products} />
       </div>
 
-      <div className="categoriasCont">
-        <div className="tituloCategorias">Categorias</div>
-        <div className="categoriaItems">
-          <NavLink
-            activeclassname="categoriaActiva"
-            className={"itemCat"}
-            to={"/items/palito"}
-          >
-            Palitos
-          </NavLink>
-          <NavLink
-            activeclassname="categoriaActiva"
-            className={"itemCat"}
-            to={"/items/torta"}
-          >
-            Tortas Heladas
-          </NavLink>
-          <NavLink
-            activeclassname="categoriaActiva"
-            className={"itemCat"}
-            to={"/items/alfajor"}
-          >
-            Alfajores
-          </NavLink>
-        </div>
-      </div>
+      <Categories />
+
       <div className="contenedorProductos">
         <ProductList productos={helados} />
       </div>

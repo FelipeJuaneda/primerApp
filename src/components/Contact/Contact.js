@@ -1,8 +1,8 @@
 import React from "react";
-import "./Contact.css";
 import emailjs from "@emailjs/browser";
 import imagenContacto from "../images/bombonHeladoCompania.jpg";
 import swal from "sweetalert";
+import "./Contact.css";
 
 const Contact = () => {
   const enviarEmail = (e) => {

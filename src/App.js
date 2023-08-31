@@ -5,7 +5,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Cart from "./components/Cart/Cart";
 import CartContextProvider from "./components/context/CartContext";
 import AppContextProvider from "./components/context/AppContext";
-import Contact from "./components/Contacto/Contact";
+import Contact from "./components/Contact/Contact";
 import Checkout from "./components/Checkout/Checkout";
 import ProductDetailCont from "./components/ProductsDetail/ProductDetailCont";
 import ItemDestListContainer from "./components/ItemDest/ItemDestListContainer";

@@ -1,5 +1,5 @@
-<h1 align="center">Hola 👋, Soy Felipe Juaneda</h1>
-<h3 align="center">Estudiante de Programación full Stack</h3>
+<h1 align="center">Hola 👋, Soy Felipe Agustin Juaneda</h1>
+<h3 align="center">De 21 años, Argentino residente en Córdoba. Actualmente estudiando Programación Full Stack 👨‍🎓, e introduciéndome en este ámbito que tanto me apasiona.   Mi objetivo/meta es obtener mucha mas experiencia, ir aprendiendo y nutriendo de cada conocimiento y momentos en mi vida, para llegar a ser un muy buen programador🎯.</h3>
 
 - 🔭 Trabajando actualmente en un proyecto de React Js [Heladeria Artesanal](https://primer-app.vercel.app/) (Desplegado en Vercel)
 
@@ -7,11 +7,9 @@
 
 - 📫 Email: **felipejua9@gmail.com**
 
-- 📄 Tuve mi primera experiencia laboral como programador con un pequeño proyecto para Nutricionista [https://felipejuaneda.github.io/nutricion-page/](https://felipejuaneda.github.io/nutricion-page/)
-
 <h3 align="left">Connect with me:</h3>
 <p align="left">
-<a href="https://linkedin.com/in/felipe juaneda" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/linked-in-alt.svg" alt="felipe juaneda" height="30" width="40" /></a>
+<a href="https://www.linkedin.com/in/felipe-juaneda-8b7103190/" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/linked-in-alt.svg" alt="felipe juaneda" height="30" width="40" /></a>
 <a href="https://fb.com/felipe juaneda" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/facebook.svg" alt="felipe juaneda" height="30" width="40" /></a>
 <a href="https://instagram.com/felipejuaneda" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/instagram.svg" alt="felipejuaneda" height="30" width="40" /></a>
 </p>

@@ -1,0 +1,190 @@
+.contenedorContacto {
+  display: flex;
+  width: 100%;
+  /* height: 100vh; */
+}
+
+.imagenContactoCont {
+  width: 65%;
+}
+
+.imagenContactoCont .imgContact {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
+.formCont {
+  width: 35%;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+  background-color: var(--color-verdeTransparente);
+  gap: 30px;
+}
+
+.tituloContacto {
+  color: var(--color-blancoLindo);
+  font-size: 32px;
+  font-family: var(--fuente-nav);
+}
+
+.nombreCont,
+.apellidoCont,
+.mensajeCont {
+  display: flex;
+  flex-flow: column;
+  text-align: initial;
+  gap: 3px;
+}
+
+.nombreCont input,
+.apellidoCont input,
+.mensajeCont textarea {
+  width: 355px;
+  height: 29px;
+  border-style: none;
+  border-radius: 5px;
+}
+
+.mensajeCont textarea {
+  resize: none;
+  width: 355px;
+  height: 240px;
+}
+
+.nombreCont input:focus {
+  background-color: var(--color-verdeParrafo);
+}
+
+.apellidoCont input:focus {
+  background-color: var(--color-verdeParrafo);
+}
+
+.mensajeCont textarea:focus {
+  background-color: var(--color-verdeParrafo);
+}
+
+/* boton enviar */
+.ctaContacto {
+  border: none;
+  background: none;
+  font-family: var(--fuente-nav);
+  cursor: pointer;
+  padding-bottom: 20px;
+}
+
+.ctaContacto span {
+  padding-bottom: 7px;
+  letter-spacing: 4px;
+  font-size: 18px;
+  padding-right: 15px;
+  text-transform: uppercase;
+}
+
+.ctaContacto svg {
+  transform: translateX(-8px);
+  transition: all 0.3s ease;
+}
+
+.ctaContacto svg path {
+  fill: var(--color-cucurucho);
+}
+
+.ctaContacto:hover svg {
+  transform: translateX(0);
+}
+
+.ctaContacto:active svg {
+  transform: scale(0.9);
+}
+
+.hover-underline-animationContact {
+  position: relative;
+  color: var(--color-blancoLindo);
+  padding-bottom: 20px;
+}
+
+.hover-underline-animationContact:after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 1.5px;
+  bottom: 0;
+  left: 0;
+  background-color: var(--color-cucurucho);
+  transform-origin: bottom right;
+  transition: transform 0.25s ease-out;
+}
+
+.ctaContacto:hover .hover-underline-animationContact:after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
+/* MEDIAS QUERIES */
+@media screen and (max-width: 1350px) {
+  .imagenContactoCont {
+    width: 60%;
+  }
+  .formCont {
+    width: 40%;
+  }
+}
+
+@media screen and (max-width: 1111px) {
+  .imagenContactoCont {
+    width: 50%;
+  }
+  .formCont {
+    width: 50%;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .imagenContactoCont {
+    width: 30%;
+  }
+  .formCont {
+    width: 70%;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .imagenContactoCont {
+    display: none;
+  }
+  .formCont {
+    width: 100%;
+    background-image: url(../images/bombonHeladoCompania.jpg);
+    background-size: cover;
+    background-blend-mode: soft-light;
+    background-position: top;
+    gap: 15px;
+  }
+  .formCont .tituloContacto {
+    font-size: 20px;
+  }
+  .mensajeCont textarea {
+    height: 150px;
+  }
+  .nombreCont,
+  .apellidoCont,
+  .mensajeCont {
+    text-align: end;
+  }
+}
+@media screen and (max-width: 400px) {
+  .nombreCont,
+  .apellidoCont,
+  .mensajeCont {
+    width: 100%;
+  }
+  .nombreCont input,
+  .apellidoCont input,
+  .mensajeCont textarea {
+    width: 100%;
+  }
+}

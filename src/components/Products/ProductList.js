@@ -1,4 +1,3 @@
-import GifReload from "../images/heladoGif.gif";
 import Products from "./Products";
 import "./Products.css";
 const ProductList = ({ productos }) => {
@@ -7,16 +6,15 @@ const ProductList = ({ productos }) => {
     <>
       {productos.map((product) => {
         return (
-          <div key={product.id}>
-            <Products
-              nombre={product.nombre}
-              imagen={product.imagen}
-              precio={product.precio}
-              stock={product.stock}
-              id={product.id}
-              descripcion={product.descripcion}
-            />
-          </div>
+          <Products
+            key={product.id}
+            nombre={product.nombre}
+            imagen={product.imagen}
+            precio={product.precio}
+            stock={product.stock}
+            id={product.id}
+            descripcion={product.descripcion}
+          />
         );
       })}
     </>
