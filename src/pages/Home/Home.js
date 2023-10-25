@@ -1,5 +1,5 @@
 import React from "react";
-import "./Main.css";
+import "./Home.css";
 import videoFondo from "../../videos/heladoDerretido.mp4";
 import { Cursor, useTypewriter } from "react-simple-typewriter";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -12,7 +12,7 @@ import "swiper/css/bundle";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 
-function MainComp() {
+function Home() {
   //Typewriter para el titulo
   const { text } = useTypewriter({
     words: ["Helado", "Sabor", "Momento"],
@@ -66,4 +66,4 @@ function MainComp() {
   );
 }
 
-export default MainComp;
+export default Home;

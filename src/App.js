@@ -6,7 +6,7 @@ import ItemDestDetailContainer from "./pages/Details/ItemDestDetail/ItemDestDeta
 import ProductDetailCont from "./pages/Details/ProductsDetail/ProductDetailCont";
 import Cart from "./pages/Cart/Cart";
 import Contact from "./pages/Contact/Contact";
-import Main from "./pages/Main/Main";
+import Home from "./pages/Home/Home";
 import NavBar from "./layouts/NavBar/NavBar";
 import Checkout from "./components/Checkout/Checkout";
 import "./App.css";
@@ -19,7 +19,7 @@ function App() {
           <BrowserRouter>
             <NavBar />
             <Routes>
-              <Route path="/" element={<Main />} />
+              <Route path="/" element={<Home />} />
               <Route path="/items" element={<ItemDestListContainer />} />
               <Route
                 path="/items/:category"
