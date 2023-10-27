@@ -1,199 +1,150 @@
-import * as React from "react";
-import PropTypes from "prop-types";
-import AppBar from "@mui/material/AppBar";
-import Box from "@mui/material/Box";
-import CssBaseline from "@mui/material/CssBaseline";
-import Divider from "@mui/material/Divider";
-import Drawer from "@mui/material/Drawer";
-import IconButton from "@mui/material/IconButton";
-import List from "@mui/material/List";
-import ListItem from "@mui/material/ListItem";
-import ListItemButton from "@mui/material/ListItemButton";
-import ListItemText from "@mui/material/ListItemText";
+import React, { useState } from "react";
+import logo from "../../images/heladoLogo.png";
+import { Link, NavLink } from "react-router-dom";
 import MenuIcon from "@mui/icons-material/Menu";
-import Toolbar from "@mui/material/Toolbar";
-import Typography from "@mui/material/Typography";
-import Button from "@mui/material/Button";
+import CartWidget from "./CartWidget";
+import {
+  AppBar,
+  Box,
+  Drawer,
+  IconButton,
+  List,
+  ListItemButton,
+  ListItemText,
+  Toolbar,
+} from "@mui/material";
 
-const drawerWidth = 240;
-const navItems = ["Home", "About", "Contact"];
+function NavBar(props) {
+  const [drawerOpen, setDrawerOpen] = useState(false);
 
-function DrawerAppBar(props) {
-  const { window } = props;
-  const [mobileOpen, setMobileOpen] = React.useState(false);
-
-  const handleDrawerToggle = () => {
-    setMobileOpen((prevState) => !prevState);
+  const handleDrawerOpen = () => {
+    setDrawerOpen(true);
   };
 
-  const drawer = (
-    <Box onClick={handleDrawerToggle} sx={{ textAlign: "center" }}>
-      <Typography variant="h6" sx={{ my: 2 }}>
-        MUI
-      </Typography>
-      <Divider />
-      <List>
-        {navItems.map((item) => (
-          <ListItem key={item} disablePadding>
-            <ListItemButton sx={{ textAlign: "center" }}>
-              <ListItemText primary={item} />
-            </ListItemButton>
-          </ListItem>
-        ))}
-      </List>
-    </Box>
-  );
-
-  const container =
-    window !== undefined ? () => window().document.body : undefined;
+  const handleDrawerClose = () => {
+    setDrawerOpen(false);
+  };
 
   return (
-    <Box sx={{ display: "flex" }}>
-      <CssBaseline />
-      <AppBar component="nav">
-        <Toolbar>
+    <AppBar
+      sx={{
+        width: "100%",
+        top: 0,
+        zIndex: 100,
+        backgroundColor: "#5c6829d4",
+        transition: "all 0.7s",
+      }}
+      position="static"
+    >
+      <Toolbar
+        sx={{
+          display: "flex",
+          alignItems: "center",
+          justifyContent: { xs: "space-evenly", lg: "space-around" },
+        }}
+      >
+        <Link
+          to="/"
+          style={{
+            zIndex: 10,
+          }}
+        >
+          <Box
+            sx={{
+              width: { xs: "40px", sm: "55px", md: "65px" },
+              padding: "10px 0",
+            }}
+          >
+            <img
+              src={logo}
+              width={"100%"}
+              alt="Logo de Helado para pagina de Heladeria"
+            />
+          </Box>
+        </Link>
+
+        <Box display={{ xs: "block", md: "none" }}>
           <IconButton
-            color="inherit"
-            aria-label="open drawer"
             edge="start"
-            onClick={handleDrawerToggle}
-            sx={{ mr: 2, display: { sm: "none" } }}
+            color="inherit"
+            aria-label="menu"
+            onClick={handleDrawerOpen}
           >
             <MenuIcon />
           </IconButton>
-          <Typography
-            variant="h6"
-            component="div"
-            sx={{ flexGrow: 1, display: { xs: "none", sm: "block" } }}
-          >
-            MUI
-          </Typography>
-          <Box sx={{ display: { xs: "none", sm: "block" } }}>
-            {navItems.map((item) => (
-              <Button key={item} sx={{ color: "#fff" }}>
-                {item}
-              </Button>
-            ))}
-          </Box>
-        </Toolbar>
-      </AppBar>
-      <nav>
-        <Drawer
-          container={container}
-          variant="temporary"
-          open={mobileOpen}
-          onClose={handleDrawerToggle}
-          ModalProps={{
-            keepMounted: true, // Better open performance on mobile.
-          }}
+        </Box>
+        <List
           sx={{
-            display: { xs: "block", sm: "none" },
-            "& .MuiDrawer-paper": {
-              boxSizing: "border-box",
-              width: drawerWidth,
-            },
+            display: { xs: "none", md: "flex" },
+            gap: "1rem",
+            padding: "0",
+            color: "#fccc9a",
           }}
+          component="nav"
+          aria-label="main mailbox folders"
         >
-          {drawer}
-        </Drawer>
-      </nav>
-    </Box>
+          <ListItemButton
+            button
+            component={NavLink}
+            to="/"
+            onClick={handleDrawerClose}
+          >
+            <ListItemText primary="Inicio" />
+          </ListItemButton>
+          <ListItemButton
+            button
+            component={NavLink}
+            to="/items"
+            onClick={handleDrawerClose}
+          >
+            <ListItemText primary="Productos" />
+          </ListItemButton>
+          <ListItemButton
+            button
+            component={NavLink}
+            to="/contacto"
+            onClick={handleDrawerClose}
+          >
+            <ListItemText primary="Contacto" />
+          </ListItemButton>
+        </List>
+        <Link to={"/cart"} className="linkCarrito">
+          <CartWidget />
+        </Link>
+      </Toolbar>
+      <Drawer anchor="right" open={drawerOpen} onClose={handleDrawerClose}>
+        <div
+          role="presentation"
+          onClick={handleDrawerClose}
+          onKeyDown={handleDrawerClose}
+        >
+          <List>
+            <ListItemButton
+              component={NavLink}
+              to="/"
+              onClick={handleDrawerClose}
+            >
+              <ListItemText primary="Inicio" />
+            </ListItemButton>
+            <ListItemButton
+              component={NavLink}
+              to="/items"
+              onClick={handleDrawerClose}
+            >
+              <ListItemText primary="Productos" />
+            </ListItemButton>
+            <ListItemButton
+              component={NavLink}
+              to="/contacto"
+              onClick={handleDrawerClose}
+            >
+              <ListItemText primary="Contacto" />
+            </ListItemButton>
+          </List>
+        </div>
+      </Drawer>
+    </AppBar>
   );
 }
 
-export default DrawerAppBar;
-
-// import React, { useState } from "react";
-// import logo from "../../images/heladoLogo.png";
-// import menuBurgerIcono from "../../images/menuBurger.png";
-// import "remixicon/fonts/remixicon.css";
-// import CartWidget from "./CartWidget";
-// import { Link, NavLink } from "react-router-dom";
-// import "./NavBar.css";
-
-// function HeaderComp(props) {
-//   //FUNCION CLICK PARA MENU BURGER
-//   const [clicked, setClicked] = useState(false);
-//   const handleClick = () => {
-//     setClicked(!clicked);
-//   };
-
-//   return (
-//     <header className="header">
-//       <nav className="navegador">
-//         {/* LOGO */}
-//         <Link className="linkLogo" to="/">
-//           <img
-//             className="logoImg"
-//             src={logo}
-//             alt="Logo de Helado para pagina de Heladeria"
-//           />
-//         </Link>
-
-//         {/* MENU BURGER */}
-//         <div className="contenedorBurger" onClick={handleClick}>
-//           <img
-//             className="iconoBurger"
-//             src={menuBurgerIcono}
-//             alt="Menu Hamburguesa"
-//           />
-//         </div>
-
-//         {/* LISTA DESORDENADA */}
-//         <ul
-//           className={`listaDesordenada ${clicked ? "toggleBurger" : ""}`}
-//           id="lista"
-//         >
-//           <li>
-//             <NavLink
-//               onClick={handleClick}
-//               to={"/"}
-//               activeclassname="active"
-//               className="link"
-//             >
-//               Inicio
-//             </NavLink>
-//           </li>
-//           <li>
-//             <NavLink
-//               onClick={handleClick}
-//               to={"/items"}
-//               activeclassname="active"
-//               className="link"
-//             >
-//               Productos
-//             </NavLink>
-//           </li>
-//           <li>
-//             <NavLink
-//               onClick={handleClick}
-//               to={"/contacto"}
-//               activeclassname="active"
-//               className="link"
-//             >
-//               Contacto
-//             </NavLink>
-//           </li>
-
-//           <div className="redesNav">
-//             <a href="https://www.instagram.com/felipejuaneda/">
-//               <i className="ri-instagram-line"></i>
-//             </a>
-//             <a href="https://web.whatsapp.com/">
-//               <i className="ri-whatsapp-line"></i>
-//             </a>
-//             <a href="https://www.facebook.com/felipe.juaneda">
-//               <i className="ri-facebook-circle-line"></i>
-//             </a>
-//           </div>
-//         </ul>
-
-//         {/* LOGO CARRITO */}
-//         <NavLink className="linkCarrito" to={"/cart"}>
-//           <CartWidget />
-//         </NavLink>
-//       </nav>
-//     </header>
-//   );
-// }
-// export default HeaderComp;
+export default NavBar;
