@@ -70,7 +70,7 @@ function NavBar(props) {
             aria-label="menu"
             onClick={handleDrawerOpen}
           >
-            <MenuIcon />
+            <MenuIcon sx={{ color: "#fccc9a" }} />
           </IconButton>
         </Box>
         <List
@@ -113,12 +113,13 @@ function NavBar(props) {
         </Link>
       </Toolbar>
       <Drawer anchor="right" open={drawerOpen} onClose={handleDrawerClose}>
-        <div
+        <Box
           role="presentation"
           onClick={handleDrawerClose}
           onKeyDown={handleDrawerClose}
+          sx={{ backgroundColor: "#5c6829d4", height: "100%" }}
         >
-          <List>
+          <List sx={{ color: "#fccc9a" }}>
             <ListItemButton
               component={NavLink}
               to="/"
@@ -141,7 +142,7 @@ function NavBar(props) {
               <ListItemText primary="Contacto" />
             </ListItemButton>
           </List>
-        </div>
+        </Box>
       </Drawer>
     </AppBar>
   );

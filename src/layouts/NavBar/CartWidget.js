@@ -1,32 +1,38 @@
 import React from "react";
 import { useCartContext } from "../../context/CartContext";
-import { Typography } from "@mui/material";
-
+import { Box, Typography } from "@mui/material";
+import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 const CartWidget = () => {
   const { cart } = useCartContext();
 
   return (
-    <div className="contenedorCarrito">
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        viewBox="0 0 24 24"
-        width="24"
-        height="24"
-      >
-        <path fill="none" d="M0 0h24v24H0z" />
-        <path
-          className="colorCarrito"
-          d="M6 9h13.938l.5-2H8V5h13.72a1 1 0 0 1 .97 1.243l-2.5 10a1 1 0 0 1-.97.757H5a1 1 0 0 1-1-1V4H2V2h3a1 1 0 0 1 1 1v6zm0 14a2 2 0 1 1 0-4 2 2 0 0 1 0 4zm12 0a2 2 0 1 1 0-4 2 2 0 0 1 0 4z"
-        />
-      </svg>
+    <Box
+      sx={{
+        position: "relative",
+        zIndex: "10",
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
+        padding: "5px",
+        backgroundColor: "#5c6829d4",
+        cursor: "pointer",
+      }}
+    >
+      <ShoppingCartIcon sx={{ color: "#fccc9a" }} />
       <Typography
-        sx={{ textDecoration: "none" }}
+        sx={{
+          textDecoration: "none",
+          position: "absolute",
+          fontSize: "14px",
+          color: "#fccc9a",
+          left: "0",
+          bottom: "0",
+        }}
         component={"span"}
-        className="contadorProductoCarrito"
       >
         {cart.length}
       </Typography>
-    </div>
+    </Box>
   );
 };
 
