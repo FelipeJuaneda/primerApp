@@ -14,17 +14,17 @@ const CartWidget = () => {
         alignItems: "center",
         justifyContent: "center",
         padding: "5px",
-        backgroundColor: "#5c6829d4",
+        backgroundColor: "primary.main",
         cursor: "pointer",
       }}
     >
-      <ShoppingCartIcon sx={{ color: "#fccc9a" }} />
+      <ShoppingCartIcon color="secondary" />
       <Typography
         sx={{
           textDecoration: "none",
           position: "absolute",
           fontSize: "14px",
-          color: "#fccc9a",
+          color: "secondary.main",
           left: "0",
           bottom: "0",
         }}

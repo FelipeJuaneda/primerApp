@@ -6,11 +6,9 @@ import CartWidget from "./CartWidget";
 import {
   AppBar,
   Box,
-  Drawer,
   IconButton,
   List,
   ListItemButton,
-  ListItemText,
   SwipeableDrawer,
   Toolbar,
   Typography,
@@ -74,12 +72,12 @@ function NavBar(props) {
 
         <Box display={{ xs: "block", md: "none" }}>
           <IconButton
+            color="secondary"
             edge="start"
-            color="inherit"
             aria-label="menu"
             onClick={handleDrawerOpen}
           >
-            <MenuIcon color="secondary" />
+            <MenuIcon />
           </IconButton>
         </Box>
         <List
@@ -99,12 +97,12 @@ function NavBar(props) {
                 to={e.to}
                 onClick={handleDrawerClose}
               >
-                <Typography color="secondary">{e.value}</Typography>
+                <Typography color="secondary.main">{e.value}</Typography>
               </ListItemButton>
             );
           })}
         </List>
-        <Link to={"/cart"} className="linkCarrito">
+        <Link to={"/cart"}>
           <CartWidget />
         </Link>
       </Toolbar>
@@ -114,8 +112,10 @@ function NavBar(props) {
         onClose={handleDrawerClose}
       >
         <Box
-          sx={{ backgroundColor: (theme) => theme.palette.primary.main }}
-          height={64}
+          sx={{
+            backgroundColor: "primary.main",
+            height: { xs: "64px", sm: "79px" },
+          }}
           role="presentation"
           onClick={handleDrawerClose}
           onKeyDown={handleDrawerClose}
@@ -131,7 +131,7 @@ function NavBar(props) {
                   to={e.to}
                   onClick={handleDrawerClose}
                 >
-                  <Typography color="secondary">{e.value}</Typography>
+                  <Typography color="secondary.main">{e.value}</Typography>
                 </ListItemButton>
               );
             })}
