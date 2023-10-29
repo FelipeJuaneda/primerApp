@@ -8,6 +8,7 @@ import "@fontsource/roboto/300.css";
 import "@fontsource/roboto/400.css";
 import "@fontsource/roboto/500.css";
 import "@fontsource/roboto/700.css";
+import { ThemeProvider, createTheme } from "@mui/material";
 
 const firebaseConfig = {
   apiKey: process.env.REACT_APP_APIKEY,
@@ -19,11 +20,25 @@ const firebaseConfig = {
   measurementId: process.env.REACT_APP_MEASUREMENTID,
 };
 
+const theme = createTheme({
+  palette: {
+    mode: "light",
+    primary: {
+      main: "#5c6829d4",
+    },
+    secondary: {
+      main: "#fccc9a",
+    },
+  },
+});
+
 const app = initializeApp(firebaseConfig);
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    <App />
+    <ThemeProvider theme={theme}>
+      <App />
+    </ThemeProvider>
   </React.StrictMode>
 );
 

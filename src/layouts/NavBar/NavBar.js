@@ -11,7 +11,9 @@ import {
   List,
   ListItemButton,
   ListItemText,
+  SwipeableDrawer,
   Toolbar,
+  Typography,
 } from "@mui/material";
 
 function NavBar(props) {
@@ -25,16 +27,22 @@ function NavBar(props) {
     setDrawerOpen(false);
   };
 
+  const listItems = [
+    { value: "Inicio", to: "/" },
+    { value: "Productos", to: "/items" },
+    { value: "Contacto", to: "/contacto" },
+  ];
+
   return (
     <AppBar
       sx={{
         width: "100%",
         top: 0,
         zIndex: 100,
-        backgroundColor: "#5c6829d4",
         transition: "all 0.7s",
       }}
       position="static"
+      color="primary"
     >
       <Toolbar
         sx={{
@@ -58,6 +66,7 @@ function NavBar(props) {
             <img
               src={logo}
               width={"100%"}
+              loading="lazy"
               alt="Logo de Helado para pagina de Heladeria"
             />
           </Box>
@@ -70,7 +79,7 @@ function NavBar(props) {
             aria-label="menu"
             onClick={handleDrawerOpen}
           >
-            <MenuIcon sx={{ color: "#fccc9a" }} />
+            <MenuIcon color="secondary" />
           </IconButton>
         </Box>
         <List
@@ -78,72 +87,57 @@ function NavBar(props) {
             display: { xs: "none", md: "flex" },
             gap: "1rem",
             padding: "0",
-            color: "#fccc9a",
           }}
           component="nav"
           aria-label="main mailbox folders"
         >
-          <ListItemButton
-            button
-            component={NavLink}
-            to="/"
-            onClick={handleDrawerClose}
-          >
-            <ListItemText primary="Inicio" />
-          </ListItemButton>
-          <ListItemButton
-            button
-            component={NavLink}
-            to="/items"
-            onClick={handleDrawerClose}
-          >
-            <ListItemText primary="Productos" />
-          </ListItemButton>
-          <ListItemButton
-            button
-            component={NavLink}
-            to="/contacto"
-            onClick={handleDrawerClose}
-          >
-            <ListItemText primary="Contacto" />
-          </ListItemButton>
+          {listItems.map((e) => {
+            return (
+              <ListItemButton
+                key={e.value}
+                component={NavLink}
+                to={e.to}
+                onClick={handleDrawerClose}
+              >
+                <Typography color="secondary">{e.value}</Typography>
+              </ListItemButton>
+            );
+          })}
         </List>
         <Link to={"/cart"} className="linkCarrito">
           <CartWidget />
         </Link>
       </Toolbar>
-      <Drawer anchor="right" open={drawerOpen} onClose={handleDrawerClose}>
+      <SwipeableDrawer
+        anchor="top"
+        open={drawerOpen}
+        onClose={handleDrawerClose}
+      >
         <Box
+          sx={{ backgroundColor: (theme) => theme.palette.primary.main }}
+          height={64}
           role="presentation"
           onClick={handleDrawerClose}
           onKeyDown={handleDrawerClose}
-          sx={{ backgroundColor: "#5c6829d4", height: "100%" }}
+          component={"div"}
         >
-          <List sx={{ color: "#fccc9a" }}>
-            <ListItemButton
-              component={NavLink}
-              to="/"
-              onClick={handleDrawerClose}
-            >
-              <ListItemText primary="Inicio" />
-            </ListItemButton>
-            <ListItemButton
-              component={NavLink}
-              to="/items"
-              onClick={handleDrawerClose}
-            >
-              <ListItemText primary="Productos" />
-            </ListItemButton>
-            <ListItemButton
-              component={NavLink}
-              to="/contacto"
-              onClick={handleDrawerClose}
-            >
-              <ListItemText primary="Contacto" />
-            </ListItemButton>
+          <List sx={{ display: "flex" }}>
+            {listItems.map((e) => {
+              return (
+                <ListItemButton
+                  sx={{ justifyContent: "center" }}
+                  key={e.value}
+                  component={NavLink}
+                  to={e.to}
+                  onClick={handleDrawerClose}
+                >
+                  <Typography color="secondary">{e.value}</Typography>
+                </ListItemButton>
+              );
+            })}
           </List>
         </Box>
-      </Drawer>
+      </SwipeableDrawer>
     </AppBar>
   );
 }
