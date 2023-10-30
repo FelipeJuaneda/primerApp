@@ -14,9 +14,9 @@ import {
   Typography,
 } from "@mui/material";
 
-function NavBar(props) {
+function NavBar() {
   const [drawerOpen, setDrawerOpen] = useState(false);
-  const location = useLocation(); // Obten la ubicación actual
+  const location = useLocation();
 
   const handleDrawerOpen = () => {
     setDrawerOpen(true);
@@ -118,6 +118,7 @@ function NavBar(props) {
         anchor="top"
         open={drawerOpen}
         onClose={handleDrawerClose}
+        onOpen={() => {}}
       >
         <Box
           sx={{

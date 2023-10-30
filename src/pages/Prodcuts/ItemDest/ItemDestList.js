@@ -1,8 +1,7 @@
-import GifReload from "../../../images/heladoGif.gif";
+import Loading from "../../../components/Loading/Loading";
 import ItemDest from "./ItemDest";
 
 const ItemDestList = ({ products }) => {
-  //mapeo los productos
   return (
     <>
       {products.length ? (
@@ -24,13 +23,7 @@ const ItemDestList = ({ products }) => {
           })}
         </>
       ) : (
-        <div>
-          <img
-            className="gifHelado"
-            src={GifReload}
-            alt="gif de helado reload"
-          />
-        </div>
+        <Loading />
       )}
     </>
   );

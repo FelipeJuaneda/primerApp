@@ -132,13 +132,13 @@ function Home() {
           >
             {imgsList.map((e) => {
               return (
-                <SwiperSlide>
+                <SwiperSlide key={e}>
                   <Box
                     sx={{ width: "100%", height: "100%", objectFit: "cover" }}
                     component={"img"}
                     loading="lazy"
                     src={e}
-                    alt="Imagenes home, en inicio de Hleaderia Artesanal"
+                    alt="Imagenes home, en inicio de Heladeria Artesanal"
                   />
                 </SwiperSlide>
               );
