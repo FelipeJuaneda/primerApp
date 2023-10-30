@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import logo from "../../images/heladoLogo.png";
-import { Link, NavLink } from "react-router-dom";
+import { Link, NavLink, useLocation } from "react-router-dom";
 import MenuIcon from "@mui/icons-material/Menu";
 import CartWidget from "./CartWidget";
 import {
@@ -16,6 +16,7 @@ import {
 
 function NavBar(props) {
   const [drawerOpen, setDrawerOpen] = useState(false);
+  const location = useLocation(); // Obten la ubicación actual
 
   const handleDrawerOpen = () => {
     setDrawerOpen(true);
@@ -85,19 +86,26 @@ function NavBar(props) {
             display: { xs: "none", md: "flex" },
             gap: "1rem",
             padding: "0",
+            fontFamily: "fontFamily.nav",
           }}
           component="nav"
           aria-label="main mailbox folders"
         >
           {listItems.map((e) => {
+            const isSelected = location.pathname === e.to;
             return (
               <ListItemButton
                 key={e.value}
                 component={NavLink}
                 to={e.to}
                 onClick={handleDrawerClose}
+                selected={isSelected}
               >
-                <Typography color="secondary.main">{e.value}</Typography>
+                <Typography
+                  color={isSelected ? "secondary.main" : "text.primary"}
+                >
+                  {e.value}
+                </Typography>
               </ListItemButton>
             );
           })}
@@ -113,6 +121,8 @@ function NavBar(props) {
       >
         <Box
           sx={{
+            display: "flex",
+            justifyContent: "center",
             backgroundColor: "primary.main",
             height: { xs: "64px", sm: "79px" },
           }}
@@ -123,6 +133,7 @@ function NavBar(props) {
         >
           <List sx={{ display: "flex" }}>
             {listItems.map((e) => {
+              const isSelected = location.pathname === e.to;
               return (
                 <ListItemButton
                   sx={{ justifyContent: "center" }}
@@ -130,8 +141,13 @@ function NavBar(props) {
                   component={NavLink}
                   to={e.to}
                   onClick={handleDrawerClose}
+                  selected={isSelected}
                 >
-                  <Typography color="secondary.main">{e.value}</Typography>
+                  <Typography
+                    color={isSelected ? "secondary.main" : "text.primary"}
+                  >
+                    {e.value}
+                  </Typography>
                 </ListItemButton>
               );
             })}

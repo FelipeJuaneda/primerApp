@@ -25,9 +25,20 @@ const theme = createTheme({
     mode: "light",
     primary: {
       main: "#5c6829d4",
+      parrafo: "#b6c073",
     },
     secondary: {
       main: "#fccc9a",
+    },
+    whiteMod: {
+      main: "#f8f7f9",
+    },
+  },
+
+  typography: {
+    fontFamily: {
+      nav: '"Noto Sans", sans-serif',
+      parrafo: '"BIZ UDMincho", serif',
     },
   },
 });
