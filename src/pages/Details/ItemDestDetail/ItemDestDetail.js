@@ -11,7 +11,6 @@ const ItemDestDetail = ({ item }) => {
   //funcion desaparece boton añadir, y agrega terminar compra
   const onAdd = (qty) => {
     setTerminarCompra(true);
-    console.log(qty);
   };
 
   return (

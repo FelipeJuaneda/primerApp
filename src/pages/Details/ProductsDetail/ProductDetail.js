@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import ProductsCount from "../../../components/ItemCount/ProductsCount";
 import "./ProductDetail.css";
 import BackButtonDetail from "../../../components/BackButtonDetail/BackButtonDetail";
 import ItemCount from "../../../components/ItemCount/ItemCount";

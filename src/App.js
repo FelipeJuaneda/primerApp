@@ -1,7 +1,7 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import AppContextProvider from "./context/AppContext";
 import CartContextProvider from "./context/CartContext";
-import ItemDestListContainer from "./pages/Prodcuts/ProductsContainer/ProductsContainer";
+import ProductsContainer from "./pages/Products/ProductsContainer/ProductsContainer";
 import ItemDestDetailContainer from "./pages/Details/ItemDestDetail/ItemDestDetailContainer";
 import ProductDetailCont from "./pages/Details/ProductsDetail/ProductDetailCont";
 import Cart from "./pages/Cart/Cart";
@@ -20,11 +20,8 @@ function App() {
             <NavBar />
             <Routes>
               <Route path="/" element={<Home />} />
-              <Route path="/items" element={<ItemDestListContainer />} />
-              <Route
-                path="/items/:category"
-                element={<ItemDestListContainer />}
-              />
+              <Route path="/items" element={<ProductsContainer />} />
+              <Route path="/items/:category" element={<ProductsContainer />} />
               <Route
                 path="/item/:itemId"
                 element={<ItemDestDetailContainer />}

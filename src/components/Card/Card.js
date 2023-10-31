@@ -1,10 +1,9 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import ItemCount from "../../../components/ItemCount/ItemCount";
 import { Box, Typography } from "@mui/material";
-import swal from "sweetalert";
+import ItemCount from "../ItemCount/ItemCount";
 
-const FeaturedProducts = ({
+const Card = ({
   id,
   nombre,
   precio,
@@ -12,30 +11,33 @@ const FeaturedProducts = ({
   imagen,
   product,
   stock,
+  linkTo,
 }) => {
   //funcion cantidad de productos agregados
   const onAdd = (qty) => {};
   return (
     <Box
-      className="cardProduct"
       sx={{
         padding: "30px",
-        backgroundColor: "primary.parrafo",
+        backgroundColor: `${
+          linkTo === "product" ? "primary.main" : "primary.parrafo"
+        }`,
         borderRadius: "10px 10px 0 0",
         position: "relative",
         height: { xs: "352px", sm: "395px" },
         width: { xs: "247px", sm: "260px" },
       }}
     >
-      <Link to={`/item/${id}`}>
+      <Link to={`/${linkTo}/${id}`}>
         <Box
           component="img"
           loading="lazy"
-          className="imgProduct"
           src={imagen}
           alt="Productos de heladeria"
           sx={{
             width: { xs: "200px", sm: "250px" },
+            height: { xs: "200px", sm: "250px" },
+            objectFit: "cover",
             filter: "drop-shadow(0px 9px 13px rgba(0, 0, 0, 0.5))",
             transition: "all 0.3s",
             "&:hover": {
@@ -45,12 +47,10 @@ const FeaturedProducts = ({
           }}
         />
       </Link>
-      <Typography component="h2" className="productName" sx={{ margin: 0 }}>
+      <Typography component="h2" sx={{ margin: 0 }}>
         {nombre}
       </Typography>
-      <Typography component="span" className="priceProduct">
-        {precio}$
-      </Typography>
+      <Typography component="span">{precio}$</Typography>
 
       <ItemCount
         product={product}
@@ -64,4 +64,4 @@ const FeaturedProducts = ({
   );
 };
 
-export default FeaturedProducts;
+export default Card;

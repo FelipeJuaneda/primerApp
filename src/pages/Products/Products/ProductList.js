@@ -1,5 +1,5 @@
 import { Box } from "@mui/material";
-import Products from "./Products";
+import Card from "../../../components/Card/Card";
 const ProductList = ({ products }) => {
   return (
     <Box
@@ -15,15 +15,17 @@ const ProductList = ({ products }) => {
     >
       {products.map((product) => {
         return (
-          <Products
-            product={product}
+          <Card
             key={product.id}
+            product={product}
+            linkTo={"product"}
             nombre={product.nombre}
             imagen={product.imagen}
             precio={product.precio}
             stock={product.stock}
             id={product.id}
             descripcion={product.descripcion}
+            saboresElegidos={null}
           />
         );
       })}

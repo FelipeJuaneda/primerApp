@@ -1,6 +1,6 @@
 import { Box, Typography } from "@mui/material";
 import Loading from "../../../components/Loading/Loading";
-import FeaturedProducts from "./FeaturedProducts";
+import Card from "../../../components/Card/Card";
 
 const FeaturedProductsList = ({ products }) => {
   return (
@@ -32,18 +32,18 @@ const FeaturedProductsList = ({ products }) => {
           <>
             {products.map((product) => {
               return (
-                <div key={product.id}>
-                  <FeaturedProducts
-                    product={product}
-                    nombre={product.nombre}
-                    imagen={product.imagen}
-                    precio={product.precio}
-                    stock={product.stock}
-                    id={product.id}
-                    descripcion={product.descripcion}
-                    saboresElegidos={product.saboresElegidos}
-                  />
-                </div>
+                <Card
+                  key={product.id}
+                  product={product}
+                  linkTo={"item"}
+                  nombre={product.nombre}
+                  imagen={product.imagen}
+                  precio={product.precio}
+                  stock={product.stock}
+                  id={product.id}
+                  descripcion={product.descripcion}
+                  saboresElegidos={product.saboresElegidos}
+                />
               );
             })}
           </>
