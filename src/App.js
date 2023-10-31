@@ -2,8 +2,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import AppContextProvider from "./context/AppContext";
 import CartContextProvider from "./context/CartContext";
 import ProductsContainer from "./pages/Products/ProductsContainer/ProductsContainer";
-import ItemDestDetailContainer from "./pages/Details/ItemDestDetail/ItemDestDetailContainer";
-import ProductDetailCont from "./pages/Details/ProductsDetail/ProductDetailCont";
+import ProductDetailCont from "./pages/Details/ProductDetailContainer/ProductDetailContainer";
 import Cart from "./pages/Cart/Cart";
 import Contact from "./pages/Contact/Contact";
 import Home from "./pages/Home/Home";
@@ -23,10 +22,13 @@ function App() {
               <Route path="/items" element={<ProductsContainer />} />
               <Route path="/items/:category" element={<ProductsContainer />} />
               <Route
-                path="/item/:itemId"
-                element={<ItemDestDetailContainer />}
+                path="/item/:prodId"
+                element={<ProductDetailCont type="featuredProduct" />}
               />
-              <Route path="/product/:prodId" element={<ProductDetailCont />} />
+              <Route
+                path="/product/:prodId"
+                element={<ProductDetailCont type="products" />}
+              />
               <Route path="/cart" element={<Cart />} />
               <Route path="/checkout" element={<Checkout />} />
               <Route path="/contacto" element={<Contact />} />

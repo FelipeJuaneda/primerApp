@@ -7,22 +7,22 @@ import Categories from "../../../components/Categories/Categories";
 import { Box } from "@mui/material";
 
 const ProductsContainer = () => {
-  const { products, productos } = useAppContext();
+  const { products, featuredProducts } = useAppContext();
   const { category } = useParams();
-  const [helados, setHelados] = useState(productos);
+  const [helados, setHelados] = useState(products);
 
   //seteo en helados los productos filtrados
   useEffect(() => {
     if (category) {
-      setHelados(productos.filter((h) => h.categoria === category));
+      setHelados(products.filter((h) => h.categoria === category));
     } else {
-      setHelados(productos);
+      setHelados(products);
     }
-  }, [category, productos]);
+  }, [category, products]);
 
   return (
     <Box>
-      <FeaturedProductsList products={products} />
+      <FeaturedProductsList products={featuredProducts} />
       <Categories />
       <ProductList products={helados} />
     </Box>
