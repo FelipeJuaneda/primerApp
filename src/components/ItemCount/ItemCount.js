@@ -1,33 +1,20 @@
 import { React, useState } from "react";
-import { useAppContext } from "../../context/AppContext";
 import { useCartContext } from "../../context/CartContext";
-import swal from "sweetalert";
 import "./ItemCount.css";
+import swal from "sweetalert";
 
-const ItemCount = ({
-  inicial,
-  stock,
-  onAdd,
-  id,
-  saboresElegidos,
-  limiteSabor,
-}) => {
-  //estado de contador
+const ItemCount = ({ inicial, stock, onAdd, id, product, saboresElegidos }) => {
   const [qty, setQty] = useState(inicial);
-  //funcion contador
   const contadorNum = (num) => {
     setQty(qty + num);
   };
 
   //contextos de carrito y productos
   const { addToCart } = useCartContext();
-  const { products } = useAppContext();
 
   //funcion para agregar cantidad de productos
   const funcionAgregar = (id, cantidad) => {
-    const findProduct = products.find((producto) => producto.id === id);
-    //si no hay sabores elegidos:
-    if (saboresElegidos.length === 0) {
+    if (saboresElegidos && saboresElegidos.length === 0) {
       swal({
         title: "Debes agregar sabores Primero!",
         text: "Click en la imagen para Detalles",
@@ -36,13 +23,8 @@ const ItemCount = ({
       });
       return;
     }
-
-    if (!findProduct) {
-      alert("Error!!");
-      return;
-    }
-    addToCart(findProduct, cantidad);
     onAdd(qty);
+    addToCart(product, cantidad, id);
   };
   return (
     <div className="contenedorBotones">

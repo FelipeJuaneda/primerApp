@@ -1,9 +1,8 @@
 import React, { useState } from "react";
-import { useAppContext } from "../../context/AppContext";
 import { useCartContext } from "../../context/CartContext";
 import "./ProductsCount.css";
 
-const ProductsCount = ({ stock, onAdd, inicial, id }) => {
+const ProductsCount = ({ stock, onAdd, inicial, id, products }) => {
   //estado de contador
   const [qty, setQty] = useState(inicial);
   //funcion contador
@@ -12,10 +11,10 @@ const ProductsCount = ({ stock, onAdd, inicial, id }) => {
   };
   //contextos de carrito y productos
   const { addToCart } = useCartContext();
-  const { productos } = useAppContext();
   //funcion para agregar cantidad de productos
   const funcionAgregar = (id, cantidad) => {
-    const findProducto = productos.find((producto) => producto.id === id);
+    const findProducto = products.find((producto) => producto.id === id);
+    console.log(findProducto);
     //si no hay sabores elegidos:
     if (!findProducto) {
       alert("Error!!");

@@ -1,34 +1,80 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
-import "./Categories.css";
+import Box from "@mui/material/Box";
+import Typography from "@mui/material/Typography";
+
 const Categories = () => {
+  const categories = [
+    { name: "Palitos", to: "/items/palito" },
+    { name: "Tortas Heladas", to: "/items/torta" },
+    { name: "Alfajores", to: "/items/alfajor" },
+  ];
+
   return (
-    <div className="categoriasCont">
-      <div className="tituloCategorias">Categorias</div>
-      <div className="categoriaItems">
-        <NavLink
-          activeclassname="categoriaActiva"
-          className={"itemCat"}
-          to={"/items/palito"}
-        >
-          Palitos
-        </NavLink>
-        <NavLink
-          activeclassname="categoriaActiva"
-          className={"itemCat"}
-          to={"/items/torta"}
-        >
-          Tortas Heladas
-        </NavLink>
-        <NavLink
-          activeclassname="categoriaActiva"
-          className={"itemCat"}
-          to={"/items/alfajor"}
-        >
-          Alfajores
-        </NavLink>
-      </div>
-    </div>
+    <Box
+      component="div"
+      sx={{
+        display: "grid",
+        gap: "10px",
+      }}
+      className="categoriasCont"
+    >
+      <Typography
+        variant="h4"
+        sx={{
+          fontFamily: "var(--fuente-nav)",
+          letterSpacing: "2px",
+          color: "var(--color-verdeTransparente)",
+        }}
+        className="tituloCategorias"
+      >
+        Categorías
+      </Typography>
+      <Box
+        component="div"
+        sx={{
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+          gap: "30px",
+          height: "55px",
+          width: "100%",
+          backgroundColor: "secondary.main",
+        }}
+        className="categoriaItems"
+      >
+        {categories.map((e) => (
+          <Box
+            sx={{
+              color: "text.primary",
+            }}
+            style={({ isActive, isPending }) => {
+              return {
+                textDecoration: isActive ? "underline" : "none",
+                textUnderlinePosition: isActive ? "under" : "",
+                fontSize: "18px",
+              };
+            }}
+            component={NavLink}
+            key={e.name}
+            to={e.to}
+          >
+            <Typography
+              component="span"
+              sx={{
+                color: "text.primary",
+                textDecoration: "none",
+                fontSize: "17px",
+                fontFamily: "monospace",
+                transition: "all 0.5s",
+              }}
+            >
+              {e.name}
+            </Typography>
+          </Box>
+        ))}
+      </Box>
+    </Box>
   );
 };
 

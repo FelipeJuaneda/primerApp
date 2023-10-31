@@ -44,6 +44,7 @@ const ItemDestDetail = ({ item }) => {
         </div>
       ) : (
         <ItemCount
+          product={item}
           stock={item.stock}
           inicial={1}
           onAdd={onAdd}

@@ -3,8 +3,10 @@ import { Link } from "react-router-dom";
 import ProductsCount from "../../../components/ItemCount/ProductsCount";
 import "./ProductDetail.css";
 import BackButtonDetail from "../../../components/BackButtonDetail/BackButtonDetail";
+import ItemCount from "../../../components/ItemCount/ItemCount";
 
-const ProductDetail = ({ prod }) => {
+const ProductDetail = ({ prod, id }) => {
+  console.log(id);
   //estado de terminar compra
   const [terminarCompra, setTerminarCompra] = useState(false);
   //funcion desaparece boton añadir, y agrega terminar compra
@@ -38,7 +40,8 @@ const ProductDetail = ({ prod }) => {
       ) : (
         <div className="descripcionContador">
           <p className="productDescripcion">{prod.descripcion}</p>
-          <ProductsCount
+          <ItemCount
+            product={prod}
             stock={prod.stock}
             inicial={1}
             onAdd={onAdd}

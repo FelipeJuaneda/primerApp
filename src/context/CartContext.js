@@ -5,15 +5,14 @@ const CartContext = createContext();
 export const useCartContext = () => useContext(CartContext);
 
 const CartContextProvider = ({ children }) => {
-  // Logica
   const [cart, setCart] = useState([]);
   // Validar si está el item en el carrito
   const isInCart = (id) => cart.find((producto) => producto.id === id);
 
   // Agregar item al carrito
-  const addToCart = (producto, cantidad) => {
+  const addToCart = (producto, cantidad, id) => {
     const newCart = [...cart];
-    const productoIsInCart = isInCart(producto.id);
+    const productoIsInCart = isInCart(id);
     if (productoIsInCart) {
       newCart[
         newCart.findIndex((prod) => prod.id === productoIsInCart.id)

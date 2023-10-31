@@ -42,6 +42,8 @@ function Home() {
           objectFit: "cover",
         }}
         autoPlay
+        playsInline
+        preload="auto"
         muted
         loop
         component={"video"}
@@ -125,6 +127,7 @@ function Home() {
             modules={[Navigation, Pagination, Scrollbar, A11y]}
             spaceBetween={0}
             slidesPerView={1}
+            lazy={true}
             navigation
             autoplay
             pagination={{ clickable: true }}
