@@ -1,14 +1,20 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { Button } from "@mui/material";
+import { Box, Button } from "@mui/material";
 import KeyboardBackspaceIcon from "@mui/icons-material/KeyboardBackspace";
 const BackButtonDetail = () => {
   return (
-    <Link to={"/items"}>
-      <Button variant="outlined" startIcon={<KeyboardBackspaceIcon />}>
-        Volver
-      </Button>
-    </Link>
+    <Box sx={{ textAlign: "end" }}>
+      <Link to={"/items"}>
+        <Button
+          size="small"
+          variant="outlined"
+          startIcon={<KeyboardBackspaceIcon />}
+        >
+          Volver
+        </Button>
+      </Link>
+    </Box>
   );
 };
 

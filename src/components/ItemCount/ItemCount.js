@@ -1,18 +1,15 @@
 import { React, useState } from "react";
 import { useCartContext } from "../../context/CartContext";
-import "./ItemCount.css";
 import swal from "sweetalert";
+import { Box, Typography } from "@mui/material";
 
 const ItemCount = ({ inicial, stock, onAdd, id, product, saboresElegidos }) => {
   const [qty, setQty] = useState(inicial);
   const contadorNum = (num) => {
     setQty(qty + num);
   };
-
-  //contextos de carrito y productos
   const { addToCart } = useCartContext();
 
-  //funcion para agregar cantidad de productos
   const funcionAgregar = (id, cantidad) => {
     if (saboresElegidos && saboresElegidos.length === 0) {
       swal({
@@ -27,41 +24,118 @@ const ItemCount = ({ inicial, stock, onAdd, id, product, saboresElegidos }) => {
     addToCart(product, cantidad, id);
   };
   return (
-    <div className="contenedorBotones">
-      <div className="botonesAumDism">
+    <Box className="contenedorBotones">
+      <Box
+        sx={{
+          display: "flex",
+          justifyContent: "center",
+          gap: "10px",
+          position: "absolute",
+          bottom: "75px",
+          left: 0,
+          right: 0,
+        }}
+        className="botonesAumDism"
+      >
         {/* //boton disminuir */}
-        <button
+        <Box
+          sx={{
+            padding: "5px 17px",
+            backgroundColor: "primary.main",
+            color: "#000",
+            borderStyle: "none",
+            cursor: "pointer",
+          }}
+          component={"button"}
           className="botonDis"
           onClick={() => contadorNum(-1)}
           disabled={qty === inicial ? true : null}
         >
           -
-        </button>
+        </Box>
 
         {/*----- cantidad----- */}
         <b>{qty}</b>
 
         {/* //boton aumentar */}
-        <button
+        <Box
+          component={"button"}
+          sx={{
+            padding: "5px 17px",
+            backgroundColor: "primary.main",
+            color: "#000",
+            borderStyle: "none",
+            cursor: "pointer",
+          }}
           className="botonAum"
           onClick={() => contadorNum(+1)}
           disabled={qty === stock ? true : null}
         >
           +
-        </button>
-      </div>
+        </Box>
+      </Box>
 
       {/* //boton añadir */}
-      <div className="botonAñadirCont">
-        <button
+      <Box
+        sx={{
+          position: "absolute",
+          bottom: 0,
+          left: 0,
+          right: 0,
+          height: "65px",
+          display: "flex",
+          backgroundColor: "primary.main",
+          justifyContent: "center",
+          alignItems: "center",
+        }}
+        className="botonAñadirCont"
+      >
+        <Box
+          sx={{
+            border: "none",
+            background: "none",
+            cursor: "pointer",
+          }}
+          component={"button"}
           className="ctaAñadir"
           onClick={() => funcionAgregar(id, qty)}
           disabled={stock === 0 ? true : null}
         >
-          <span className="hover-underline-animationAñadir"> Añadir </span>
-        </button>
-      </div>
-    </div>
+          <Typography
+            sx={{
+              letterSpacing: "3px",
+              fontSize: "17px",
+              textTransform: "uppercase",
+              fontFamily: "fontFamily.nav",
+              color: "whiteMod.main",
+              transition: "color 0.4s",
+              "&:hover": {
+                color: "secondary.main",
+                "&::after": {
+                  transform: "scaleX(1)",
+                  transformOrigin: "bottom left",
+                },
+              },
+              "::after": {
+                content: "''",
+                position: "absolute",
+                width: "100%",
+                transform: "scaleX(0)",
+                height: "3px",
+                bottom: 0,
+                left: 0,
+                backgroundColor: "secondary.main",
+                transformOrigin: "bottom right",
+                transition: "transform 0.25s ease-out",
+              },
+            }}
+            className="hover-underline-animationAñadir"
+          >
+            Añadir
+          </Typography>
+        </Box>
+      </Box>
+    </Box>
   );
 };
 

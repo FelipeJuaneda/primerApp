@@ -24,7 +24,7 @@ const ProductDetail = ({ type, prod }) => {
       }}
       className="itemDetailCont"
     >
-      <Container maxWidth={"lg"}>
+      <Container sx={{ paddingTop: "24px" }} maxWidth={"lg"}>
         <BackButtonDetail />
         <Box sx={{ position: "relative" }} className="itemDetailInfo">
           <Box
@@ -120,8 +120,7 @@ const ProductDetail = ({ type, prod }) => {
                   component="span"
                   className="hover-underline-animationTerminar"
                 >
-                  {" "}
-                  Terminar Compra{" "}
+                  Terminar Compra
                 </Typography>
               </Box>
             </Box>

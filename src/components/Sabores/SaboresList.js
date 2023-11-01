@@ -93,7 +93,6 @@ const SaboresList = ({ saboresElegidos, limiteSabor }) => {
         <p className="tituloSaboresEleg">
           Sabores Elegidos!
           <br />
-          <i className="ri-arrow-down-line"></i>
         </p>
         {saborElegido.map((sab) => (
           <div className="listaSaboresCont" key={sab.id}>
