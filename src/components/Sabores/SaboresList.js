@@ -15,6 +15,7 @@ const SaboresList = ({
   limiteSabor,
   setSaborElegido,
   saborElegido,
+  finishBuying,
 }) => {
   const [sabores, setSabores] = useState([]);
   useEffect(() => {
@@ -51,6 +52,7 @@ const SaboresList = ({
         key={sabor.id}
         role={undefined}
         dense
+        disabled={finishBuying}
         selected={isSelected}
         onClick={() => handleAgregarSabor(sabor.id)}
       >
@@ -68,7 +70,7 @@ const SaboresList = ({
   };
 
   const renderSaborTipo = (tipo) => (
-    <Box className={`sabores${tipo}`}>
+    <Box>
       <Typography variant={"span"} sx={{ fontSize: "20px" }}>
         {tipo === "Crema" ? "Crema" : "Agua"}
       </Typography>

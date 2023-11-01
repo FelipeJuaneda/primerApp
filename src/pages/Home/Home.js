@@ -1,16 +1,8 @@
 import React from "react";
 import videoFondo from "../../videos/heladoDerretido.mp4";
 import { Cursor, useTypewriter } from "react-simple-typewriter";
-import { Swiper, SwiperSlide } from "swiper/react";
-import imgUno from "../../images/salsa.jpg";
-import imgDos from "../../images/tachos.jpg";
-import imgTres from "../../images/bombonHeladoCompania.jpg";
-import { A11y, Navigation, Pagination, Scrollbar } from "swiper";
-import "swiper/css";
-import "swiper/css/bundle";
-import "swiper/css/navigation";
-import "swiper/css/pagination";
 import { Box, Typography } from "@mui/material";
+import SwiperCarousel from "../../components/SwiperCarousel/SwiperCarousel";
 
 function Home() {
   const { text } = useTypewriter({
@@ -20,7 +12,6 @@ function Home() {
     deleteSpeed: 100,
     delaySpeed: 2500,
   });
-  const imgsList = [imgUno, imgDos, imgTres];
   return (
     <Box
       sx={{
@@ -105,49 +96,7 @@ function Home() {
           Artesanal por excelencia, con sabor, textura y aroma único
         </Typography>
 
-        <Box
-          sx={{
-            width: "100%",
-            height: "75%",
-            backgroundColor: "primary.main",
-            borderRadius: "5px",
-            boxShadow: "1px 1px 96px -7px rgba(0, 0, 0, 0.75)",
-            WebkitBoxShadow: "1px 1px 96px -7px rgba(0, 0, 0, 0.75)",
-            MozBoxShadow: "1px 1px 96px -7px rgba(0, 0, 0, 0.75)",
-            display: "flex",
-            flexDirection: "column",
-            alignItems: "center",
-            justifyContent: "center",
-            cursor: "grab",
-          }}
-        >
-          <Box
-            sx={{ width: "100%", height: "100%" }}
-            component={Swiper}
-            modules={[Navigation, Pagination, Scrollbar, A11y]}
-            spaceBetween={0}
-            slidesPerView={1}
-            lazy={true}
-            navigation
-            autoplay
-            pagination={{ clickable: true }}
-            scrollbar={{ draggable: true }}
-          >
-            {imgsList.map((e) => {
-              return (
-                <SwiperSlide key={e}>
-                  <Box
-                    sx={{ width: "100%", height: "100%", objectFit: "cover" }}
-                    component={"img"}
-                    loading="lazy"
-                    src={e}
-                    alt="Imagenes home, en inicio de Heladeria Artesanal"
-                  />
-                </SwiperSlide>
-              );
-            })}
-          </Box>
-        </Box>
+        <SwiperCarousel />
       </Box>
     </Box>
   );

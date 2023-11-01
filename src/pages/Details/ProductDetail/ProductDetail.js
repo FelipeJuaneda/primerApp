@@ -2,8 +2,8 @@ import React, { useState } from "react";
 import ItemCount from "../../../components/ItemCount/ItemCount";
 import SaboresContainer from "../../../components/Sabores/SaboresContainer";
 import BackButtonDetail from "../../../components/BackButtonDetail/BackButtonDetail";
-import { Box, Container, Divider, Typography } from "@mui/material";
 import FinishBuy from "../../../components/FinishBuy/FinishBuy";
+import { Box, Container, Divider, Typography } from "@mui/material";
 import swal from "sweetalert";
 
 const ProductDetail = ({ prod }) => {
@@ -11,14 +11,14 @@ const ProductDetail = ({ prod }) => {
   const [saborElegido, setSaborElegido] = useState([]);
 
   const onAdd = (qty) => {
-    if (prod.saboresElegidos && saborElegido.length === 0) {
-      swal({
-        title: "Debes agregar sabores Primero!",
-        icon: "warning",
-        timer: "4500",
-      });
-      return;
-    }
+    // if (prod.saboresElegidos && saborElegido.length === 0) {
+    //   swal({
+    //     title: "Debes agregar sabores primero!",
+    //     icon: "warning",
+    //     timer: "4500",
+    //   });
+    //   return;
+    // }
     setFinishBuying(true);
   };
 
@@ -38,33 +38,35 @@ const ProductDetail = ({ prod }) => {
     >
       <Container sx={{ paddingTop: "24px" }} fixed>
         <BackButtonDetail />
-        <Box sx={{ display: "grid", gap: "20px" }}>
-          <Box sx={{ position: "relative" }} className="itemDetailInfo">
+
+        <Box sx={{ display: "grid", gap: "20px" }} className="itemDetailInfo">
+          <Box>
             <Box
-              sx={{ width: "140px" }}
               component={"img"}
-              className="imgProduct"
               src={prod.imagen}
+              sx={{ width: { xs: "140px", sm: "200px", md: "270px" } }}
               alt="Productos de heladeria"
+              className="imgProduct"
             />
             <Typography
-              variant={"h1"}
+              variant="h1"
               sx={{ fontSize: "25px" }}
               className="productName"
             >
               {prod.nombre}
             </Typography>
             <Typography
-              variant={"h2"}
+              variant="h2"
               sx={{ fontSize: "20px" }}
               className="productDescrip"
             >
               {prod.descripcion}
             </Typography>
-            <Typography component={"span"} className="priceProduct">
+            <Typography component="span" className="priceProduct">
               Precio: {prod.precio}$
             </Typography>
           </Box>
+
           <Divider variant="middle" />
 
           {prod.saboresElegidos && (
@@ -73,6 +75,7 @@ const ProductDetail = ({ prod }) => {
               saborElegido={saborElegido}
               saboresElegidos={prod.saboresElegidos}
               limiteSabor={prod.limiteSabor}
+              finishBuying={finishBuying}
             />
           )}
 
@@ -85,6 +88,7 @@ const ProductDetail = ({ prod }) => {
               inicial={1}
               onAdd={onAdd}
               id={prod.id}
+              saborElegido={saborElegido}
               saboresElegidos={prod.saboresElegidos}
             />
           )}

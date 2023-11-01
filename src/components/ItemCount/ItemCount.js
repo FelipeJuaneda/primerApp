@@ -3,14 +3,22 @@ import { useCartContext } from "../../context/CartContext";
 import swal from "sweetalert";
 import { Box, Typography } from "@mui/material";
 
-const ItemCount = ({ inicial, stock, onAdd, id, product, saboresElegidos }) => {
+const ItemCount = ({
+  inicial,
+  stock,
+  onAdd,
+  id,
+  product,
+  saboresElegidos,
+  saborElegido,
+}) => {
   const [qty, setQty] = useState(inicial);
   const contadorNum = (num) => {
     setQty(qty + num);
   };
   const { addToCart } = useCartContext();
   const funcionAgregar = (id, cantidad) => {
-    if (saboresElegidos) {
+    if (saboresElegidos && saborElegido.length === 0) {
       swal({
         title: "Debes agregar sabores Primero!",
         text: "Click en la imagen para Detalles",
@@ -33,7 +41,6 @@ const ItemCount = ({ inicial, stock, onAdd, id, product, saboresElegidos }) => {
         }}
         className="botonesAumDism"
       >
-        {/* //boton disminuir */}
         <Box
           sx={{
             padding: "5px 17px",
@@ -50,10 +57,8 @@ const ItemCount = ({ inicial, stock, onAdd, id, product, saboresElegidos }) => {
           -
         </Box>
 
-        {/*----- cantidad----- */}
         <Typography component={"b"}>{qty}</Typography>
 
-        {/* //boton aumentar */}
         <Box
           component={"button"}
           sx={{
@@ -71,7 +76,6 @@ const ItemCount = ({ inicial, stock, onAdd, id, product, saboresElegidos }) => {
         </Box>
       </Box>
 
-      {/* //boton añadir */}
       <Box
         sx={{
           position: "relative",

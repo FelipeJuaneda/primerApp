@@ -7,6 +7,7 @@ const SaboresContainer = ({
   limiteSabor,
   setSaborElegido,
   saborElegido,
+  finishBuying,
 }) => {
   return (
     <Box
@@ -24,6 +25,7 @@ const SaboresContainer = ({
         limiteSabor={limiteSabor}
         setSaborElegido={setSaborElegido}
         saborElegido={saborElegido}
+        finishBuying={finishBuying}
       />
     </Box>
   );

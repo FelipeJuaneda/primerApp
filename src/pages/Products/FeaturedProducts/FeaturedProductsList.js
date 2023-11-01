@@ -1,5 +1,5 @@
+import React from "react";
 import { Box, Typography } from "@mui/material";
-import Loading from "../../../components/Loading/Loading";
 import Card from "../../../components/Card/Card";
 
 const FeaturedProductsList = ({ products }) => {
@@ -28,28 +28,14 @@ const FeaturedProductsList = ({ products }) => {
         }}
         className="contenedorProductosDestacados"
       >
-        {products.length ? (
-          <>
-            {products.map((product) => {
-              return (
-                <Card
-                  key={product.id}
-                  product={product}
-                  linkTo={"item"}
-                  nombre={product.nombre}
-                  imagen={product.imagen}
-                  precio={product.precio}
-                  stock={product.stock}
-                  id={product.id}
-                  descripcion={product.descripcion}
-                  saboresElegidos={product.saboresElegidos}
-                />
-              );
-            })}
-          </>
-        ) : (
-          <Loading />
-        )}
+        {products.map((product) => (
+          <Card
+            key={product.id}
+            product={product}
+            linkTo={"item"}
+            {...product}
+          />
+        ))}
       </Box>
     </Box>
   );

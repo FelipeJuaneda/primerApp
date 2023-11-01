@@ -9,14 +9,16 @@ import { Box } from "@mui/material";
 const ProductsContainer = () => {
   const { products, featuredProducts } = useAppContext();
   const { category } = useParams();
-  const [helados, setHelados] = useState(products);
+  const [filteredProducts, setFilteredProducts] = useState([]);
 
-  //seteo en helados los productos filtrados
   useEffect(() => {
     if (category) {
-      setHelados(products.filter((h) => h.categoria === category));
+      const filtered = products.filter(
+        (product) => product.categoria === category
+      );
+      setFilteredProducts(filtered);
     } else {
-      setHelados(products);
+      setFilteredProducts(products);
     }
   }, [category, products]);
 
@@ -24,7 +26,7 @@ const ProductsContainer = () => {
     <Box>
       <FeaturedProductsList products={featuredProducts} />
       <Categories />
-      <ProductList products={helados} />
+      <ProductList products={filteredProducts} />
     </Box>
   );
 };
