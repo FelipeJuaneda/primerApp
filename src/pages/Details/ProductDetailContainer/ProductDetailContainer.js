@@ -13,7 +13,7 @@ const ProductDetailContainer = ({ type }) => {
     setProd(depende.find((p) => p.id === Number(prodId)));
   }, [depende, prodId, products]);
 
-  return <>{prod ? <ItemDetail type="product" prod={prod} /> : <Loading />}</>;
+  return <>{prod ? <ItemDetail prod={prod} /> : <Loading />}</>;
 };
 
 export default ProductDetailContainer;

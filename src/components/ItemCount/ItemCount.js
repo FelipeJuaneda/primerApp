@@ -24,16 +24,13 @@ const ItemCount = ({ inicial, stock, onAdd, id, product, saboresElegidos }) => {
     addToCart(product, cantidad, id);
   };
   return (
-    <Box className="contenedorBotones">
+    <Box sx={{ display: "grid", gap: "10px" }} className="contenedorBotones">
       <Box
         sx={{
           display: "flex",
           justifyContent: "center",
           gap: "10px",
-          position: "absolute",
           bottom: "75px",
-          left: 0,
-          right: 0,
         }}
         className="botonesAumDism"
       >
@@ -78,10 +75,7 @@ const ItemCount = ({ inicial, stock, onAdd, id, product, saboresElegidos }) => {
       {/* //boton añadir */}
       <Box
         sx={{
-          position: "absolute",
-          bottom: 0,
-          left: 0,
-          right: 0,
+          position: "relative",
           height: "65px",
           display: "flex",
           backgroundColor: "primary.main",
