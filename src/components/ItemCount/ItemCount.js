@@ -9,9 +9,8 @@ const ItemCount = ({ inicial, stock, onAdd, id, product, saboresElegidos }) => {
     setQty(qty + num);
   };
   const { addToCart } = useCartContext();
-
   const funcionAgregar = (id, cantidad) => {
-    if (saboresElegidos && saboresElegidos.length === 0) {
+    if (saboresElegidos) {
       swal({
         title: "Debes agregar sabores Primero!",
         text: "Click en la imagen para Detalles",
@@ -52,7 +51,7 @@ const ItemCount = ({ inicial, stock, onAdd, id, product, saboresElegidos }) => {
         </Box>
 
         {/*----- cantidad----- */}
-        <b>{qty}</b>
+        <Typography component={"b"}>{qty}</Typography>
 
         {/* //boton aumentar */}
         <Box

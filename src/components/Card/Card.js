@@ -13,7 +13,6 @@ const Card = ({
   stock,
   linkTo,
 }) => {
-  //funcion cantidad de productos agregados
   const onAdd = (qty) => {};
   return (
     <Box

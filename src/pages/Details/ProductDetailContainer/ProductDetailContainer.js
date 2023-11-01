@@ -7,13 +7,19 @@ import ItemDetail from "../ProductDetail/ProductDetail";
 const ProductDetailContainer = ({ type }) => {
   const { prodId } = useParams();
   const { products, featuredProducts } = useAppContext();
-  const [prod, setProd] = useState({});
-  const depende = type === "featuredProduct" ? featuredProducts : products;
-  useEffect(() => {
-    setProd(depende.find((p) => p.id === Number(prodId)));
-  }, [depende, prodId, products]);
+  const [selectedProduct, setSelectedProduct] = useState({});
+  const productList = type === "featuredProduct" ? featuredProducts : products;
 
-  return <>{prod ? <ItemDetail prod={prod} /> : <Loading />}</>;
+  useEffect(() => {
+    const productToDisplay = productList.find(
+      (product) => product.id === Number(prodId)
+    );
+    setSelectedProduct(productToDisplay);
+  }, [productList, prodId, products]);
+
+  return (
+    <>{selectedProduct ? <ItemDetail prod={selectedProduct} /> : <Loading />}</>
+  );
 };
 
 export default ProductDetailContainer;

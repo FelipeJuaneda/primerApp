@@ -4,10 +4,21 @@ import SaboresContainer from "../../../components/Sabores/SaboresContainer";
 import BackButtonDetail from "../../../components/BackButtonDetail/BackButtonDetail";
 import { Box, Container, Divider, Typography } from "@mui/material";
 import FinishBuy from "../../../components/FinishBuy/FinishBuy";
+import swal from "sweetalert";
 
 const ProductDetail = ({ prod }) => {
   const [finishBuying, setFinishBuying] = useState(false);
+  const [saborElegido, setSaborElegido] = useState([]);
+
   const onAdd = (qty) => {
+    if (prod.saboresElegidos && saborElegido.length === 0) {
+      swal({
+        title: "Debes agregar sabores Primero!",
+        icon: "warning",
+        timer: "4500",
+      });
+      return;
+    }
     setFinishBuying(true);
   };
 
@@ -55,14 +66,16 @@ const ProductDetail = ({ prod }) => {
             </Typography>
           </Box>
           <Divider variant="middle" />
-          <div>
-            {prod.saboresElegidos && (
-              <SaboresContainer
-                saboresElegidos={prod.saboresElegidos}
-                limiteSabor={prod.limiteSabor}
-              />
-            )}
-          </div>
+
+          {prod.saboresElegidos && (
+            <SaboresContainer
+              setSaborElegido={setSaborElegido}
+              saborElegido={saborElegido}
+              saboresElegidos={prod.saboresElegidos}
+              limiteSabor={prod.limiteSabor}
+            />
+          )}
+
           {finishBuying ? (
             <FinishBuy />
           ) : (
