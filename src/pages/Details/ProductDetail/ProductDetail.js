@@ -11,14 +11,6 @@ const ProductDetail = ({ prod }) => {
   const [saborElegido, setSaborElegido] = useState([]);
 
   const onAdd = (qty) => {
-    // if (prod.saboresElegidos && saborElegido.length === 0) {
-    //   swal({
-    //     title: "Debes agregar sabores primero!",
-    //     icon: "warning",
-    //     timer: "4500",
-    //   });
-    //   return;
-    // }
     setFinishBuying(true);
   };
 
