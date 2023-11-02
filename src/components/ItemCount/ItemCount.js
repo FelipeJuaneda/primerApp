@@ -1,4 +1,4 @@
-import { React, useState } from "react";
+import React, { useState } from "react";
 import { useCartContext } from "../../context/CartContext";
 import swal from "sweetalert";
 import { Box, Typography } from "@mui/material";
@@ -12,16 +12,15 @@ const ItemCount = ({
   saboresElegidos,
   saborElegido,
 }) => {
+  const { addToCart } = useCartContext();
   const [qty, setQty] = useState(inicial);
-  const contadorNum = (num) => {
+  const handleCount = (num) => {
     setQty(qty + num);
   };
-  const { addToCart } = useCartContext();
-  const funcionAgregar = (id, cantidad) => {
-    if (saboresElegidos && saborElegido.length === 0) {
+  const handleAddToCart = (id, cantidad) => {
+    if (saboresElegidos && (!saborElegido || saborElegido.length === 0)) {
       swal({
-        title: "Debes agregar sabores Primero!",
-        text: "Click en la imagen para Detalles",
+        title: "Debes agregar sabores primero!",
         icon: "warning",
         timer: "4500",
       });
@@ -30,6 +29,7 @@ const ItemCount = ({
     onAdd(qty);
     addToCart(product, cantidad, id);
   };
+
   return (
     <Box sx={{ display: "grid", gap: "10px" }} className="contenedorBotones">
       <Box
@@ -51,7 +51,7 @@ const ItemCount = ({
           }}
           component={"button"}
           className="botonDis"
-          onClick={() => contadorNum(-1)}
+          onClick={() => handleCount(-1)}
           disabled={qty === inicial ? true : null}
         >
           -
@@ -69,7 +69,7 @@ const ItemCount = ({
             cursor: "pointer",
           }}
           className="botonAum"
-          onClick={() => contadorNum(+1)}
+          onClick={() => handleCount(+1)}
           disabled={qty === stock ? true : null}
         >
           +
@@ -95,7 +95,7 @@ const ItemCount = ({
           }}
           component={"button"}
           className="ctaAñadir"
-          onClick={() => funcionAgregar(id, qty)}
+          onClick={() => handleAddToCart(id, qty)}
           disabled={stock === 0 ? true : null}
         >
           <Typography

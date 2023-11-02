@@ -1,32 +1,53 @@
-import React from "react";
+import React, { useState } from "react";
 import SaboresList from "./SaboresList";
-import { Box } from "@mui/material";
-
+import {
+  Accordion,
+  AccordionDetails,
+  AccordionSummary,
+  Box,
+} from "@mui/material";
+import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 const SaboresContainer = ({
   saboresElegidos,
   limiteSabor,
   setSaborElegido,
   saborElegido,
   finishBuying,
+  descripcion,
 }) => {
+  const [expanded, setExpanded] = useState("panel1");
+  const handleChange = (panel) => (event, isExpanded) => {
+    setExpanded(isExpanded ? panel : false);
+  };
+
   return (
     <Box
       sx={{
-        display: "flex",
-        justifyContent: "space-evenly",
-        flexDirection: { xs: "column", sm: "row" },
-        gap: { xs: "15px", sm: "50px" },
         textAlign: "start",
       }}
       className="saboresContainer"
     >
-      <SaboresList
-        saboresElegidos={saboresElegidos}
-        limiteSabor={limiteSabor}
-        setSaborElegido={setSaborElegido}
-        saborElegido={saborElegido}
-        finishBuying={finishBuying}
-      />
+      <Accordion
+        sx={{
+          backgroundColor: "secondary.main",
+        }}
+        expanded={expanded === "panel1"}
+        onChange={handleChange("panel1")}
+        TransitionProps={{ unmountOnExit: true }}
+      >
+        <AccordionSummary expandIcon={<ExpandMoreIcon />}>
+          {descripcion}
+        </AccordionSummary>
+        <AccordionDetails>
+          <SaboresList
+            saboresElegidos={saboresElegidos}
+            limiteSabor={limiteSabor}
+            setSaborElegido={setSaborElegido}
+            saborElegido={saborElegido}
+            finishBuying={finishBuying}
+          />
+        </AccordionDetails>
+      </Accordion>
     </Box>
   );
 };

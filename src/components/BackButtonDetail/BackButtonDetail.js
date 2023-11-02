@@ -4,7 +4,7 @@ import { Box, Button } from "@mui/material";
 import KeyboardBackspaceIcon from "@mui/icons-material/KeyboardBackspace";
 const BackButtonDetail = () => {
   return (
-    <Box sx={{ textAlign: "end" }}>
+    <Box sx={{ textAlign: "end", padding: "20px 0" }}>
       <Link to={"/items"}>
         <Button
           size="small"

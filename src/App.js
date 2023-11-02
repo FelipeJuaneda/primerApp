@@ -9,7 +9,7 @@ import Contact from "./pages/Contact/Contact";
 import Cart from "./pages/Cart/Cart";
 import Checkout from "./components/Checkout/Checkout";
 import ProductsContainer from "./pages/Products/ProductsContainer/ProductsContainer";
-import ProductDetailCont from "./pages/Details/ProductDetailContainer/ProductDetailContainer";
+import ProductDetailCont from "./pages/Details/ProductDetailContainer";
 
 function App() {
   return (
